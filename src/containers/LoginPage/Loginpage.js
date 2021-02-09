@@ -37,6 +37,7 @@ const App = () => {
 
   const handlePasswordChange = (e) => {
     setError(false);
+
     setPassword(e.target.value);
   };
   const handleTypeChange = (e) => {
