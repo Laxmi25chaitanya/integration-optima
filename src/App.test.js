@@ -1,15 +1,33 @@
-import React from 'react';
-import { render } from '@testing-library/react';
-import { Provider } from 'react-redux';
-import store from './app/store';
-import App from './App';
+import React from "react";
+import { shallow } from "enzyme";
+import App from "./App";
+import { findByTestAttr } from "./test/testUtils";
 
-test('renders learn react link', () => {
-  const { getByText } = render(
-    <Provider store={store}>
-      <App />
-    </Provider>
-  );
+const setup = () => {
+  return shallow(<App />);
+};
 
-  expect(getByText(/learn/i)).toBeInTheDocument();
+describe("testing of the Login Page App Component", () => {
+  let wrapper;
+  beforeEach(() => {
+    wrapper = setup();
+  });
+  test("should render without error", () => {
+    const component = findByTestAttr(wrapper, "app-component");
+    expect(component.length).toBe(1);
+  });
+  test("should not render the error message initially", () => {
+    const errorComponent = findByTestAttr(wrapper, "error-component");
+    expect(errorComponent.text()).toBe("");
+  });
+  test("should render the radio type components", () => {
+    const typeComponent = findByTestAttr(wrapper, "type-component");
+    expect(typeComponent.length).toBe(1);
+  });
+  test("should render error message when sign in button clicked", () => {
+    const button = findByTestAttr(wrapper, "signin-button");
+    button.simulate("click");
+    const errorComponent = findByTestAttr(wrapper, "error-component");
+    expect(errorComponent.text()).toBe("All the fields are required!");
+  });
 });
