@@ -1,0 +1,454 @@
+{
+  "Groceries": [
+    {
+      "spendMonthYear": "SEPTEMBER2020",
+      "firstWeek": 142,
+      "secondWeek": 22.88,
+      "thirdWeek": 0,
+      "fourthWeek": 1436.48,
+      "fifthWeek": 0,
+      "numberOfTransaction": 23,
+      "averagePerDay": 18.5,
+      "totalBudget": 555,
+      "remainingBudget": -1046.3600000000001
+    },
+    {
+      "spendMonthYear": "JUNE2020",
+      "firstWeek": 0,
+      "secondWeek": 794,
+      "thirdWeek": 0,
+      "fourthWeek": 0,
+      "fifthWeek": 0,
+      "numberOfTransaction": 8,
+      "averagePerDay": 0,
+      "totalBudget": 0,
+      "remainingBudget": -794
+    },
+    {
+      "spendMonthYear": "JULY2020",
+      "firstWeek": 47.8,
+      "secondWeek": 471.20000000000005,
+      "thirdWeek": 0,
+      "fourthWeek": 0,
+      "fifthWeek": 0,
+      "numberOfTransaction": 8,
+      "averagePerDay": 0,
+      "totalBudget": 0,
+      "remainingBudget": 0
+    },
+    {
+      "spendMonthYear": "AUGUST2020",
+      "firstWeek": 173,
+      "secondWeek": 78.8,
+      "thirdWeek": 22,
+      "fourthWeek": 0,
+      "fifthWeek": 0,
+      "numberOfTransaction": 4,
+      "averagePerDay": 18.5,
+      "totalBudget": 555,
+      "remainingBudget": 281.2
+    },
+    {
+      "spendMonthYear": "OCTOBER2020",
+      "firstWeek": 763.2300000000001,
+      "secondWeek": 2876.3000000000006,
+      "thirdWeek": 742.6899999999999,
+      "fourthWeek": 0,
+      "fifthWeek": 435.36,
+      "numberOfTransaction": 63,
+      "averagePerDay": 161.29032258064515,
+      "totalBudget": 5000,
+      "remainingBudget": 182.42000000000007
+    }
+  ],
+  "Personal Care": [
+    {
+      "spendMonthYear": "JUNE2020",
+      "firstWeek": 0,
+      "secondWeek": 0,
+      "thirdWeek": 241.78,
+      "fourthWeek": 0,
+      "fifthWeek": 0,
+      "numberOfTransaction": 2,
+      "averagePerDay": 0,
+      "totalBudget": 0,
+      "remainingBudget": -241.78
+    },
+    {
+      "spendMonthYear": "JULY2020",
+      "firstWeek": 0,
+      "secondWeek": 3.7,
+      "thirdWeek": 241.78,
+      "fourthWeek": 0,
+      "fifthWeek": 0,
+      "numberOfTransaction": 3,
+      "averagePerDay": 0,
+      "totalBudget": 0,
+      "remainingBudget": 0
+    },
+    {
+      "spendMonthYear": "AUGUST2020",
+      "firstWeek": 186,
+      "secondWeek": 0,
+      "thirdWeek": 0,
+      "fourthWeek": 241.78,
+      "fifthWeek": 0,
+      "numberOfTransaction": 3,
+      "averagePerDay": 14.833333333333334,
+      "totalBudget": 445,
+      "remainingBudget": 17.220000000000027
+    }
+  ],
+  "Entertainment": [
+    {
+      "spendMonthYear": "OCTOBER2020",
+      "firstWeek": 0,
+      "secondWeek": 85.79,
+      "thirdWeek": 0,
+      "fourthWeek": 0,
+      "fifthWeek": 0,
+      "numberOfTransaction": 1,
+      "averagePerDay": 1.6129032258064515,
+      "totalBudget": 50,
+      "remainingBudget": -35.790000000000006
+    }
+  ],
+  "Expenses": [
+    {
+      "spendMonthYear": "JUNE2020",
+      "firstWeek": 0,
+      "secondWeek": 0,
+      "thirdWeek": 0,
+      "fourthWeek": 0,
+      "fifthWeek": 271.54,
+      "numberOfTransaction": 3,
+      "averagePerDay": 0,
+      "totalBudget": 0,
+      "remainingBudget": -271.54
+    },
+    {
+      "spendMonthYear": "JULY2020",
+      "firstWeek": 200.9,
+      "secondWeek": 23,
+      "thirdWeek": 0,
+      "fourthWeek": 0,
+      "fifthWeek": 0,
+      "numberOfTransaction": 2,
+      "averagePerDay": 0,
+      "totalBudget": 0,
+      "remainingBudget": 0
+    },
+    {
+      "spendMonthYear": "AUGUST2020",
+      "firstWeek": 4,
+      "secondWeek": 0,
+      "thirdWeek": 0,
+      "fourthWeek": 0,
+      "fifthWeek": 0,
+      "numberOfTransaction": 1,
+      "averagePerDay": 16.666666666666668,
+      "totalBudget": 500,
+      "remainingBudget": 496
+    }
+  ],
+  "Income": [],
+  "Holidays": [
+    {
+      "spendMonthYear": "JUNE2020",
+      "firstWeek": 0,
+      "secondWeek": 40,
+      "thirdWeek": 372,
+      "fourthWeek": 0,
+      "fifthWeek": 0,
+      "numberOfTransaction": 6,
+      "averagePerDay": 0,
+      "totalBudget": 0,
+      "remainingBudget": -412
+    },
+    {
+      "spendMonthYear": "JULY2020",
+      "firstWeek": 0,
+      "secondWeek": 0,
+      "thirdWeek": 38,
+      "fourthWeek": 0,
+      "fifthWeek": 0,
+      "numberOfTransaction": 2,
+      "averagePerDay": 66.66666666666667,
+      "totalBudget": 2000,
+      "remainingBudget": 1962
+    },
+    {
+      "spendMonthYear": "AUGUST2020",
+      "firstWeek": 29,
+      "secondWeek": 0,
+      "thirdWeek": 0,
+      "fourthWeek": 0,
+      "fifthWeek": 0,
+      "numberOfTransaction": 2,
+      "averagePerDay": 8,
+      "totalBudget": 240,
+      "remainingBudget": 211
+    },
+    {
+      "spendMonthYear": "SEPTEMBER2020",
+      "firstWeek": 120.89,
+      "secondWeek": 0,
+      "thirdWeek": 0,
+      "fourthWeek": 0,
+      "fifthWeek": 0,
+      "numberOfTransaction": 1,
+      "averagePerDay": 66.66666666666667,
+      "totalBudget": 2000,
+      "remainingBudget": 1879.11
+    }
+  ],
+  "Utilities": [],
+  "Not Categorised": [
+    {
+      "spendMonthYear": "AUGUST2020",
+      "firstWeek": 0,
+      "secondWeek": 40,
+      "thirdWeek": 0,
+      "fourthWeek": 0,
+      "fifthWeek": 0,
+      "numberOfTransaction": 1,
+      "averagePerDay": 0,
+      "totalBudget": 0,
+      "remainingBudget": 0
+    }
+  ],
+  "Refund": [],
+  "Energy": [],
+  "Eating Out": [
+    {
+      "spendMonthYear": "JUNE2020",
+      "firstWeek": 0,
+      "secondWeek": 0,
+      "thirdWeek": 84,
+      "fourthWeek": 0,
+      "fifthWeek": 0,
+      "numberOfTransaction": 2,
+      "averagePerDay": 0,
+      "totalBudget": 0,
+      "remainingBudget": -84
+    },
+    {
+      "spendMonthYear": "AUGUST2020",
+      "firstWeek": 0,
+      "secondWeek": 0,
+      "thirdWeek": 42,
+      "fourthWeek": 0,
+      "fifthWeek": 0,
+      "numberOfTransaction": 1,
+      "averagePerDay": 3.3333333333333335,
+      "totalBudget": 100,
+      "remainingBudget": 58
+    },
+    {
+      "spendMonthYear": "SEPTEMBER2020",
+      "firstWeek": 0,
+      "secondWeek": 333,
+      "thirdWeek": 0,
+      "fourthWeek": 0,
+      "fifthWeek": 0,
+      "numberOfTransaction": 3,
+      "averagePerDay": 3.3333333333333335,
+      "totalBudget": 100,
+      "remainingBudget": -233
+    },
+    {
+      "spendMonthYear": "OCTOBER2020",
+      "firstWeek": 0,
+      "secondWeek": 0,
+      "thirdWeek": 0,
+      "fourthWeek": 0,
+      "fifthWeek": 121.28,
+      "numberOfTransaction": 1,
+      "averagePerDay": 32.25806451612903,
+      "totalBudget": 1000,
+      "remainingBudget": 1000
+    }
+  ],
+  "Transfer": [
+    {
+      "spendMonthYear": "AUGUST2020",
+      "firstWeek": 357.67,
+      "secondWeek": 133.77,
+      "thirdWeek": 287,
+      "fourthWeek": 0,
+      "fifthWeek": 0,
+      "numberOfTransaction": 5,
+      "averagePerDay": 0,
+      "totalBudget": 0,
+      "remainingBudget": 0
+    },
+    {
+      "spendMonthYear": "SEPTEMBER2020",
+      "firstWeek": 0,
+      "secondWeek": 0,
+      "thirdWeek": 0,
+      "fourthWeek": 840.7799999999999,
+      "fifthWeek": 0,
+      "numberOfTransaction": 9,
+      "averagePerDay": 0,
+      "totalBudget": 0,
+      "remainingBudget": 0
+    },
+    {
+      "spendMonthYear": "OCTOBER2020",
+      "firstWeek": 567.54,
+      "secondWeek": 1425.6399999999999,
+      "thirdWeek": 483.96000000000004,
+      "fourthWeek": 0,
+      "fifthWeek": 176.09,
+      "numberOfTransaction": 32,
+      "averagePerDay": 0,
+      "totalBudget": 0,
+      "remainingBudget": 0
+    }
+  ],
+  "Family": [
+    {
+      "spendMonthYear": "JUNE2020",
+      "firstWeek": 662.16,
+      "secondWeek": 0,
+      "thirdWeek": 0,
+      "fourthWeek": 0,
+      "fifthWeek": 0,
+      "numberOfTransaction": 4,
+      "averagePerDay": 0,
+      "totalBudget": 0,
+      "remainingBudget": -662.16
+    },
+    {
+      "spendMonthYear": "AUGUST2020",
+      "firstWeek": 0,
+      "secondWeek": 165.54,
+      "thirdWeek": 0,
+      "fourthWeek": 0,
+      "fifthWeek": 0,
+      "numberOfTransaction": 1,
+      "averagePerDay": 11.333333333333334,
+      "totalBudget": 340,
+      "remainingBudget": 174.46
+    }
+  ],
+  "Finances": [
+    {
+      "spendMonthYear": "JUNE2020",
+      "firstWeek": 0,
+      "secondWeek": 13.7,
+      "thirdWeek": 0,
+      "fourthWeek": 0,
+      "fifthWeek": 0,
+      "numberOfTransaction": 2,
+      "averagePerDay": 0,
+      "totalBudget": 0,
+      "remainingBudget": -13.7
+    }
+  ],
+  "General": [
+    {
+      "spendMonthYear": "AUGUST2020",
+      "firstWeek": 0,
+      "secondWeek": 0,
+      "thirdWeek": 0,
+      "fourthWeek": 235,
+      "fifthWeek": 0,
+      "numberOfTransaction": 1,
+      "averagePerDay": 3.3333333333333335,
+      "totalBudget": 100,
+      "remainingBudget": -135
+    }
+  ],
+  "Shopping": [
+    {
+      "spendMonthYear": "AUGUST2020",
+      "firstWeek": 23.9,
+      "secondWeek": 0,
+      "thirdWeek": 0,
+      "fourthWeek": 0,
+      "fifthWeek": 0,
+      "numberOfTransaction": 1,
+      "averagePerDay": 3.3333333333333335,
+      "totalBudget": 100,
+      "remainingBudget": 76.1
+    },
+    {
+      "spendMonthYear": "SEPTEMBER2020",
+      "firstWeek": 150,
+      "secondWeek": 354.89,
+      "thirdWeek": 0,
+      "fourthWeek": 0,
+      "fifthWeek": 0,
+      "numberOfTransaction": 5,
+      "averagePerDay": 3.3333333333333335,
+      "totalBudget": 100,
+      "remainingBudget": -404.89
+    },
+    {
+      "spendMonthYear": "OCTOBER2020",
+      "firstWeek": 241.24,
+      "secondWeek": 0,
+      "thirdWeek": 0,
+      "fourthWeek": 0,
+      "fifthWeek": 0,
+      "numberOfTransaction": 2,
+      "averagePerDay": 32.25806451612903,
+      "totalBudget": 1000,
+      "remainingBudget": 758.76
+    }
+  ],
+  "Charity": [
+    {
+      "spendMonthYear": "AUGUST2020",
+      "firstWeek": 0,
+      "secondWeek": 140,
+      "thirdWeek": 0,
+      "fourthWeek": 0,
+      "fifthWeek": 0,
+      "numberOfTransaction": 1,
+      "averagePerDay": 3.3333333333333335,
+      "totalBudget": 100,
+      "remainingBudget": -40
+    }
+  ],
+  "Bills": [
+    {
+      "spendMonthYear": "JUNE2020",
+      "firstWeek": 331.08,
+      "secondWeek": 0,
+      "thirdWeek": 0,
+      "fourthWeek": 0,
+      "fifthWeek": 0,
+      "numberOfTransaction": 2,
+      "averagePerDay": 0,
+      "totalBudget": 0,
+      "remainingBudget": -331.08
+    },
+    {
+      "spendMonthYear": "JULY2020",
+      "firstWeek": 87.23999999999998,
+      "secondWeek": 0,
+      "thirdWeek": 0,
+      "fourthWeek": 0,
+      "fifthWeek": 0,
+      "numberOfTransaction": 6,
+      "averagePerDay": 66.69966666666667,
+      "totalBudget": 2000.99,
+      "remainingBudget": 1913.75
+    },
+    {
+      "spendMonthYear": "AUGUST2020",
+      "firstWeek": 180.07999999999998,
+      "secondWeek": 0,
+      "thirdWeek": 0,
+      "fourthWeek": 14.54,
+      "fifthWeek": 0,
+      "numberOfTransaction": 3,
+      "averagePerDay": 20.021666666666665,
+      "totalBudget": 600.65,
+      "remainingBudget": 406.031
+    }
+  ]
+}
