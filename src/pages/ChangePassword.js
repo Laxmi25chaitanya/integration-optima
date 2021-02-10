@@ -16,8 +16,6 @@ const ChangePassword = (props) => {
 
   const handleChangePassword = (e) => {
     e.preventDefault();
-    // console.log(location.state.userName);
-    // console.log(location.state.type);
     if (newPass !== confirmPass) {
       errorMessage = "The passwords do not match!";
       setError(true);
