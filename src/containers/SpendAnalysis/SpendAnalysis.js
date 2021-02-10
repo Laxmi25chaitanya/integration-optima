@@ -4,16 +4,15 @@ import Budget from './Budget'
 import {FaAngleLeft,FaAngleRight} from 'react-icons/fa'
 import {useState} from 'react'
 const SpendAnalysis = () => {
-    const months=["January","February","March","April","May","June","July","August","September"
-    ,"October","November","December"];
-    const [index,setIndex]=useState(0)
+    const months=["JANUARY","FEBRUARY","MARCH","APRIL","MAY","JUNE","JULY","AUGEST","SEPTEMBER"
+    ,"OCTOBER","NOVEMBER","DECEMBER"];
+    const [index,setIndex]=useState(7)
     const[month,setMonth]=useState(months[index]);    
      return (
         <div className="container">
             <div className="topnav">
                 <div className="leftslider arrow" >
                   <FaAngleLeft onClick={()=>{
-                      console.log("LeftClick and ",index)
                       setIndex(index-1<0?11:index-1)
                       setMonth(months[index])
                   }}/>
@@ -24,7 +23,6 @@ const SpendAnalysis = () => {
                 </div>
                 <div className="rightslider arrow">
                     <FaAngleRight onClick={()=>{
-                        console.log("RightClick and ",index)
                         setIndex(index+1>11?0:index+1)
                         setMonth(months[index])
                     }}/>
