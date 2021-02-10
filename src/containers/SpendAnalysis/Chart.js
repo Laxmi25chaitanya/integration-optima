@@ -2,7 +2,10 @@ import React from 'react'
 import {useState,useEffect} from "react"
 import axios from 'axios';
 import {Bar} from 'react-chartjs-2';
+<<<<<<< HEAD
 
+=======
+>>>>>>> spendanalysis-hrs
 const Chart = ({month}) => {
     //States
     const[barchart,setBarChart]=useState({})
