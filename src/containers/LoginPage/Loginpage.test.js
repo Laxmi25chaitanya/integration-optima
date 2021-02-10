@@ -1,10 +1,10 @@
 import React from "react";
 import { shallow } from "enzyme";
-import App from "./App";
-import { findByTestAttr } from "./test/testUtils";
+import LoginPage from "./Loginpage";
+import { findByTestAttr } from "../../test/testUtils";
 
 const setup = () => {
-  return shallow(<App />);
+  return shallow(<LoginPage />);
 };
 
 describe("testing of the Login Page App Component", () => {

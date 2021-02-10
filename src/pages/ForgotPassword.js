@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 import ChangePassword from "./ChangePassword";
-import "../App.css";
+import "../containers/LoginPage/Loginpage.css";
 
 let errorMessage;
 

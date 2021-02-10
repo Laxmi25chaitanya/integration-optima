@@ -39,3 +39,7 @@
 .type {
   display: flex;
 }
+
+.errorMessage {
+  color: red;
+}
