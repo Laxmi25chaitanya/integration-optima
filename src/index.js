@@ -4,6 +4,8 @@ import { HashRouter, Route } from "react-router-dom";
 import "./index.css";
 import App from "./App";
 import LoginPage from "./containers/LoginPage/Loginpage";
+import ForgotPassword from "./pages/ForgotPassword";
+import ChangePassword from "./pages/ChangePassword";
 import store from "./app/store";
 import { Provider } from "react-redux";
 import * as serviceWorker from "./serviceWorker";
@@ -14,6 +16,8 @@ ReactDOM.render(
       <HashRouter>
         <Route exact path="/" component={LoginPage} />
         <Route exact path="/app" component={App} />
+        <Route exact path="/forgotPassword" component={ForgotPassword} />
+        <Route path="/changePassword" component={ChangePassword} />
       </HashRouter>
     </Provider>
   </React.StrictMode>,

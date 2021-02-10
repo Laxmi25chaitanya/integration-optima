@@ -1,15 +1,23 @@
 import React, { useState } from "react";
-import { Redirect } from "react-router-dom";
-import "../App.css";
+import { useLocation } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { updatePasswordCredentials } from "../action/loginPage";
 
 let errorMessage;
 
-const ChangePassword = () => {
+const ChangePassword = (props) => {
+  const location = useLocation();
+  const userName = location.state.userName;
+  const type = location.state.type;
+  const dispatch = useDispatch();
   const [newPass, setNewPass] = useState("");
   const [confirmPass, setConfirmPass] = useState("");
   const [error, setError] = useState(false);
+
   const handleChangePassword = (e) => {
     e.preventDefault();
+    // console.log(location.state.userName);
+    // console.log(location.state.type);
     if (newPass !== confirmPass) {
       errorMessage = "The passwords do not match!";
       setError(true);
@@ -17,15 +25,15 @@ const ChangePassword = () => {
       setError(true);
       errorMessage = "The fields cannot be empty!";
     } else {
-      setError(false);
-      console.log("Password Changed!");
-      <Redirect to="/login"></Redirect>;
+      dispatch(updatePasswordCredentials({ userName, type, newPass }));
     }
   };
   return (
     <div>
-      <div className="form-signin">
-        {error ? <p className="errorMessage">{`${errorMessage}`}</p> : ""}
+      <div>
+        <h1>Change Password</h1>
+        {error ? <p>{`${errorMessage}`}</p> : ""}
+
         <label>New Password</label>
         <input
           type="password"
@@ -35,6 +43,7 @@ const ChangePassword = () => {
             setNewPass(e.target.value);
           }}
         />
+        <br />
         <label>Confirm Password</label>
         <input
           type="password"
@@ -45,11 +54,7 @@ const ChangePassword = () => {
           }}
         />
       </div>
-      <button
-        className="btn btn-primary m-2 btn-sm"
-        type="submit"
-        onClick={handleChangePassword}
-      >
+      <button type="submit" onClick={handleChangePassword}>
         Change Password
       </button>
     </div>

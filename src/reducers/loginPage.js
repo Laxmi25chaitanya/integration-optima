@@ -1,23 +1,37 @@
-import * as actionTypes from '../constant/index';
+import * as actionTypes from "../constant/index";
 
 const initialState = {
-    userName: null,
-    error: null
+  userName: null,
+  error: true,
+  userStatus: null,
+  passwordUpdateStatus: null,
 };
 
-const loginPageReducer = (state = initialState, action) =>{
- const {type, payload} = action;
-    switch(type){
-        case actionTypes.VALIDATION_SUCCESSFUL: {
-            return {userName:{...payload}, error:false}
-        }
-        case actionTypes.VALIDATION_FAILURE: {
-            return {userName: null, error: payload}
-        }
-        default: {
-            return{...state}
-        }
+const loginPageReducer = (state = initialState, action) => {
+  const { type, payload } = action;
+  switch (type) {
+    case actionTypes.VALIDATION_SUCCESSFUL: {
+      return { userName: payload, error: false, userStatus: null };
     }
-}
+    case actionTypes.VALIDATION_FAILURE: {
+      return { userName: null, error: payload, userStatus: null };
+    }
+    case actionTypes.VALIDATION_USERFOUND: {
+      return { userName: payload, error: false, userStatus: true };
+    }
+    case actionTypes.VALIDATION_USERNOTFOUND: {
+      return { userName: null, error: payload, userStatus: false };
+    }
+    case actionTypes.PASSWORD_UPDATION_SUCCESSFUL: {
+      return { ...state, passwordUpdateStatus: true };
+    }
+    case actionTypes.PASSWORD_UPDATION_FAILURE: {
+      return { ...state, passwordUpdateStatus: false };
+    }
+    default: {
+      return { ...state };
+    }
+  }
+};
 
 export default loginPageReducer;
