@@ -14,7 +14,7 @@ const ForgotPassword = () => {
   const [data, setData] = useState();
 
   const getData = () => {
-    fetch("src/app/userCredentials.json", {
+    fetch("http://localhost:9000/userDetailsAPI", {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",

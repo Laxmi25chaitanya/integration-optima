@@ -10,10 +10,10 @@ const LoginPage = () => {
   const [password, setPassword] = useState("");
   const [type, setType] = useState("");
   const [error, setError] = useState(false);
-  const [data, setData] = useState([]);
+  const [data, setData] = useState();
 
   const getData = () => {
-    fetch("src/app/userCredentials.json", {
+    fetch("http://localhost:9000/userDetailsAPI", {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
