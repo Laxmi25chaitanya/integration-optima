@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../../App.css";
 import Label from "../../components/Label.js";
 import { useDispatch, useSelector } from "react-redux";
@@ -12,6 +12,16 @@ const App = () => {
   const [type, setType] = useState("");
   const [error, setError] = useState(false);
   const dispatch = useDispatch();
+  let errorStatus = useSelector(state => state.loginPage.error)
+  console.log(errorStatus,"error status");
+  
+  useEffect(()=>{
+    if(!errorStatus){
+      history.push("/app")
+  }
+  
+  },[errorStatus])
+ 
 
   const handleUsernameChange = (e) => {
     setError(false);
@@ -33,9 +43,10 @@ const App = () => {
       setError(true);
     }
     // else{
-    //   history.push("/app")
     // }
-    dispatch(validateUserCredentials({ type, userName, password }));
+    else{
+      dispatch(validateUserCredentials({ type, userName, password }));
+    }
     // console.log(type,userName, password);
   };
 

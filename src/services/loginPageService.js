@@ -2,11 +2,11 @@
 const axios = require("axios");
 
 exports.validateUserCredentials = (bodyData) => {
-  axios
+  console.log('from action to service', bodyData);
+  return new Promise((resolve, reject)=>{
+    axios
     .get(`http://localhost:9000/userDetailsAPI`, {})
     .then((res) => {
-      console.log("Response from the JSON service", res);
-      const status = res.status;
       const data = res.data;
       const userListMatchingType = data.userList.filter(
         (userlist) => userlist.type === bodyData.type
@@ -15,32 +15,18 @@ exports.validateUserCredentials = (bodyData) => {
         (user) => user.userName === bodyData.userName
       )[0];
       if (userDetailMatchingUsername) {
-        if (
-          userDetailMatchingUsername.userName === bodyData.userName &&
-          userDetailMatchingUsername.pwd === bodyData.password
-        ) {
-          console.log("Login Successfully!");
-          return status;
+        if ((userDetailMatchingUsername.userName == bodyData.userName) && (userDetailMatchingUsername.pwd == bodyData.password)) {
+          resolve({status:200, username: bodyData.userName});
         } else {
-          return status;
+          reject(404);
         }
-      } else {
-        return status;
       }
-      //filtering done here
+      else{
+        reject(404)
+      }
     })
     .catch((error) => {
-      console.log(error);
+      reject(404)
     });
-  //   let data = fetch("http://localhost:9000/userDetailsAPI", {
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //       Accept: "application/json",
-  //     },
-  //   }).then(function (response) {
-  //     return response.json();
-  //   });
-  //   // .then(function (myJson) {
-  //   //   console.log(myJson);
-  //   // });
+  })
 };
