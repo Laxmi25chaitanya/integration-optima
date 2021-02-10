@@ -6,7 +6,7 @@ const Chart = ({month}) => {
     let weeks=[]
     useEffect(() => {
       const getExpenseData = async () =>{
-        const {data} = await axios('data.json')
+        const {data} = await axios('spendAnalysis.json')
         .catch(err=>console.log(err));
         setWeekExpense(data)
       }  
