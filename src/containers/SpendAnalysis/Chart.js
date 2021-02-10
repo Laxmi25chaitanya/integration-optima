@@ -15,22 +15,25 @@ const Chart = ({month}) => {
             showInLegend: true,
             type: "column",
             dataPoints: [
-                { label: "1-7", y: 10, },
-                { label: "8-14", y: 15, },
-                { label: "15-21", y: 25, },
-                { label: "22-27", y: 30, },
-                { label: "28-30", y: 28, }
+                { label: "1-7", y: weeks[0], },
+                { label: "8-14", y: weeks[1], },
+                { label: "15-21", y: weeks[2], },
+                { label: "22-27", y: weeks[3], },
+                { label: "28-30", y: weeks[4], }
             ]
         }]
     }
 
     useEffect(() => {
-      const getExpenseData = async () =>{
-        const {data} = await axios('data.json')
-        .catch(err=>console.log(err));
-        setWeekExpense(data)
-      }  
-      getExpenseData();
+        const getExpenseData = async () =>{
+            const {data} = await axios('spendanalysis.json')
+            .catch(err=>console.log(err));
+            setWeekExpense(data)
+          }  
+          getExpenseData();
+    }, [month])
+
+      
       Object.keys(weekexpense).forEach((key)=>{
         var expense=weekexpense[key];
        Object.keys(expense).forEach((key2)=>{
@@ -44,7 +47,7 @@ const Chart = ({month}) => {
        })
       })
       console.log(`${month}2020`,weeks);
-    }, [month]) 
+
      return (
         <div className="chartgrid">
             <div className="barchart chart">
