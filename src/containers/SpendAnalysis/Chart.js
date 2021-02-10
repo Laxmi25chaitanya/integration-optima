@@ -1,54 +1,98 @@
 import React from 'react'
 import {useState,useEffect} from "react"
 import axios from 'axios';
-import CanvasJSReact from "./canvasjs.react";
-var CanvasJSChart = CanvasJSReact.CanvasJSChart;
-const Chart = ({month}) => {
-    const weeks=[0,0,0,0,0]
-    const [weekexpense,setWeekExpense]=useState([])
-    const options = {
-        axisY: {
-            valueFormatString: "$#######.00",
-        },
-        data: [{
-            name: "WEEKLY SPEND",
-            showInLegend: true,
-            type: "column",
-            dataPoints: [
-                { label: "1-7", y: 10, },
-                { label: "8-14", y: 15, },
-                { label: "15-21", y: 25, },
-                { label: "22-27", y: 30, },
-                { label: "28-30", y: 28, }
-            ]
-        }]
-    }
+import {Bar} from 'react-chartjs-2';
 
-    useEffect(() => {
-      const getExpenseData = async () =>{
-        const {data} = await axios('data.json')
-        .catch(err=>console.log(err));
-        setWeekExpense(data)
-      }  
-      getExpenseData();
-      Object.keys(weekexpense).forEach((key)=>{
+const Chart = ({month}) => {
+    //States
+    const[barchart,setBarChart]=useState({})
+    const[options,setOptions]=useState({})
+    const [weekexpense,setWeekExpense]=useState([])
+        const AddCharts=()=>{
+            //Declaration
+            let weeks=[]
+//1----Axios to Get Data
+            const getExpenseData = async () =>{
+                const {data} = await axios('spendanalysis.json')
+                .catch(err=>console.log(err));
+                setWeekExpense(data)              
+                }
+                //End of getExpenseData
+ //2----Called Functions              
+              getExpenseData();            
+              overallmonthsExpense();           
+            
+            setBarChart({
+                    labels: ["1-7", "8-14","15-21","22-28","29-31"],
+                    datasets: [
+                        {
+                           
+                            label: 'weekly spend',
+                            data: weeks,
+                            backgroundColor:[
+                                'rgba(255, 99, 132, 0.6)',
+                                'rgba(54, 162, 235, 0.6)',
+                                'rgba(255, 206, 86, 0.6)',
+                                'rgba(75, 192, 192, 0.6)',
+                                'rgba(153, 102, 255, 0.6)'
+                              ]
+                        }
+                    ]
+             })
+            //End of barGraph
+            setOptions({
+                legend: { display: false },
+                title: {
+                  display: true,
+                  text: 'Weekly Expense'
+                },
+                responsive: true,
+            scales: {
+                xAxes: [{
+                    gridLines: {
+                        display: false
+                      }
+                }],
+                yAxes: [{
+                    ticks: {
+                        min: 0,
+                        stepSize: 100,
+                    },
+                    gridLines: {
+                        display: false
+                      }
+                }]
+            }
+            })
+ //--------BarChart
+ function overallmonthsExpense(){
+    Object.keys(weekexpense).forEach((key)=>{
         var expense=weekexpense[key];
        Object.keys(expense).forEach((key2)=>{
         if(expense[key2].spendMonthYear===`${month}2020`){
-        weeks[0]+=expense[key2].firstWeek;
-        weeks[1]+=expense[key2].secondWeek;
-        weeks[2]+=expense[key2].thirdWeek;
-        weeks[3]+=expense[key2].fourthWeek;
-        weeks[4]+=expense[key2].fifthWeek; 
+        weeks.push(parseInt(expense[key2].firstWeek));
+        weeks.push(parseInt(expense[key2].secondWeek));
+        weeks.push(parseInt(expense[key2].thirdWeek));
+        weeks.push(parseInt(expense[key2].fourthWeek));
+        weeks.push(parseInt(expense[key2].fifthWeek)); 
         }
        })
-      })
-      console.log(`${month}2020`,weeks);
-    }, [month]) 
+    })
+}
+//Donut Chart
+     
+ }
+
+                
+  useEffect(() => {
+        AddCharts();
+    }, [month])
+
+
      return (
         <div className="chartgrid">
             <div className="barchart chart">
-            <CanvasJSChart options={options} /> 
+            <Bar data={barchart} options={options}/> 
             </div>
             <div className="donutchart chart">
                 <h1>DonutChart</h1>
