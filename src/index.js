@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
+// import "./index.css";
 // import App from './App';
 import LoginPage from "./containers/LoginPage/Loginpage";
 //import store from './app/store';

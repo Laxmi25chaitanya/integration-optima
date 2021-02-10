@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import "./App.css";
+import "./Loginpage.css";
 import { BrowserRouter, Route, NavLink } from "react-router-dom";
-import Label from "./components/label";
-import ForgotPassword from "./pages/ForgotPassword";
+import Label from "../../components/Label";
+import ForgotPassword from "../../pages/ForgotPassword";
 
 let errorMessage;
-const App = () => {
+const LoginPage = () => {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [type, setType] = useState("");
@@ -140,4 +140,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default LoginPage;
