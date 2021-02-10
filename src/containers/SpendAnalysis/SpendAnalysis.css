@@ -1,0 +1,49 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin:0;
+}
+.container{
+    width: 95%;
+    margin-left: auto;
+    user-select: none;
+}
+.topnav{
+    
+    background-color: #006A4D;
+    color: white;   
+    height:110px;
+    display: flex;
+    justify-content: space-between;
+}
+.topnav h2{
+    padding: 1rem;
+    font-weight: 600;
+}
+.arrow{
+    padding-top: 2.5rem;
+    font-size: 40px;
+    cursor: pointer;
+}
+/*End of topnavbar*/
+.chartgrid{
+    padding: 3rem;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr;
+}
+.chart{
+    background-color:rgb(255, 248, 153);
+    width: 500px;
+    height: 400px;
+    color: darkorange;
+}
+
+
+/*End of Chart*/
+
+.budget{
+    padding-top: 3rem;
+    background-color: deepskyblue;
+    height: 150px;
+}
