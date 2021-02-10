@@ -9,6 +9,8 @@ const Label = (props) => {
         type={props.type}
         onChange={props.onChange}
         value={props.value}
+        placeholder={props.holder}
+        className="form-control"
       />
     </div>
   );
