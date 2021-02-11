@@ -54,16 +54,14 @@ export const updatePasswordCredentials = (bodyData) => {
     loginPageService
       .updatePasswordCredentials(bodyData)
       .then((res) => {
-        // console.log("response from service", res);
+        console.log("response from service", res.status);
         if (res.status == 200) {
           dispatch({
             type: actionTypes.PASSWORD_UPDATION_SUCCESSFUL,
-            payload: true,
           });
         } else {
           dispatch({
             type: actionTypes.PASSWORD_UPDATION_FAILURE,
-            payload: false,
           });
         }
       })

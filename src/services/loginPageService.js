@@ -5,7 +5,7 @@ exports.validateUserCredentials = (bodyData) => {
   console.log("from action to service 'validateUserCredentials'", bodyData);
   return new Promise((resolve, reject) => {
     axios
-      .get(`http://localhost:9000/userDetailsAPI`, {})
+      .get(`http://localhost:3000/data`, {})
       .then((res) => {
         const data = res.data;
         const userListMatchingType = data.userList.filter(
@@ -37,7 +37,7 @@ exports.validateUserPresence = (bodyData) => {
   console.log("from action to service 'validateUserPresence'", bodyData);
   return new Promise((resolve, reject) => {
     axios
-      .get(`http://localhost:9000/userDetailsAPI`, {})
+      .get(`http://localhost:3000/data`, {})
       .then((res) => {
         const data = res.data;
         const userListMatchingType = data.userList.filter(
@@ -62,7 +62,7 @@ exports.updatePasswordCredentials = (bodyData) => {
   let modifiedData;
   return new Promise((resolve, reject) => {
     axios
-      .get(`http://localhost:9000/userDetailsAPI`, {})
+      .get(`http://localhost:3000/data`, {})
       .then((res) => {
         const data = res.data;
         for (const item in data.userList) {
@@ -83,17 +83,20 @@ exports.updatePasswordCredentials = (bodyData) => {
         return modifiedData;
       })
       .then((modifiedData) => {
-        axios
-          .post("http://localhost:9000/userDetailsAPI", modifiedData)
-          .then((res) => console.log(res.data))
-          .catch((err) => console.log(err));
-        //   axios
-        //   .post("https://jsonplaceholder.typicode.com/posts", modifiedData)
-        //   .then((res) => console.log(res.data))
-        //   .catch((err) => console.log(err));
+        console.log(modifiedData);
+        fetch("http://localhost:3000/data", {
+          method: "POST",
+          body: modifiedData,
+          headers: {
+            "Content-type": "application/json",
+          },
+        }).then((response) => {
+          console.log(response);
+          resolve({ status: 200 });
+        });
       })
       .catch((error) => {
-        console.log(error);
+        reject(404);
       });
   });
 };

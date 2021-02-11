@@ -4,7 +4,7 @@ const initialState = {
   userName: null,
   error: true,
   userStatus: false,
-  passwordUpdateStatus: null,
+  passwordUpdateStatus: false,
 };
 
 const loginPageReducer = (state = initialState, action) => {

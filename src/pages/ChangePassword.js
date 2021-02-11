@@ -1,22 +1,44 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { updatePasswordCredentials } from "../action/loginPage";
+import { useHistory } from "react-router-dom";
 
 let errorMessage;
 
 const ChangePassword = (props) => {
+  let history = useHistory();
   const location = useLocation();
   const userName = location.state.userName;
   const type = location.state.type;
   const dispatch = useDispatch();
+  //  let errorStatus = useSelector((state) => state.location.error);
   const [newPass, setNewPass] = useState("");
   const [confirmPass, setConfirmPass] = useState("");
   const [error, setError] = useState(false);
+  const passwordUpdateStatus = useSelector(
+    (state) => state.loginPage.passwordUpdateStatus
+  );
+
+  useEffect(() => {
+    if (passwordUpdateStatus) {
+      alert("Password Updated!");
+      // errorStatus = true;
+      setTimeout(() => {
+        history.push({
+          pathname: "/",
+          state: { status: true },
+        });
+      }, 1000);
+    }
+  }, [passwordUpdateStatus]);
 
   const handleChangePassword = (e) => {
     e.preventDefault();
-    if (newPass !== confirmPass) {
+    if (newPass.length < 4 && newPass.length > 12) {
+      setError(true);
+      console.log("The password should be 4-12 characters in length!");
+    } else if (newPass !== confirmPass) {
       errorMessage = "The passwords do not match!";
       setError(true);
     } else if (newPass === "" && confirmPass === "") {

@@ -6,16 +6,19 @@ import Label from "../../components/Label.js";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { validateUserCredentials } from "../../action/loginPage";
+import { useLocation } from "react-router-dom";
 
 const App = () => {
   let history = useHistory();
+  const passwordUpdateStatus = useSelector(
+    (state) => state.loginPage.passwordUpdateStatus
+  );
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [type, setType] = useState("");
   const [error, setError] = useState(false);
   const dispatch = useDispatch();
   let errorStatus = useSelector((state) => state.loginPage.error);
-  console.log(errorStatus, "error status");
 
   useEffect(() => {
     if (!errorStatus) {
@@ -41,13 +44,9 @@ const App = () => {
     e.preventDefault();
     if (userName === "" || password === "" || type === "") {
       setError(true);
-    }
-    // else{
-    // }
-    else {
+    } else {
       dispatch(validateUserCredentials({ type, userName, password }));
     }
-    // console.log(type,userName, password);
   };
 
   const handleForgotPassword = (e) => {
@@ -95,10 +94,11 @@ const App = () => {
           holder="password"
         />
         <br />
-        <button className="btn btn-primary" onClick={handleSubmit}>
+        <button onClick={handleSubmit}>
           <span>Sign In</span>
         </button>
         <button onClick={handleForgotPassword}>Forgot Password</button>
+        {passwordUpdateStatus ? <span>Password Updated!</span> : ""}
       </div>
     </div>
   );
