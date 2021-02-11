@@ -17,12 +17,12 @@ img {
 }
 
 .form-signin {
-  margin: 80px;
+  margin: 50px;
   padding: 20px 0;
   background-color: rgb(51, 94, 110);
   text-align: center;
   width: 420px;
-  height: 400px;
+  height: auto;
   float: right;
   box-sizing: border-box;
   border-radius: 10%;
@@ -48,16 +48,22 @@ img {
   background-color: silver;
 }
 
+input {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
 ::placeholder {
   font-family: 'Courier New', Courier, monospace;
 }
 
 button {
-  padding: 15px 105px;
+  width: 270px;
+  padding: 10px;
   background-color: brown;
   border: none;
   color: white;
-  margin: 20px;
+  margin-bottom: 10px;
 }
 
 button:hover {

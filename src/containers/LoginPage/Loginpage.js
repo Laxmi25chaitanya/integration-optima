@@ -52,6 +52,9 @@ const App = () => {
   const handleForgotPassword = (e) => {
     history.push("/forgotPassword");
   };
+  const handleChangePassword = (e) => {
+    history.push("/changePassword");
+  };
 
   return (
     <div className="text-center">

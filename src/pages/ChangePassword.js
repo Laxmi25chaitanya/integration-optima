@@ -75,7 +75,7 @@ const ChangePassword = (props) => {
         />
       </div>
       <button type="submit" onClick={handleChangePassword}>
-        Change Password
+        <span>Change Password</span>
       </button>
     </div>
   );

@@ -3,7 +3,7 @@ import "../containers/LoginPage/Loginpage.css";
 import { useDispatch, useSelector } from "react-redux";
 import { validateUserPresence } from "../action/loginPage";
 import { useHistory } from "react-router-dom";
-
+import Logo from "../components/imgaes/ps.png";
 let errorMessage;
 
 const ForgotPassword = () => {
@@ -44,17 +44,12 @@ const ForgotPassword = () => {
   };
 
   return (
+    <>
+      <img src={Logo}style={{height:"300px",width:"350px"}}></img>
     <div className="form-signin">
-      <h3>Forgot Password</h3>
-      {error ? <p>{`${errorMessage}`}</p> : ""}
-      <input
-        name="Username"
-        type="text"
-        className="form-control"
-        value={userName}
-        onChange={handleUsernameChange}
-      />
-      <br />
+      <h1>Forgot Password</h1>
+      {error ? <p className="errorMessage">{`${errorMessage}`}</p> : ""}
+      <div className="button1">
       <input
         name="type"
         value={type}
@@ -62,8 +57,8 @@ const ForgotPassword = () => {
         value="retail"
         onChange={handleTypeChange}
       />
-      Retail
-      <br />
+      <span>Retail</span>
+      </div>
       <input
         name="type"
         value={type}
@@ -73,10 +68,20 @@ const ForgotPassword = () => {
       />
       Commercial
       <br />
+      <input
+        name="Username"
+        type="text"
+        className="form-control"
+        value={userName}
+        placeholder="username"
+        onChange={handleUsernameChange}
+      />
+      <br />
       <button className="btn m-2 btn-sm btn-primary" onClick={handleSearch}>
         Search
       </button>
     </div>
+    </>
   );
 };
 
