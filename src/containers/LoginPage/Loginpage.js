@@ -53,6 +53,10 @@ const App = () => {
   const handleForgotPassword = (e) => {
     history.push("/forgotPassword");
   };
+  const handleChangePassword = (e) => {
+    history.push("/changePassword");
+  };
+
 
   return (
     <div className="text-center">
@@ -95,10 +99,15 @@ const App = () => {
           holder="password"
         />
         <br />
-        <button className="btn btn-primary" onClick={handleSubmit}>
+        <button onClick={handleSubmit}>
           <span>Sign In</span>
         </button>
-        <button onClick={handleForgotPassword}>Forgot Password</button>
+        <button onClick={handleForgotPassword}>
+          <span>Forgot Password</span>
+        </button>
+        <button onClick={handleChangePassword}>
+          <span>change Password</span>
+        </button>
       </div>
     </div>
   );

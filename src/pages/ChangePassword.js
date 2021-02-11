@@ -17,7 +17,7 @@ const ChangePassword = (props) => {
   const handleChangePassword = (e) => {
     e.preventDefault();
     if (newPass !== confirmPass) {
-      errorMessage = "The passwords do not match!";
+      errorMessage = "Both The passwords should be match!";
       setError(true);
     } else if (newPass === "" && confirmPass === "") {
       setError(true);
@@ -53,7 +53,7 @@ const ChangePassword = (props) => {
         />
       </div>
       <button type="submit" onClick={handleChangePassword}>
-        Change Password
+        <span>Change Password</span>
       </button>
     </div>
   );
