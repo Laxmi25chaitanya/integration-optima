@@ -1,7 +1,9 @@
 import SemiCircleProgressBar from "react-progressbar-semicircle"
 
 const Budget = ({ dailyusage, remainingBudget, totalBudget }) => {
-    let average = (remainingBudget/totalBudget) * 100 
+    let average = (remainingBudget/totalBudget) * 100 ;
+    average= Math.ceil(average);
+    average= average>0&&average<100?average:0;
 
     return (
         <div className="budget">

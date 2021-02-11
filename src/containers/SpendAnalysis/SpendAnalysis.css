@@ -36,7 +36,7 @@
     grid-template-columns: 1fr 1fr;
 }
 .chart{
-    background-color:rgb(255, 255, 255);
+    background-color:rgba(244, 253, 253, 0.849);
     width: 600px;
     height: 500px;
     color: rgb(0, 0, 0);
@@ -48,10 +48,11 @@
 
 .budget{
     padding-top: 3rem;
-    background-color: deepskyblue;
+    background-color: rgb(61, 207, 255);
     height: 250px;
     margin-right: 10vh;
     margin-bottom: 10vh;
+    margin-top: 10vh;
 }
 
 .link-tag {
