@@ -26,12 +26,12 @@ img {
   float: right;
   box-sizing: border-box;
   border-radius: 10%;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
 }
 
 .form-signin p {
   color: red;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
 }
 
 .button1 {
@@ -50,11 +50,10 @@ img {
 
 input {
   margin-top: 10px;
-  margin-bottom: 20px;
 }
 
 ::placeholder {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
 }
 
 button {
@@ -64,6 +63,9 @@ button {
   border: none;
   color: white;
   margin-bottom: 10px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 15px;
+  font-weight: bold;
 }
 
 button:hover {
@@ -72,5 +74,17 @@ button:hover {
 }
 
 button span {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.success-message {
+  color: green;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  padding: 5px;
+  background-color: aliceblue;
+}
+
+span {
+  padding: 10px;
 }

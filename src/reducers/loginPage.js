@@ -11,7 +11,7 @@ const loginPageReducer = (state = initialState, action) => {
   const { type, payload } = action;
   switch (type) {
     case actionTypes.VALIDATION_SUCCESSFUL: {
-      return { userName: payload, error: false, userStatus: true };
+      return { userName: payload, error: false, userStatus: false };
     }
     case actionTypes.VALIDATION_FAILURE: {
       return { userName: null, error: payload, userStatus: false };
@@ -23,10 +23,10 @@ const loginPageReducer = (state = initialState, action) => {
       return { userName: null, error: payload, userStatus: false };
     }
     case actionTypes.PASSWORD_UPDATION_SUCCESSFUL: {
-      return { ...state, passwordUpdateStatus: true };
+      return { ...state, error: true, passwordUpdateStatus: true };
     }
     case actionTypes.PASSWORD_UPDATION_FAILURE: {
-      return { ...state, passwordUpdateStatus: false };
+      return { ...state, error: true, passwordUpdateStatus: false };
     }
     default: {
       return { ...state };

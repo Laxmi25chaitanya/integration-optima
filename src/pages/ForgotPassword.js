@@ -45,42 +45,40 @@ const ForgotPassword = () => {
 
   return (
     <>
-      <img src={Logo}style={{height:"300px",width:"350px"}}></img>
-    <div className="form-signin">
-      <h1>Forgot Password</h1>
-      {error ? <p className="errorMessage">{`${errorMessage}`}</p> : ""}
-      <div className="button1">
-      <input
-        name="type"
-        value={type}
-        type="radio"
-        value="retail"
-        onChange={handleTypeChange}
-      />
-      <span>Retail</span>
+      <img src={Logo} style={{ height: "300px", width: "350px" }}></img>
+      <div className="form-signin">
+        <h1>Forgot Password</h1>
+        {error ? <p className="errorMessage">{`${errorMessage}`}</p> : ""}
+        <div className="button1">
+          <input
+            name="type"
+            value={type}
+            type="radio"
+            value="retail"
+            onChange={handleTypeChange}
+          />
+          <span>Retail</span>
+        </div>
+        <input
+          name="type"
+          value={type}
+          type="radio"
+          value="commercial"
+          onChange={handleTypeChange}
+        />
+        Commercial
+        <br />
+        <input
+          name="Username"
+          type="text"
+          className="form-control"
+          value={userName}
+          placeholder="username"
+          onChange={handleUsernameChange}
+        />
+        <br />
+        <button onClick={handleSearch}>Search</button>
       </div>
-      <input
-        name="type"
-        value={type}
-        type="radio"
-        value="commercial"
-        onChange={handleTypeChange}
-      />
-      Commercial
-      <br />
-      <input
-        name="Username"
-        type="text"
-        className="form-control"
-        value={userName}
-        placeholder="username"
-        onChange={handleUsernameChange}
-      />
-      <br />
-      <button className="btn m-2 btn-sm btn-primary" onClick={handleSearch}>
-        Search
-      </button>
-    </div>
     </>
   );
 };
