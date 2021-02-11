@@ -6,20 +6,18 @@ import Label from "../../components/Label.js";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { validateUserCredentials } from "../../action/loginPage";
-import { useLocation } from "react-router-dom";
 
 const App = () => {
   let history = useHistory();
-  const passwordUpdateStatus = useSelector(
-    (state) => state.loginPage.passwordUpdateStatus
-  );
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [type, setType] = useState("");
   const [error, setError] = useState(false);
   const dispatch = useDispatch();
   let errorStatus = useSelector((state) => state.loginPage.error);
-
+  let passwordUpdateStatus = useSelector(
+    (state) => state.loginPage.passwordUpdateStatus
+  );
   useEffect(() => {
     if (!errorStatus) {
       history.push("/app");
@@ -52,9 +50,6 @@ const App = () => {
   const handleForgotPassword = (e) => {
     history.push("/forgotPassword");
   };
-  const handleChangePassword = (e) => {
-    history.push("/changePassword");
-  };
 
   return (
     <div className="text-center">
@@ -86,7 +81,7 @@ const App = () => {
           value={userName}
           className="form-control"
           onChange={handleUsernameChange}
-          holder="username"
+          holder="Enter Username"
         />
         <Label
           id="password"
@@ -94,13 +89,14 @@ const App = () => {
           value={password}
           className="form-control"
           onChange={handlePasswordChange}
-          holder="password"
+          holder="Enter Password"
         />
         <br />
         <button onClick={handleSubmit}>
           <span>Sign In</span>
         </button>
         <button onClick={handleForgotPassword}><span>Forgot Password</span></button>
+        <br/>
         {passwordUpdateStatus ? <span>Password Updated!</span> : ""}
       </div>
     </div>
