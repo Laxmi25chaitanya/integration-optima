@@ -78,15 +78,16 @@ const Chart = ({month}) => {
        })
     })
 }
-//Donut Chart
+//Pie Chart
      
  }
+//Budgetinfo
 
-                
+//Use Effect
   useEffect(() => {
         AddCharts();
     }, [month])
-
+//End of use Effect
 
      return (
         <div className="chartgrid">
@@ -94,7 +95,7 @@ const Chart = ({month}) => {
             <Bar data={barchart} options={options}/> 
             </div>
             <div className="donutchart chart">
-                <h1>DonutChart</h1>
+                <h1>PieChart</h1>
             </div>            
         </div>
     )
