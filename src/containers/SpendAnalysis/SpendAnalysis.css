@@ -45,9 +45,30 @@
 
 /*End of Chart*/
 
+
 .budget{
     padding-top: 3rem;
     background-color: deepskyblue;
-    height: 150px;
+    height: 250px;
     margin-right: 10vh;
+    margin-bottom: 10vh;
 }
+
+.link-tag {
+    text-align: left;
+    margin-left: 50px;
+    font-size: 30px;
+}
+.link-tag a{
+    color: yellow;
+}
+
+.perday-cost {
+    text-align: left;
+    margin-left: 100px;
+    margin-right: 100px;
+    display: flex;
+    justify-content: space-between;   
+    font-family: 'Times New Roman', Times, serif; 
+}
+
