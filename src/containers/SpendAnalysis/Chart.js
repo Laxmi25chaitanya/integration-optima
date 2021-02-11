@@ -11,18 +11,19 @@ const Chart = ({month}) => {
     const [dailyusage,setDailyUsage]=useState(0)
     const [totalBudget,setTotalBudget]=useState(0)
     const [remainingBudget,setRemainingBudget]=useState(0)                
-        //Declaration
-        let weeks = []
-        //1----Axios to Get Data
-        const getExpenseData = async () => {
-            const { data } = await axios('spendanalysis.json')
-                .catch(err => console.log(err));
-            setWeekExpense(data)
-        }
-        //End of getExpenseData
-        //2----Called Functions              
-        getExpenseData();
-        overallmonthsExpense();
+            const AddCharts=()=>{
+                //Declaration
+                let weeks=[]
+    //1----Axios to Get Data
+                const getExpenseData = async () =>{
+                    const {data} = await axios('spendanalysis.json')
+                    .catch(err=>console.log(err));
+                    setWeekExpense(data)              
+                    }
+                    //End of getExpenseData
+     //2----Called Functions              
+                  getExpenseData();            
+                  overallmonthsExpense(); 
         setBarChart({
             labels: ["1-7", "8-14", "15-21", "22-28", "29-31"],
             fontColor: 'black',
