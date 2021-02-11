@@ -15,6 +15,9 @@
     height:110px;
     display: flex;
     justify-content: space-between;
+    margin-left: 8vh;
+    margin-right: 10vh;
+    margin-top: 5vh;
 }
 .topnav h2{
     padding: 1rem;
