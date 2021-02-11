@@ -2,7 +2,7 @@
 const axios = require("axios");
 
 exports.validateUserCredentials = (bodyData) => {
-  console.log("from action to service", bodyData);
+  console.log("from action to service 'validateUserCredentials'", bodyData);
   return new Promise((resolve, reject) => {
     axios
       .get(`http://localhost:9000/userDetailsAPI`, {})
@@ -16,8 +16,8 @@ exports.validateUserCredentials = (bodyData) => {
         )[0];
         if (userDetailMatchingUsername) {
           if (
-            userDetailMatchingUsername.userName == bodyData.userName &&
-            userDetailMatchingUsername.pwd == bodyData.password
+            userDetailMatchingUsername.userName === bodyData.userName &&
+            userDetailMatchingUsername.pwd === bodyData.password
           ) {
             resolve({ status: 200, username: bodyData.userName });
           } else {
@@ -34,6 +34,7 @@ exports.validateUserCredentials = (bodyData) => {
 };
 
 exports.validateUserPresence = (bodyData) => {
+  console.log("from action to service 'validateUserPresence'", bodyData);
   return new Promise((resolve, reject) => {
     axios
       .get(`http://localhost:9000/userDetailsAPI`, {})
@@ -45,7 +46,7 @@ exports.validateUserPresence = (bodyData) => {
         const userDetailMatchingUsername = userListMatchingType.userDetails.filter(
           (user) => user.userName === bodyData.userName
         )[0];
-        if (userDetailMatchingUsername) {
+        if (userDetailMatchingUsername !== undefined) {
           resolve({ status: 200, username: bodyData.userName });
         } else {
           reject(404);
