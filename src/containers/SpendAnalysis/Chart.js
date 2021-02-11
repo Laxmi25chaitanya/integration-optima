@@ -13,11 +13,12 @@ const Chart = ({ month }) => {
     const [remainingBudget, setRemainingBudget] = useState(0)
     const [piedata, setPieData] = useState({})
     const [Pieoptions, setPieOptions] = useState({})
-
-
+    let firstweek=0,secondweek=0,thirdweek=0,fourthweek=0,fifthweek=0,averageperday=0,
+            totalbudget=0,remainingbudget=0;
     const AddCharts = () => {
         //Declaration
         let weeks = []
+        //let piechart=[]
         //1----Axios to Get Data
         const getExpenseData = async () => {
             const { data } = await axios('spendanalysis.json')
@@ -28,7 +29,7 @@ const Chart = ({ month }) => {
         //2----Called Functions              
         getExpenseData();
         overallmonthsExpense();
-
+        //getByCategory();
 
         setBarChart({
             labels: ["1-7", "8-14", "15-21", "22-28", "29-31"],
@@ -94,7 +95,7 @@ const Chart = ({ month }) => {
 
         //---pie chart
         setPieData({
-            labels: ["groceries", "eating out", "shopping", "netflix"],
+            labels: ["Groceries", "Holidays", "Eating Out", "Shopping"],
             backgroundColor: [
                 'rgba(54, 162, 235, 0.6)',
                 'rgba(255, 99, 132, 0.6)',
@@ -128,27 +129,39 @@ const Chart = ({ month }) => {
               }
         })
 
-
-
         function overallmonthsExpense() {
             Object.keys(weekexpense).forEach((key) => {
                 var expense = weekexpense[key];
                 Object.keys(expense).forEach((key2) => {
                     if (expense[key2].spendMonthYear === `${month}2020`) {
-                        weeks.push(parseInt(expense[key2].firstWeek));
-                        weeks.push(parseInt(expense[key2].secondWeek));
-                        weeks.push(parseInt(expense[key2].thirdWeek));
-                        weeks.push(parseInt(expense[key2].fourthWeek));
-                        weeks.push(parseInt(expense[key2].fifthWeek));
-                        setDailyUsage(parseInt(expense[key2].averagePerDay));
-                        setRemainingBudget(parseInt(expense[key2].remainingBudget));
-                        setTotalBudget(parseInt(expense[key2].totalBudget));
+                        firstweek+=parseInt(expense[key2].firstWeek);
+                        secondweek+=parseInt(expense[key2].secondWeek);
+                        thirdweek+=parseInt(expense[key2].thirdWeek);
+                        fourthweek+=parseInt(expense[key2].fourthWeek);
+                        fifthweek+=parseInt(expense[key2].fifthWeek);                       
+                        averageperday+=parseInt(expense[key2].averagePerDay);
+                        remainingbudget+=parseInt(expense[key2].remainingBudget);
+                        totalbudget+=parseInt(expense[key2].totalBudget);
                     }
                 })
             })
         }
+        //End of Budget and Week analysis calculation
+        weeks.push(firstweek);
+        weeks.push(secondweek);
+        weeks.push(thirdweek);
+        weeks.push(fourthweek);
+        weeks.push(fifthweek);
+        setDailyUsage(averageperday);
+        setRemainingBudget(remainingbudget);
+        setTotalBudget(totalbudget);
+        //Pie Chart Function
+        /*function getByCategory(){
+                Object.keys(weekexpense).forEach((key)=>{
+                    example=weekexpense[key];
+                })
 
-
+        }*/
     }
 
     //Use Effect
