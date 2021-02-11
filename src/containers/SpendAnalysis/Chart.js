@@ -155,6 +155,7 @@ const Chart = ({ month }) => {
         setDailyUsage(averageperday);
         setRemainingBudget(remainingbudget);
         setTotalBudget(totalbudget);
+        
         //Pie Chart Function
         /*function getByCategory(){
                 Object.keys(weekexpense).forEach((key)=>{
