@@ -15,6 +15,9 @@
     height:110px;
     display: flex;
     justify-content: space-between;
+    margin-left: 8vh;
+    margin-right: 10vh;
+    margin-top: 5vh;
 }
 .topnav h2{
     padding: 1rem;
@@ -27,23 +30,46 @@
 }
 /*End of topnavbar*/
 .chartgrid{
-    padding: 3rem;
+    padding-top: 3rem;
     display: grid;
     grid-gap: 20px;
     grid-template-columns: 1fr 1fr;
 }
 .chart{
-    background-color:rgb(255, 248, 153);
-    width: 500px;
-    height: 400px;
-    color: darkorange;
+    background-color:rgba(244, 253, 253, 0.849);
+    width: 600px;
+    height: 500px;
+    color: rgb(0, 0, 0);
 }
 
 
 /*End of Chart*/
 
+
 .budget{
     padding-top: 3rem;
-    background-color: deepskyblue;
-    height: 150px;
+    background-color: rgb(61, 207, 255);
+    height: 250px;
+    margin-right: 10vh;
+    margin-bottom: 10vh;
+    margin-top: 10vh;
 }
+
+.link-tag {
+    text-align: left;
+    margin-left: 50px;
+    font-size: 30px;
+}
+.link-tag a{
+    color: yellow;
+}
+
+.perday-cost {
+    text-align: left;
+    margin-left: 100px;
+    margin-right: 100px;
+    display: flex;
+    justify-content: space-between;   
+    font-family: 'Times New Roman', Times, serif; 
+}
+

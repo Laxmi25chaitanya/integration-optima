@@ -3,10 +3,11 @@ import Chart from './Chart'
 import Budget from './Budget'
 import {FaAngleLeft,FaAngleRight} from 'react-icons/fa'
 import {useState} from 'react'
+
 const SpendAnalysis = () => {
-    const months=["JANUARY","FEBRUARY","MARCH","APRIL","MAY","JUNE","JULY","AUGEST","SEPTEMBER"
+    const months=["JANUARY","FEBRUARY","MARCH","APRIL","MAY","JUNE","JULY","AUGUST","SEPTEMBER"
     ,"OCTOBER","NOVEMBER","DECEMBER"];
-    const [index,setIndex]=useState(7)
+    const [index,setIndex]=useState(5)
     const[month,setMonth]=useState(months[index]);    
      return (
         <div className="container">
@@ -29,7 +30,6 @@ const SpendAnalysis = () => {
                 </div>
             </div>
             <Chart month={month}/>
-            <Budget/>
         </div>
     )
 }
