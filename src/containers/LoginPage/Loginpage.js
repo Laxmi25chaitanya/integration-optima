@@ -100,7 +100,7 @@ const App = () => {
         <button onClick={handleSubmit}>
           <span>Sign In</span>
         </button>
-        <button onClick={handleForgotPassword}>Forgot Password</button>
+        <button onClick={handleForgotPassword}><span>Forgot Password</span></button>
         {passwordUpdateStatus ? <span>Password Updated!</span> : ""}
       </div>
     </div>

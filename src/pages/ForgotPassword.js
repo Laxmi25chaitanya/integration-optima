@@ -78,7 +78,7 @@ const ForgotPassword = () => {
       />
       <br />
       <button className="btn m-2 btn-sm btn-primary" onClick={handleSearch}>
-        Search
+        <span>Search</span>
       </button>
     </div>
     </>

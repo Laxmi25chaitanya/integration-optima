@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { updatePasswordCredentials } from "../action/loginPage";
 import { useHistory } from "react-router-dom";
+import Logo from "../components/imgaes/ps.png";
 
 let errorMessage;
 
@@ -50,13 +51,15 @@ const ChangePassword = (props) => {
   };
   return (
     <div>
-      <div>
+      <img src={Logo}style={{height:"300px",width:"350px"}}></img>
+      <div  className="form-signin">
         <h1>Change Password</h1>
         {error ? <p>{`${errorMessage}`}</p> : ""}
 
-        <label>New Password</label>
         <input
           type="password"
+          placeholder="new password"
+          className="form-control"
           value={newPass}
           onChange={(e) => {
             setError(false);
@@ -64,19 +67,20 @@ const ChangePassword = (props) => {
           }}
         />
         <br />
-        <label>Confirm Password</label>
         <input
           type="password"
           value={confirmPass}
+          placeholder="confirm password"
+          className="form-control"
           onChange={(e) => {
             setError(false);
             setConfirmPass(e.target.value);
           }}
         />
-      </div>
       <button type="submit" onClick={handleChangePassword}>
         <span>Change Password</span>
       </button>
+    </div>
     </div>
   );
 };
