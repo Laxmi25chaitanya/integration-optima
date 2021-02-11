@@ -30,7 +30,7 @@ export const validateUserPresence = (bodyData) => {
     loginPageService
       .validateUserPresence(bodyData)
       .then((res) => {
-        // console.log("response from service", res);
+        console.log("response from service", res);
         if (res.status == 200) {
           dispatch({
             type: actionTypes.VALIDATION_USERFOUND,

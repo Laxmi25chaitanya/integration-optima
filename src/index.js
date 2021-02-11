@@ -17,7 +17,7 @@ ReactDOM.render(
         <Route exact path="/" component={LoginPage} />
         <Route exact path="/app" component={App} />
         <Route exact path="/forgotPassword" component={ForgotPassword} />
-        <Route path="/changePassword" component={ChangePassword} />
+        <Route exact path="/changePassword" component={ChangePassword} />
       </HashRouter>
     </Provider>
   </React.StrictMode>,
