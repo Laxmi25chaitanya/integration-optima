@@ -7,6 +7,7 @@
     width: 95%;
     margin-left: auto;
     user-select: none;
+    
 }
 .topnav{
     background-color: #006A4D;
@@ -18,14 +19,14 @@
     margin-right: 10vh;
     margin-top: 5vh;
     border-radius: 10px;
-  padding: auto;
+    padding: auto;
 }
-
 
 .topnav h2{
     padding: 1rem;
     font-weight: 300;
     font-size: 50px;
+    
 }
 .arrow{
     padding-top: 2.5rem;
@@ -38,15 +39,17 @@
     display: grid;
     grid-gap: 20px;
     grid-template-columns: 1fr 1fr;
-    margin-left: 100px;
-    
+    margin-left: 9vh;
+    margin-right: 10vh;    
+
 }
 .chart{
-    width: 400px;
-    height: 250px;
+    width: 500px;
+    height: 500px;
     align-items: center;
     color: rgb(0, 0, 0);
-    box-shadow: 0 0 5px black;
+    box-shadow: 0 0 5px rgb(201, 189, 189);
+    margin-top: 10vh;
 }
 
 
@@ -56,12 +59,13 @@
 .budget{
     padding-top: 2.5rem;
     background-color: #20b2aa;
-    height: 250px;
-    width: 1100px;
+    height: 300px;
+    width: 180vh;
     margin-left: 50px;
     margin-bottom: 10vh;
     margin-top: 10vh;
     border-radius: 10px;
+    font-size: 20px;
 }
 
 .link-tag {

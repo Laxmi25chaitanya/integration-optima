@@ -2,13 +2,16 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './BudgetAnalysis.css'
 
-function BudgetAnalysis() {
+const BudgetAnalysis = () => {
     return (
         <>
             <div className="allbudget">
                 <h1>Overall Budget</h1>
             </div>
+            <br></br>
+            <br></br>
             <p>Your Monthly Budget</p>
+            <br></br>
             <br></br>
             <div className="overallbudget">
 

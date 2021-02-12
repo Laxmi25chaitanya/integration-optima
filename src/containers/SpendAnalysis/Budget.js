@@ -12,13 +12,13 @@ const Budget = ({ dailyusage, remainingBudget, totalBudget }) => {
         <>
 
             <div className="budget">
-                    <div className="link-tag">
-                       <Link to='/spendanalysis/budgetanalysis' >
-                           Budget
-                       </Link>                          
-                      
-                    </div>
-               
+                <div className="link-tag">
+                    <Link to='/spendanalysis/budgetanalysis' >
+                        Budget
+                       </Link>
+
+                </div>
+
                 <SemiCircleProgressBar percentage={average} circleRadius={100} showPercentValue />
                 <div className="perday-cost">
                     <h2>£{dailyusage} Per day</h2>
