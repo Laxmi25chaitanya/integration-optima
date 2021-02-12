@@ -6,16 +6,23 @@ export const validateUserCredentials = (bodyData) => {
     loginPageService
       .validateUserCredentials(bodyData)
       .then((res) => {
-        // console.log("response from service", res);
+        console.log("response from service", res);
         if (res.status == 200) {
           dispatch({
             type: actionTypes.VALIDATION_SUCCESSFUL,
             payload: res.username,
           });
-        } else {
+        } else if (res.status == 400) {
+          console.log("validation-failure");
           dispatch({
             type: actionTypes.VALIDATION_FAILURE,
-            payload: false,
+            payload: "Username and Password do not Match!",
+          });
+        } else if (res.status == 404) {
+          console.log("User not found!");
+          dispatch({
+            type: actionTypes.VALIDATION_USERNOTFOUND,
+            payload: "User not found!",
           });
         }
       })
@@ -36,10 +43,11 @@ export const validateUserPresence = (bodyData) => {
             type: actionTypes.VALIDATION_USERFOUND,
             payload: res.username,
           });
-        } else {
+        } else if (res.status == 404) {
+          console.log("User not found!");
           dispatch({
             type: actionTypes.VALIDATION_USERNOTFOUND,
-            payload: false,
+            payload: "User not found!",
           });
         }
       })
@@ -68,5 +76,14 @@ export const updatePasswordCredentials = (bodyData) => {
       .catch((err) => {
         console.log("response", err);
       });
+  };
+};
+
+export const clearErrorMessage = () => {
+  return (dispatch) => {
+    dispatch({
+      type: actionTypes.CLEAR_ERROR_MESSAGE,
+      payload: null,
+    });
   };
 };

@@ -5,8 +5,12 @@ import Logo from "../../components/imgaes/finance.png";
 import Label from "../../components/Label.js";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { validateUserCredentials } from "../../action/loginPage";
+import {
+  clearErrorMessage,
+  validateUserCredentials,
+} from "../../action/loginPage";
 
+let message;
 const App = () => {
   let history = useHistory();
   const [userName, setUserName] = useState("");
@@ -15,26 +19,40 @@ const App = () => {
   const [error, setError] = useState(false);
   const dispatch = useDispatch();
   let errorStatus = useSelector((state) => state.loginPage.error);
+  let errorMessage = useSelector((state) => state.loginPage.errorMessage);
+  let userStatus = useSelector((state) => state.loginPage.userStatus);
   let passwordUpdateStatus = useSelector(
     (state) => state.loginPage.passwordUpdateStatus
   );
+
   useEffect(() => {
     if (!errorStatus) {
       history.push("/app");
     }
   }, [errorStatus]);
 
+  useEffect(() => {
+    if (errorMessage) {
+      setError(true);
+      message = errorMessage;
+    }
+  }, [errorMessage]);
+
   const handleUsernameChange = (e) => {
     setError(false);
+    dispatch(clearErrorMessage());
     setUserName(e.target.value);
   };
 
   const handlePasswordChange = (e) => {
     setError(false);
+    dispatch(clearErrorMessage());
     setPassword(e.target.value);
   };
 
   const handleTypeChange = (e) => {
+    setError(false);
+    dispatch(clearErrorMessage());
     setType(e.target.value);
   };
 
@@ -42,12 +60,14 @@ const App = () => {
     e.preventDefault();
     if (userName === "" || password === "" || type === "") {
       setError(true);
+      message = "All fields are required!";
     } else {
       dispatch(validateUserCredentials({ type, userName, password }));
     }
   };
 
   const handleForgotPassword = (e) => {
+    dispatch(clearErrorMessage());
     history.push("/forgotPassword");
   };
 
@@ -56,7 +76,8 @@ const App = () => {
       <img src={Logo}></img>
       <div className="form-signin">
         <h1>Sign in here!</h1>
-        {error ? <p>all the fields are required!</p> : null}
+        {error ? <p className="errorMessage">{`${message}`}</p> : null}
+        <br />
         <div className="button1">
           <input
             value={type}
@@ -95,8 +116,10 @@ const App = () => {
         <button onClick={handleSubmit}>
           <span>Sign In</span>
         </button>
-        <button onClick={handleForgotPassword}><span>Forgot Password</span></button>
-        <br/>
+        <button onClick={handleForgotPassword}>
+          <span>Forgot Password</span>
+        </button>
+        <br />
         {passwordUpdateStatus ? <span>Password Updated!</span> : ""}
       </div>
     </div>
