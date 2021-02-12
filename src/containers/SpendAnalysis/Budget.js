@@ -19,7 +19,8 @@ const Budget = ({ dailyusage, remainingBudget, totalBudget }) => {
                       
                     </div>
                
-                <SemiCircleProgressBar percentage={average} circleRadius={100} showPercentValue />
+                <SemiCircleProgressBar percentage={average} circleRadius={100} showPercentValue strokeWidth='25' stroke='#ffc107'
+                diameter='400' />
                 <div className="perday-cost">
                     <h2>£{dailyusage} Per day</h2>
                     <h2>£{remainingBudget} Remaining out of £{totalBudget}</h2>

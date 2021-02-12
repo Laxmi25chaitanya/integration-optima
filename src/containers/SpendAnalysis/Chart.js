@@ -113,7 +113,7 @@ const Chart = ({ month }) => {
                     'rgba(75, 192, 192, 0.6)',
                 ],
                 borderColor: 'rgba(0,0,0,0.4)',
-                borderWidth: 2,
+                borderWidth: 0,
 
             }]
         })
