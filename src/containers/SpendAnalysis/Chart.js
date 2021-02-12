@@ -39,16 +39,13 @@ const Chart = ({ month }) => {
 
                     label: 'weekly spend',
                     data: weeks,
-                    borderColor: ['rgba(22,85,79,20)',
-                        'rgba(22,85,79,20)',
-                        'rgba(22,85,79,20)',
-                        'rgba(22,85,79,20)'],
+                   
                     backgroundColor: [
-                        'rgba(255, 99, 132, 0.6)',
-                        'rgba(54, 162, 235, 0.6)',
-                        'rgba(255, 206, 86, 0.6)',
-                        'rgba(75, 192, 192, 0.6)',
-                        'rgba(153, 102, 255, 0.6)'
+                        'rgba(255, 195, 0)',
+                        'rgba(27, 94, 32)',
+                        'rgba(199, 0, 57)',
+                        'rgba(75, 192, 192)',
+                        'rgba(244, 81, 30)'
                     ],
                 }
             ]
@@ -58,7 +55,7 @@ const Chart = ({ month }) => {
             legend: { display: false },
             title: {
                 display: true,
-                text: 'Weekly Expense',
+                text: 'Weekely Spend',
                 fontColor: 'black',
                 fontFamily: 'Helvetica Neue',
                 fontSize: 28,
@@ -86,6 +83,14 @@ const Chart = ({ month }) => {
                         fontColor: 'black',
                         fontFamily: 'Helvetica Neue',
                         fontSize: 20,
+                    },
+                    layout:{
+                        padding:{
+                            top:5,
+                            bottom:5,
+                            left:5,
+                            right:5
+                        }
                     }
 
                 }]
@@ -97,23 +102,17 @@ const Chart = ({ month }) => {
         //---pie chart
         setPieData({
             labels: ["Groceries", "Holidays", "Eating Out", "Shopping"],
-            backgroundColor: [
-                'rgba(54, 162, 235, 0.6)',
-                'rgba(255, 99, 132, 0.6)',
-                'rgba(255, 206, 86, 0.6)',
-                'rgba(75, 192, 192, 0.6)',
-            ],
             datasets: [{
-                data: [450, 820, 46, 75],
+                data: [150, 220, 146, 75],
                 fill: false,
                 lineTension: 0.2,
                 backgroundColor: [
-                    'rgba(255, 99, 132, 0.6)',
-                    'rgba(54, 162, 235, 0.6)',
-                    'rgba(255, 206, 86, 0.6)',
-                    'rgba(75, 192, 192, 0.6)',
+                    'rgba(255, 99, 132)',
+                    'rgba(54, 162, 235)',
+                    'rgba(255, 206, 86)',
+                    'rgba(24, 106, 59)',
                 ],
-                borderColor: 'rgba(0,0,0,0.4)',
+                borderColor: 'rgba(0,0,0)',
                 borderWidth: 0,
 
             }]
@@ -176,10 +175,10 @@ const Chart = ({ month }) => {
         <>
             <div className="chartgrid">
                 <div className="barchart chart">
-                    <Bar data={barchart} options={options} />
+                    <Bar data={barchart} options={options} height={500} width={700}/>
                 </div>
-                <div className="donutchart chart">
-                    <Pie data={piedata} options={Pieoptions} />
+                <div className="piechart chart">
+                    <Pie data={piedata} options={Pieoptions} height={200} />
                 </div>
             </div>
             <Budget dailyusage={dailyusage} remainingBudget={remainingBudget} totalBudget={totalBudget} />

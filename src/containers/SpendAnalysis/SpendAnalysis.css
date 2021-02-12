@@ -7,12 +7,12 @@
     width: 95%;
     margin-left: auto;
     user-select: none;
-    
+    margin-top: 5rem;
 }
 .topnav{
     background-color: #006A4D;
     color: white;   
-    height:200px;
+    height:180px;
     display: flex;
     justify-content: space-between;
     margin-left: 8vh;
@@ -23,67 +23,61 @@
 }
 
 .topnav h2{
-    padding: 1rem;
-    font-weight: 300;
-    font-size: 50px;
+    padding-top: 1.8rem ;
+    font-weight: 400;
+    font-size: 40px;
     
 }
 .arrow{
-    padding-top: 2.5rem;
-    font-size: 40px;
+    padding-top: 6rem;
+    font-size: 50px;
     cursor: pointer;
 }
 /*End of topnavbar*/
 .chartgrid{
     color: white;
-    padding-top: 3rem;
+    padding-top: 0.5rem;
     display: grid;
     grid-gap: 20px;
-    grid-template-columns: 1fr 1fr;
-    margin-left: 9vh;
-    margin-right: 10vh;    
-
+    grid-template-columns: 1fr 1fr;   
+    width: 180vh;
+    margin-left: 4rem;
 }
+
 .chart{
     width: 500px;
-    margin-right: 10vh;
-    
-}
-.chart{
-    width: 700px;
-    height: 500px;
     align-items: center;
     color: rgb(0, 0, 0);
     box-shadow: 0 0 5px rgb(75, 71, 71);
-    margin-top: 10vh;
+    margin-top: 5rem;
 }
+.barchart{
+    padding: 10px;
+    padding-top: 2rem;
+}
+.piechart{
+    padding: 10px;
 
-
+}
 /*End of Chart*/
 
-
 .budget{
-    padding-top: 2.5rem;
+    margin-top: 3rem;
     background-color: #20b2aa;
-    height: 300px;
-    width: 180vh;
-    height: 330px;
-    width: 190vh;
-    margin-left: 50px;
-    margin-bottom: 10vh;
-    margin-top: 20vh;
+    height: 270px;
+    width: 175vh;
+    margin-left: 4rem;
     border-radius: 10px;
     font-size: 20px;
 }
 
 .link-tag {
     text-align: left;
-    margin-left: 50px;
+    margin-left: 40px;
     font-size: 30px;
 }
 .link-tag a{
-    color: yellow;
-}
+    color: yellow;}
 
 .perday-cost {
     text-align: left;
@@ -93,5 +87,8 @@
     justify-content: space-between;   
     font-family: 'Times New Roman', Times, serif; 
 }
-
+.perday-cost h2{
+    padding-top: 1rem;
+    padding-left: 1rem;
+}
 

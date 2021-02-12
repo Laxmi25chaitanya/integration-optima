@@ -3,17 +3,16 @@ import './BudgetAnalysis.css'
 
 const BudgetAnalysis = () => {
     return (
-        <>
+        <div className="container">
             <div className="allbudget">
                 <h1>Overall Budget</h1>
             </div>
             <br></br>
             <br></br>
-            <p>Your Monthly Budget</p>
+            <p>Your monthly budget</p>
             <br></br>
             <br></br>
             <div className="overallbudget">
-
                 <div className='budgetanalysis'>
                     <h2>Bills</h2>
                 </div>
@@ -56,7 +55,7 @@ const BudgetAnalysis = () => {
                     <h2>Energy</h2>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 

@@ -21,7 +21,7 @@ const SpendAnalysis = () => {
                 </div>
                 <div className="middle">
                     <h2>SPEND ANALYSIS</h2>
-                    <h1>{month}</h1>
+                    <h2>{month}</h2>
                 </div>
                 <div className="rightslider arrow">
                     <FaAngleRight onClick={() => {
@@ -32,6 +32,7 @@ const SpendAnalysis = () => {
             </div>
             <Chart month={month}/>
             <Downtable/>
+            </div>
 
     )
 }
