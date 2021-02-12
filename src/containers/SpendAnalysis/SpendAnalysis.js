@@ -3,6 +3,7 @@ import Chart from './Chart'
 import Budget from './Budget'
 import {FaAngleLeft,FaAngleRight} from 'react-icons/fa'
 import {useState} from 'react'
+import Downtable from './Downtable';
 
 const SpendAnalysis = () => {
     const months=["JANUARY","FEBRUARY","MARCH","APRIL","MAY","JUNE","JULY","AUGUST","SEPTEMBER"
@@ -31,6 +32,7 @@ const SpendAnalysis = () => {
                 </div>
             </div>
             <Chart month={month}/>
+            <Downtable/>
         </div>
     )
 }
