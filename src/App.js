@@ -1,17 +1,13 @@
-import React from 'react';
-import './App.css';
-import SpendAnalysis from './containers/SpendAnalysis/SpendAnalysis';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import React from "react";
+import "./App.css";
+import { useSelector } from "react-redux";
 
 function App() {
+  const username = useSelector((state) => state.loginPage.userName);
   return (
-    <Router>
-      <div className="App">
-        <Switch>
-          <Route path="/spendanalysis" exact component={SpendAnalysis} />
-        </Switch>
-      </div>
-    </Router>
+    <div className="App">
+      <h1>OPTIMA - {username}</h1>
+    </div>
   );
 }
 

@@ -1,21 +1,29 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-//import store from './app/store';
-//import { Provider } from 'react-redux';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import "./index.css";
+import App from "./App";
+import LoginPage from "./containers/LoginPage/Loginpage";
+import ForgotPassword from "./pages/ForgotPassword";
+import ChangePassword from "./pages/ChangePassword";
+import SpendAnalysis from './containers/SpendAnalysis/SpendAnalysis';
+import store from "./app/store";
+import { Provider } from "react-redux";
+import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
-  <React.StrictMode>
-    
-        <App/>
- {/* <Provider store={store}>
-    
+  <Router>
+    <Switch>
+    <Provider store={store}>
+        <Route exact path="/" component={LoginPage} />
+        <Route exact path="/app" component={App} />
+        <Route exact path="/spendAnalysis" component={SpendAnalysis} />
+        <Route exact path="/forgotPassword" component={ForgotPassword} />
+        <Route exact path="/changePassword" component={ChangePassword} />
     </Provider>
-      */}
-  </React.StrictMode>,
-  document.getElementById('root')
+    </Switch>
+  </Router>,
+  document.getElementById("root")
 );
 
 // If you want your app to work offline and load faster, you can change
