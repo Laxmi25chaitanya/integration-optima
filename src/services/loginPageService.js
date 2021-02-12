@@ -21,10 +21,10 @@ exports.validateUserCredentials = (bodyData) => {
           ) {
             resolve({ status: 200, username: bodyData.userName });
           } else {
-            reject(404);
+            resolve({ status: 400, error: true });
           }
         } else {
-          reject(404);
+          resolve({ status: 404, error: true });
         }
       })
       .catch((error) => {
@@ -49,7 +49,7 @@ exports.validateUserPresence = (bodyData) => {
         if (userDetailMatchingUsername !== undefined) {
           resolve({ status: 200, username: bodyData.userName });
         } else {
-          reject(404);
+          resolve({ status: 404, error: true });
         }
       })
       .catch((error) => {
@@ -91,7 +91,7 @@ exports.updatePasswordCredentials = (bodyData) => {
             "Content-type": "application/json",
           },
         }).then((response) => {
-          console.log(response);
+          //console.log(response);
           resolve({ status: 200 });
         });
       })

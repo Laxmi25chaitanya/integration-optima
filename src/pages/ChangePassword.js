@@ -3,9 +3,10 @@ import { useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { updatePasswordCredentials } from "../action/loginPage";
 import { useHistory } from "react-router-dom";
+import "../containers/LoginPage/Loginpage.css";
 import Logo from "../components/imgaes/ps.png";
 
-let errorMessage;
+let message;
 
 const ChangePassword = (props) => {
   let history = useHistory();
@@ -36,29 +37,29 @@ const ChangePassword = (props) => {
 
   const handleChangePassword = (e) => {
     e.preventDefault();
-    if (newPass.length < 4 && newPass.length > 12) {
+    if (newPass === "" && confirmPass === "") {
       setError(true);
-      console.log("The password should be 4-12 characters in length!");
+      message = "The fields cannot be empty!";
+    } else if (newPass.length < 4 || newPass.length > 12) {
+      setError(true);
+      message = "The password should be 4-12 characters in length!";
     } else if (newPass !== confirmPass) {
-      errorMessage = "The passwords do not match!";
+      message = "The passwords do not match!";
       setError(true);
-    } else if (newPass === "" && confirmPass === "") {
-      setError(true);
-      errorMessage = "The fields cannot be empty!";
     } else {
       dispatch(updatePasswordCredentials({ userName, type, newPass }));
     }
   };
   return (
     <div>
-      <img src={Logo}style={{height:"300px",width:"350px"}}></img>
-      <div  className="form-signin">
-        <h1>Change Password</h1>
-        {error ? <p>{`${errorMessage}`}</p> : ""}
+      <img src={Logo} style={{ height: "300px", width: "350px" }}></img>
+      <div className="form-signin">
+        <h1>Reset Password</h1>
+        {error ? <p className="error-message">{`${message}`}</p> : ""}
 
         <input
           type="password"
-          placeholder="new password"
+          placeholder="Enter New password"
           className="form-control"
           value={newPass}
           onChange={(e) => {
@@ -70,17 +71,17 @@ const ChangePassword = (props) => {
         <input
           type="password"
           value={confirmPass}
-          placeholder="confirm password"
+          placeholder="Confirm Password"
           className="form-control"
           onChange={(e) => {
             setError(false);
             setConfirmPass(e.target.value);
           }}
         />
-      <button type="submit" onClick={handleChangePassword}>
-        <span>Change Password</span>
-      </button>
-    </div>
+        <button type="submit" onClick={handleChangePassword}>
+          <span>Reset Password</span>
+        </button>
+      </div>
     </div>
   );
 };
