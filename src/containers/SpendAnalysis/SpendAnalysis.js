@@ -8,7 +8,7 @@ const SpendAnalysis = () => {
     const months = ["JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER"
         , "OCTOBER", "NOVEMBER", "DECEMBER"];
     let d = new Date().getMonth();
-    const [index, setIndex] = useState(5)
+    const [index, setIndex] = useState(d)
     const [month, setMonth] = useState(months[index]);
     return(
         <div className="container">
@@ -21,7 +21,7 @@ const SpendAnalysis = () => {
                 </div>
                 <div className="middle">
                     <h2>SPEND ANALYSIS</h2>
-                    <h2>{month}</h2>
+                    <h1>{month}</h1>
                 </div>
                 <div className="rightslider arrow">
                     <FaAngleRight onClick={() => {
