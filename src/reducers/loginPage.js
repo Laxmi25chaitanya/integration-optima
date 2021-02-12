@@ -14,7 +14,7 @@ const loginPageReducer = (state = initialState, action) => {
       return { userName: payload, error: false, userStatus: false };
     }
     case actionTypes.VALIDATION_FAILURE: {
-      return { userName: null, error: payload, userStatus: false };
+      return { userName: null, error: payload, userStatus: false};
     }
     case actionTypes.VALIDATION_USERFOUND: {
       return { userName: payload, error: false, userStatus: true };

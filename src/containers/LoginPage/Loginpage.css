@@ -27,12 +27,12 @@ img {
   float: right;
   box-sizing: border-box;
   border-radius: 10%;
-  font-family: "Courier New", Courier, monospace;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .form-signin p {
   color: red;
-  font-family: "Courier New", Courier, monospace;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .button1 {
@@ -43,30 +43,25 @@ img {
 
 .form-control {
   width: 260px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 15px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  padding-bottom: 15px;
   border: 2px solid lightskyblue;
   background-color: silver;
 }
 
-input {
-  margin-top: 10px;
-}
-
 ::placeholder {
-  font-family: "Courier New", Courier, monospace;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 button {
   width: 270px;
-  padding: 10px;
+  padding: 15px 20px;
   background-color: brown;
   border: none;
   color: white;
-  margin-bottom: 10px;
-  font-family: "Courier New", Courier, monospace;
-  font-size: 15px;
-  font-weight: bold;
+  margin: 10px;
 }
 
 button:hover {
@@ -75,17 +70,17 @@ button:hover {
 }
 
 button span {
-  font-family: "Courier New", Courier, monospace;
+  font-family: 'Courier New', Courier, monospace;
 }
 
-.success-message {
+/* success-message {
   color: green;
   font-family: "Courier New", Courier, monospace;
   font-weight: bold;
   padding: 5px;
   background-color: aliceblue;
-}
+} */
 
-span {
+/* span {
   padding: 10px;
-}
+} */

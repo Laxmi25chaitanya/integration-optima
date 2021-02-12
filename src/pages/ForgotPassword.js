@@ -77,7 +77,7 @@ const ForgotPassword = () => {
           onChange={handleUsernameChange}
         />
         <br />
-        <button onClick={handleSearch}><span>Search</span></button>
+        <button  onClick={handleSearch}><span>Search</span></button>
       </div>
     </div>
   );

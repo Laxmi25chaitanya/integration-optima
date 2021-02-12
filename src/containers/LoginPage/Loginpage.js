@@ -8,6 +8,7 @@ import { useHistory } from "react-router-dom";
 import { validateUserCredentials } from "../../action/loginPage";
 
 const App = () => {
+  let err = "";
   let history = useHistory();
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
@@ -57,6 +58,7 @@ const App = () => {
       <div className="form-signin">
         <h1>Sign in here!</h1>
         {error ? <p>all the fields are required!</p> : null}
+        {errorStatus==="none" ? <p>invalid credentials</p> :null}
         <div className="button1">
           <input
             value={type}
