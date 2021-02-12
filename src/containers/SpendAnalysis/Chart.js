@@ -114,7 +114,7 @@ const Chart = ({ month }) => {
                     'rgba(75, 192, 192, 0.6)',
                 ],
                 borderColor: 'rgba(0,0,0,0.4)',
-                borderWidth: 2,
+                borderWidth: 0,
 
             }]
         })
@@ -156,6 +156,7 @@ const Chart = ({ month }) => {
         setDailyUsage(averageperday);
         setRemainingBudget(remainingbudget);
         setTotalBudget(totalbudget);
+        
         //Pie Chart Function
         /*function getByCategory(){
                 Object.keys(weekexpense).forEach((key)=>{
