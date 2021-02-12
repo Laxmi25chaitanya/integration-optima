@@ -48,7 +48,7 @@ const ForgotPassword = () => {
     e.preventDefault();
     if (userName === "" || type === "") {
       setError(true);
-      message = "Both Username and Type are required!";
+      message = "All fields are required!";
     } else {
       dispatch(validateUserPresence({ userName, type }));
     }
@@ -59,7 +59,7 @@ const ForgotPassword = () => {
       <img src={Logo} style={{ height: "300px", width: "350px" }}></img>
       <div className="form-signin">
         <h1>Forgot Password</h1>
-        {error ? <p className="errorMessage">{`${message}`}</p> : null}
+        {error ? <p className="error-message">{`${message}`}</p> : null}
         <div className="button1">
           <input
             name="type"
@@ -84,7 +84,7 @@ const ForgotPassword = () => {
           type="text"
           className="form-control"
           value={userName}
-          placeholder="username"
+          placeholder="Enter Username"
           onChange={handleUsernameChange}
         />
         <br />

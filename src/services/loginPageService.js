@@ -91,7 +91,7 @@ exports.updatePasswordCredentials = (bodyData) => {
             "Content-type": "application/json",
           },
         }).then((response) => {
-          console.log(response);
+          //console.log(response);
           resolve({ status: 200 });
         });
       })

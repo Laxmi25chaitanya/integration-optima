@@ -7,7 +7,7 @@ body {
   background-position: center;
   font-weight: lighter;
   color: white;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
 }
 
 img {
@@ -43,14 +43,12 @@ img {
 
 .form-control {
   width: 260px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 15px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  padding-bottom: 15px;
   border: 2px solid lightskyblue;
   background-color: silver;
-}
-
-input {
-  margin-top: 10px;
 }
 
 ::placeholder {
@@ -59,14 +57,11 @@ input {
 
 button {
   width: 270px;
-  padding: 10px;
+  padding: 15px 20px;
   background-color: brown;
   border: none;
   color: white;
-  margin-bottom: 10px;
-  font-family: "Courier New", Courier, monospace;
-  font-size: 15px;
-  font-weight: bold;
+  margin: 10px;
 }
 
 button:hover {
@@ -82,10 +77,12 @@ button span {
   color: green;
   font-family: "Courier New", Courier, monospace;
   font-weight: bold;
-  padding: 5px;
+  padding: 3px;
   background-color: aliceblue;
 }
 
-span {
-  padding: 10px;
+.error-message {
+  color: red;
+  font-weight: bold;
+  background-color: white;
 }

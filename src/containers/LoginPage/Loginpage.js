@@ -12,6 +12,7 @@ import {
 
 let message;
 const App = () => {
+  let err = "";
   let history = useHistory();
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
@@ -20,7 +21,6 @@ const App = () => {
   const dispatch = useDispatch();
   let errorStatus = useSelector((state) => state.loginPage.error);
   let errorMessage = useSelector((state) => state.loginPage.errorMessage);
-  let userStatus = useSelector((state) => state.loginPage.userStatus);
   let passwordUpdateStatus = useSelector(
     (state) => state.loginPage.passwordUpdateStatus
   );
@@ -76,7 +76,7 @@ const App = () => {
       <img src={Logo}></img>
       <div className="form-signin">
         <h1>Sign in here!</h1>
-        {error ? <p className="errorMessage">{`${message}`}</p> : null}
+        {error ? <p className="error-message">{`${message}`}</p> : null}
         <br />
         <div className="button1">
           <input
@@ -120,7 +120,11 @@ const App = () => {
           <span>Forgot Password</span>
         </button>
         <br />
-        {passwordUpdateStatus ? <span>Password Updated!</span> : ""}
+        {passwordUpdateStatus ? (
+          <span className="success-message">Password Updated!</span>
+        ) : (
+          ""
+        )}
       </div>
     </div>
   );

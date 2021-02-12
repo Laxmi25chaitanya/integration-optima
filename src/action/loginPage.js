@@ -13,16 +13,14 @@ export const validateUserCredentials = (bodyData) => {
             payload: res.username,
           });
         } else if (res.status == 400) {
-          console.log("validation-failure");
           dispatch({
             type: actionTypes.VALIDATION_FAILURE,
-            payload: "Username and Password do not Match!",
+            payload: "Invalid Login Credentials!",
           });
         } else if (res.status == 404) {
-          console.log("User not found!");
           dispatch({
             type: actionTypes.VALIDATION_USERNOTFOUND,
-            payload: "User not found!",
+            payload: "Invalid Login Credentials!",
           });
         }
       })
