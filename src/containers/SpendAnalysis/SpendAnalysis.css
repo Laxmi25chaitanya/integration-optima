@@ -38,15 +38,17 @@
     display: grid;
     grid-gap: 20px;
     grid-template-columns: 1fr 1fr;
-    margin-left: 100px;
+    margin-left: 9vh;
+    margin-right: 10vh;
     
 }
 .chart{
-    width: 400px;
-    height: 250px;
+    width: 700px;
+    height: 500px;
     align-items: center;
     color: rgb(0, 0, 0);
-    box-shadow: 0 0 5px black;
+    box-shadow: 0 0 5px rgb(201, 189, 189);
+    margin-top: 10vh;
 }
 
 
@@ -56,11 +58,11 @@
 .budget{
     padding-top: 2.5rem;
     background-color: #20b2aa;
-    height: 250px;
-    width: 1100px;
+    height: 330px;
+    width: 190vh;
     margin-left: 50px;
     margin-bottom: 10vh;
-    margin-top: 10vh;
+    margin-top: 20vh;
     border-radius: 10px;
 }
 
