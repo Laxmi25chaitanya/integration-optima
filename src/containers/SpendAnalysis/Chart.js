@@ -3,6 +3,7 @@ import { useState, useEffect } from "react"
 import axios from 'axios';
 import { Bar, Pie } from 'react-chartjs-2';
 import Budget from './Budget'
+import BudgetAnalysis from './BudgetAnalysis';
 const Chart = ({ month }) => {
     //States
     const [barchart, setBarChart] = useState({})
@@ -13,8 +14,8 @@ const Chart = ({ month }) => {
     const [remainingBudget, setRemainingBudget] = useState(0)
     const [piedata, setPieData] = useState({})
     const [Pieoptions, setPieOptions] = useState({})
-    let firstweek=0,secondweek=0,thirdweek=0,fourthweek=0,fifthweek=0,averageperday=0,
-            totalbudget=0,remainingbudget=0;
+    let firstweek = 0, secondweek = 0, thirdweek = 0, fourthweek = 0, fifthweek = 0, averageperday = 0,
+        totalbudget = 0, remainingbudget = 0;
     const AddCharts = () => {
         //Declaration
         let weeks = []
@@ -113,20 +114,20 @@ const Chart = ({ month }) => {
                     'rgba(75, 192, 192, 0.6)',
                 ],
                 borderColor: 'rgba(0,0,0,0.4)',
-                borderWidth: 2,
+                borderWidth: 0,
 
             }]
         })
 
         setPieOptions({
-            title:{
-                display:true,
-                fontSize:20
-              },
-              legend:{
-                display:true,
-                position:'right'
-              }
+            title: {
+                display: true,
+                fontSize: 20
+            },
+            legend: {
+                display: true,
+                position: 'right'
+            }
         })
 
         function overallmonthsExpense() {
@@ -134,14 +135,14 @@ const Chart = ({ month }) => {
                 var expense = weekexpense[key];
                 Object.keys(expense).forEach((key2) => {
                     if (expense[key2].spendMonthYear === `${month}2020`) {
-                        firstweek+=parseInt(expense[key2].firstWeek);
-                        secondweek+=parseInt(expense[key2].secondWeek);
-                        thirdweek+=parseInt(expense[key2].thirdWeek);
-                        fourthweek+=parseInt(expense[key2].fourthWeek);
-                        fifthweek+=parseInt(expense[key2].fifthWeek);                       
-                        averageperday+=parseInt(expense[key2].averagePerDay);
-                        remainingbudget+=parseInt(expense[key2].remainingBudget);
-                        totalbudget+=parseInt(expense[key2].totalBudget);
+                        firstweek += parseInt(expense[key2].firstWeek);
+                        secondweek += parseInt(expense[key2].secondWeek);
+                        thirdweek += parseInt(expense[key2].thirdWeek);
+                        fourthweek += parseInt(expense[key2].fourthWeek);
+                        fifthweek += parseInt(expense[key2].fifthWeek);
+                        averageperday += parseInt(expense[key2].averagePerDay);
+                        remainingbudget += parseInt(expense[key2].remainingBudget);
+                        totalbudget += parseInt(expense[key2].totalBudget);
                     }
                 })
             })

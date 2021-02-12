@@ -7,6 +7,7 @@
     width: 95%;
     margin-left: auto;
     user-select: none;
+    
 }
 .topnav{
     background-color: #006A4D;
@@ -18,14 +19,14 @@
     margin-right: 10vh;
     margin-top: 5vh;
     border-radius: 10px;
-  padding: auto;
+    padding: auto;
 }
-
 
 .topnav h2{
     padding: 1rem;
     font-weight: 300;
     font-size: 50px;
+    
 }
 .arrow{
     padding-top: 2.5rem;
@@ -40,6 +41,11 @@
     grid-gap: 20px;
     grid-template-columns: 1fr 1fr;
     margin-left: 9vh;
+    margin-right: 10vh;    
+
+}
+.chart{
+    width: 500px;
     margin-right: 10vh;
     
 }
@@ -59,12 +65,15 @@
 .budget{
     padding-top: 2.5rem;
     background-color: #20b2aa;
+    height: 300px;
+    width: 180vh;
     height: 330px;
     width: 190vh;
     margin-left: 50px;
     margin-bottom: 10vh;
     margin-top: 20vh;
     border-radius: 10px;
+    font-size: 20px;
 }
 
 .link-tag {
