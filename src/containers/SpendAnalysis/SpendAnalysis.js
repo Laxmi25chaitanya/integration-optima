@@ -7,7 +7,8 @@ import {useState} from 'react'
 const SpendAnalysis = () => {
     const months=["JANUARY","FEBRUARY","MARCH","APRIL","MAY","JUNE","JULY","AUGUST","SEPTEMBER"
     ,"OCTOBER","NOVEMBER","DECEMBER"];
-    const [index,setIndex]=useState(5)
+    let d=new Date().getMonth();
+    const [index,setIndex]=useState(d)
     const[month,setMonth]=useState(months[index]);    
      return (
         <div className="container">
