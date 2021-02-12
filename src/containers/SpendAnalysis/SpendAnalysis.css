@@ -40,19 +40,16 @@
     grid-gap: 20px;
     grid-template-columns: 1fr 1fr;
     margin-left: 9vh;
-<<<<<<< HEAD
     margin-right: 10vh;    
 
 }
 .chart{
     width: 500px;
-=======
     margin-right: 10vh;
     
 }
 .chart{
     width: 700px;
->>>>>>> c09c57ad85594e72eaff21a12ba5c76805cda64e
     height: 500px;
     align-items: center;
     color: rgb(0, 0, 0);
@@ -67,13 +64,10 @@
 .budget{
     padding-top: 2.5rem;
     background-color: #20b2aa;
-<<<<<<< HEAD
     height: 300px;
     width: 180vh;
-=======
     height: 330px;
     width: 190vh;
->>>>>>> c09c57ad85594e72eaff21a12ba5c76805cda64e
     margin-left: 50px;
     margin-bottom: 10vh;
     margin-top: 20vh;
