@@ -2,18 +2,16 @@ import React from 'react'
 import {Bar} from 'react-chartjs-2';
 import { useState, useEffect } from "react"
 const BarChart = ({barChartInput}) => {
-    const [weeks,setWeeks]=useState([])
     const [barchart, setBarChart] = useState({})
     const [options, setOptions] = useState({})
         const addBarChart=()=>{
-            setWeeks(barChartInput);
             setBarChart({
                 labels: ["1-7", "8-14", "15-21", "22-28", "29-31"],
                 datasets: [
                     {
     
                         label: 'weekly spend',
-                        data: weeks,                       
+                        data: barChartInput,                       
                         backgroundColor: [
                             'rgba(255, 195, 0)',
                             'rgba(27, 94, 32)',
@@ -64,7 +62,7 @@ const BarChart = ({barChartInput}) => {
         }
     useEffect(() => {
        addBarChart();
-    }, [])
+    }, [barChartInput])
     return (
         <div>
             <Bar data={barchart} options={options} height={500} width={700}/>

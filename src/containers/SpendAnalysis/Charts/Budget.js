@@ -1,5 +1,4 @@
 import SemiCircleProgressBar from "react-progressbar-semicircle"
-import BudgetAnalysis from "./BudgetAnalysis/BudgetAnalysis";
 import { Link } from "react-router-dom";
 
 const Budget = ({ dailyusage, remainingBudget, totalBudget }) => {
@@ -9,7 +8,6 @@ const Budget = ({ dailyusage, remainingBudget, totalBudget }) => {
 
     return (
         <>
-
             <div className="budget">
                 <div className="link-tag">
                     <Link to='/spendanalysis/budgetanalysis' >
