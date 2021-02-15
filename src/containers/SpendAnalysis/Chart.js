@@ -5,6 +5,7 @@ import Budget from './Charts/Budget'
 import BarChart from './Charts/BarChart';
 import PieChart from './Charts/PieChart';
 import DownTable from './Charts/Downtable'
+
 const Chart = ({ month }) => {
     const [barChartInput,setBarChartInput]=useState([])
     const [weekexpense, setWeekExpense] = useState({})

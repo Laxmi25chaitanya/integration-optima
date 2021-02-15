@@ -8,11 +8,12 @@ const SpendAnalysis = () => {
     let d = new Date().getMonth();
     const [index, setIndex] = useState(d)
     const [month, setMonth] = useState(months[index]);
+
     return(
         <div className="container">
             <div className="topnav">
                 <div className="leftslider arrow" >
-                    <FaAngleLeft onClick={() => {
+                    <FaAngleLeft onClick={() =>{
                         setIndex(index - 1 < 0 ? 11 : index - 1)
                         setMonth(months[index])
                     }} />
