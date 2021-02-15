@@ -1,6 +1,4 @@
 import React from 'react';
-import './Downtable.css';
-
 const Downtable = () => {
     return (
         <div className="downtab">

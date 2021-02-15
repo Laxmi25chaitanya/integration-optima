@@ -1,5 +1,5 @@
 import SemiCircleProgressBar from "react-progressbar-semicircle"
-import BudgetAnalysis from "./BudgetAnalysis";
+import BudgetAnalysis from "./BudgetAnalysis/BudgetAnalysis";
 import { Link } from "react-router-dom";
 
 const Budget = ({ dailyusage, remainingBudget, totalBudget }) => {
@@ -14,10 +14,10 @@ const Budget = ({ dailyusage, remainingBudget, totalBudget }) => {
                 <div className="link-tag">
                     <Link to='/spendanalysis/budgetanalysis' >
                         Budget
-                       </Link>
+                    </Link>
                 </div>               
-                <SemiCircleProgressBar percentage={average} circleRadius={100} showPercentValue strokeWidth='20' stroke='#fbc02d'
-                diameter='325' />
+                <SemiCircleProgressBar percentage={average} circleRadius={100} showPercentValue strokeWidth={20} stroke='#fbc02d'
+                diameter={325} />
                 <div className="perday-cost">
                     <h2>£{dailyusage} Per day</h2>
                     <h2>£{remainingBudget} Remaining out of £{totalBudget}</h2>

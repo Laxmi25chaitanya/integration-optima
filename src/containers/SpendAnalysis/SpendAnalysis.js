@@ -1,6 +1,5 @@
 import './SpendAnalysis.css'
 import Chart from './Chart'
-import Budget from './Budget'
 import {FaAngleLeft,FaAngleRight} from 'react-icons/fa'
 import {useState} from 'react'
 import Downtable from './Downtable';

@@ -2,8 +2,7 @@ import React from 'react';
 import './App.css';
 import SpendAnalysis from './containers/SpendAnalysis/SpendAnalysis';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import BudgetAnalysis from './containers/SpendAnalysis/BudgetAnalysis'
-
+import BudgetAnalysis from './containers/SpendAnalysis/BudgetAnalysis/BudgetAnalysis'
 function App() {
   return (
     <Router>
