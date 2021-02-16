@@ -128,14 +128,15 @@ li{
     padding-top: 1rem;
 }
 
-.amount0{
-    margin-top: 20vh;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 20;
+.amount0{   
     display: inline;
 }
-.displayline{
-    margin-left: 30vh;
-    margin-top: 10vh;
-    margin-bottom: 20vh;
+.amount0 img{
+    width: 400px;
+}
+.displayline p{
+    font-family: Georgia, 'Times New Roman', Times, serif;   
+    padding-top: 2rem;
+    text-align: center;
+    font-size: 2rem;
 }

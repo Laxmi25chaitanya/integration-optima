@@ -10,7 +10,6 @@ const SpendAnalysis = () => {
     const [index, setIndex] = useState(monthIndex)
     const [month, setMonth] = useState(months[index]);
     const [year,setYear]=useState(yearIndex);
-    console.log(year)
     useEffect(()=>{
         if(index===11){
             setYear(2020);

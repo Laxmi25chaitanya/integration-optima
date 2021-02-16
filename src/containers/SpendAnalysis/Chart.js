@@ -54,13 +54,13 @@ const Chart = ({ month,year }) => {
         AddCharts();
     }, [month])
 
-    if (barChartInput[0] == 0) {
+    if (totalBudget === 0) {
         return (
             <div className='amount0'>
                 <img src={amount0} alt="amount0" />
                 <br></br>
                 <div className='displayline'>
-                    <p> {month}  , spend amount is £0</p>
+                    <p> {month} {year}, spend amount is £0</p>
                 </div>
             </div>
         )
