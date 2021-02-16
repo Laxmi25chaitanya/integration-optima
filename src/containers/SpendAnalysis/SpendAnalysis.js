@@ -12,6 +12,12 @@ const SpendAnalysis = () => {
     const [year,setYear]=useState(yearIndex);
     console.log(year)
     useEffect(()=>{
+        if(index===11){
+            setYear(2020);
+        }
+        if(index===0){
+            setYear(yearIndex);
+        }
         setMonth(months[index]);
     },[index])
     return(
@@ -33,7 +39,7 @@ const SpendAnalysis = () => {
                     }} />
                 </div>
             </div>
-            <Chart month={month}/>
+            <Chart month={month} year={year}/>
             </div>
 
     )
