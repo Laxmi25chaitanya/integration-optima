@@ -35,6 +35,15 @@
     font-size: 50px;
     cursor: pointer;
 }
+.arrow button{
+    background-color: #007550;
+    color: white;
+    font-size: 50px;
+    border: none;
+    outline: none;
+
+}
+
 /*End of topnavbar*/
 .chartgrid{    
     display: grid;
@@ -97,6 +106,7 @@
 }
 .amount0 img{
     width: 400px;
+    
 }
 .displayline p{
     font-family: Georgia, 'Times New Roman', Times, serif;   
