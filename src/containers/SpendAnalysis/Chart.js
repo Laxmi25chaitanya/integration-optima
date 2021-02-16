@@ -5,6 +5,8 @@ import Budget from './Charts/Budget'
 import BarChart from './Charts/BarChart';
 import PieChart from './Charts/PieChart';
 import DownTable from './Charts/Downtable'
+import amount0 from './images/amount0.gif';
+
 
 const Chart = ({ month,year }) => {
     const [barChartInput,setBarChartInput]=useState([])
@@ -16,12 +18,12 @@ const Chart = ({ month,year }) => {
         const AddCharts = () => {
         let weeks = [];
         let firstweek = 0, secondweek = 0, thirdweek = 0, fourthweek = 0, fifthweek = 0, averageperday = 0,
-        totalbudget = 0, remainingbudget = 0;
+            totalbudget = 0, remainingbudget = 0;
         const getExpenseData = async () => {
-            const {data} = await axios('spendanalysis.json')
-                                .catch(err => console.log(err));
+            const { data } = await axios('spendanalysis.json')
+                .catch(err => console.log(err));
             setWeekExpense(data);
-        }             
+        }
         getExpenseData();
         overallmonthsExpense();
         function overallmonthsExpense() {
@@ -36,13 +38,13 @@ const Chart = ({ month,year }) => {
                         fifthweek += parseInt(expense[key2].fifthWeek);
                         averageperday += parseInt(expense[key2].averagePerDay);
                         remainingbudget += parseInt(expense[key2].remainingBudget);
-                        totalbudget += parseInt(expense[key2].totalBudget);                        
+                        totalbudget += parseInt(expense[key2].totalBudget);
                     }
                 })
             })
         }
         //End of Budget and Week analysis calculation
-        weeks.push(firstweek,secondweek,thirdweek,fourthweek,fifthweek);
+        weeks.push(firstweek, secondweek, thirdweek, fourthweek, fifthweek);
         setBarChartInput(weeks);
         setDailyUsage(averageperday);
         setRemainingBudget(remainingbudget);
@@ -51,20 +53,34 @@ const Chart = ({ month,year }) => {
     useEffect(() => {
         AddCharts();
     }, [month])
-    return (
-        <>
-            <div className="chartgrid">
-                <div className="barchart chart">
-                    <BarChart barChartInput={barChartInput}/>
-                </div>
-                <div className="piechart chart">
-                    <PieChart/>
+
+    if (barChartInput[0] == 0) {
+        return (
+            <div className='amount0'>
+                <img src={amount0} alt="amount0" />
+                <br></br>
+                <div className='displayline'>
+                    <p> {month}  , spend amount is £0</p>
                 </div>
             </div>
-            <Budget dailyusage={dailyusage} remainingBudget={remainingBudget} totalBudget={totalBudget} />
-            <DownTable/>
-        </>
-    )
+        )
+    }
+    else {
+        return (
+            <>
+                <div className="chartgrid">
+                    <div className="barchart chart">
+                        <BarChart barChartInput={barChartInput} />
+                    </div>
+                    <div className="piechart chart">
+                        <PieChart />
+                    </div>
+                </div>
+                <Budget dailyusage={dailyusage} remainingBudget={remainingBudget} totalBudget={totalBudget} />
+                <DownTable />
+            </>
+        )
+    }
 }
 
 export default Chart
