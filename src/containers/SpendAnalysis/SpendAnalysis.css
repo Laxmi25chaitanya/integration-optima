@@ -7,18 +7,20 @@
     width: 95%;
     margin-left: auto;
     user-select: none;
-    margin-top: 5rem;
+    background-color: #f5f6fa;
+}
+.topsearch{
+    height:250px;
+    margin-bottom: -14rem;
 }
 .topnav{
-    background-color: #006A4D;
-    color: white;   
-    height:180px;
-    display: flex;
+    background-color: #007550;
+    color: white; 
+     display: flex;
     justify-content: space-between;
     margin-left: 8vh;
     margin-right: 10vh;
-    margin-top: 5vh;
-    border-radius: 10px;
+    border-radius: 2px;
     padding: auto;
 }
 
@@ -34,22 +36,21 @@
     cursor: pointer;
 }
 /*End of topnavbar*/
-.chartgrid{
-    color: white;
-    padding-top: 0.5rem;
+.chartgrid{    
     display: grid;
-    grid-gap: 20px;
+    grid-gap: 5px;
+    margin-top: 4rem;
     grid-template-columns: 1fr 1fr;   
     width: 180vh;
     margin-left: 4rem;
 }
 
 .chart{
+    background-color: #ffffff;
     width: 500px;
     align-items: center;
     color: rgb(0, 0, 0);
     box-shadow: 0 0 5px rgb(75, 71, 71);
-    margin-top: 5rem;
 }
 .barchart{
     padding: 10px;
