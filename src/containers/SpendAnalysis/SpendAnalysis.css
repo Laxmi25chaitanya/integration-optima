@@ -127,3 +127,15 @@ li{
     box-shadow: 0 0 3px black;
     padding-top: 1rem;
 }
+
+.amount0{
+    margin-top: 20vh;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20;
+    display: inline;
+}
+.displayline{
+    margin-left: 30vh;
+    margin-top: 10vh;
+    margin-bottom: 20vh;
+}
