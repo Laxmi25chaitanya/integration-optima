@@ -20,7 +20,11 @@ const Chart = ({ month,year }) => {
         let firstweek = 0, secondweek = 0, thirdweek = 0, fourthweek = 0, fifthweek = 0, averageperday = 0,
             totalbudget = 0, remainingbudget = 0;
         const getExpenseData = async () => {
-            const { data } = await axios('spendanalysis.json')
+            const { data } = await axios('spendanalysis.json', 
+            {
+                headers: {
+                'Content-Type': 'application/json'
+            }})
                 .catch(err => console.log(err));
             setWeekExpense(data);
         }

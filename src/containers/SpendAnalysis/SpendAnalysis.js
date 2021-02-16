@@ -24,7 +24,7 @@ const SpendAnalysis = () => {
             <div className="topsearch"></div>
             <div className="topnav">
                 <div className="arrow" >
-                    <button> <FaAngleLeft onClick={() =>{
+                    <button className='arrowbutton'> <FaAngleLeft onClick={() =>{
                         setIndex(index - 1 < 0 ? 11 : index - 1)
                     }} /></button>
                 </div>
@@ -34,7 +34,7 @@ const SpendAnalysis = () => {
                 </div>
                
                 <div className="arrow">
-                   <button><FaAngleRight onClick={() => {
+                   <button className='arrowbutton'><FaAngleRight onClick={() => {
                         setIndex(index + 1 > 11 ? 0 : index + 1)
                     }}  /></button> 
                 </div>

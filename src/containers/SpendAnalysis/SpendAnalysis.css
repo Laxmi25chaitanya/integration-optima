@@ -35,12 +35,13 @@
     font-size: 50px;
     cursor: pointer;
 }
-.arrow button{
+.arrowbutton{
     background-color: #007550;
     color: white;
     font-size: 50px;
     border: none;
     outline: none;
+    cursor: pointer;
 
 }
 
