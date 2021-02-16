@@ -92,7 +92,18 @@
     padding-top: 1rem;
     padding-left: 1rem;
 }
-
+.amount0{   
+    display: inline;
+}
+.amount0 img{
+    width: 400px;
+}
+.displayline p{
+    font-family: Georgia, 'Times New Roman', Times, serif;   
+    padding-top: 2rem;
+    text-align: center;
+    font-size: 2rem;
+}
 /*DownTable*/
 .downtab{
     height: 600px;
@@ -128,15 +139,3 @@ li{
     padding-top: 1rem;
 }
 
-.amount0{   
-    display: inline;
-}
-.amount0 img{
-    width: 400px;
-}
-.displayline p{
-    font-family: Georgia, 'Times New Roman', Times, serif;   
-    padding-top: 2rem;
-    text-align: center;
-    font-size: 2rem;
-}
