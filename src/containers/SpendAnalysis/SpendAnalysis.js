@@ -14,13 +14,12 @@ const SpendAnalysis = () => {
     useEffect(()=>{
         setMonth(months[index]);
     },[index])
-
     return(
         <div className="container">
             <div className="topsearch"></div>
             <div className="topnav">
                 <div className="leftslider arrow" >
-                    <FaAngleLeft onClick={() => {
+                    <FaAngleLeft onClick={() =>{
                         setIndex(index - 1 < 0 ? 11 : index - 1)
                     }} />
                 </div>
