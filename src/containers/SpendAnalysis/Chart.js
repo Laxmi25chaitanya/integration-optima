@@ -7,14 +7,15 @@ import PieChart from './Charts/PieChart';
 import DownTable from './Charts/Downtable'
 import amount0 from './images/amount0.gif';
 
-const Chart = ({ month }) => {
-    const [barChartInput, setBarChartInput] = useState([])
+
+const Chart = ({ month,year }) => {
+    const [barChartInput,setBarChartInput]=useState([])
     const [weekexpense, setWeekExpense] = useState({})
     const [dailyusage, setDailyUsage] = useState(0)
     const [totalBudget, setTotalBudget] = useState(0)
-    const [remainingBudget, setRemainingBudget] = useState(0)
-    const monthyear = `${month}2020`
-    const AddCharts = () => {
+    const [remainingBudget, setRemainingBudget] = useState(0)   
+    const monthyear=`${month}${year}`
+        const AddCharts = () => {
         let weeks = [];
         let firstweek = 0, secondweek = 0, thirdweek = 0, fourthweek = 0, fifthweek = 0, averageperday = 0,
             totalbudget = 0, remainingbudget = 0;
