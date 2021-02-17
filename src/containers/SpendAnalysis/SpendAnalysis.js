@@ -1,36 +1,48 @@
 import './SpendAnalysis.css'
 import Chart from './Chart'
-import Budget from './Budget'
 import {FaAngleLeft,FaAngleRight} from 'react-icons/fa'
-import {useState} from 'react'
-
+import {useState,useEffect} from 'react'
 const SpendAnalysis = () => {
-    const months=["JANUARY","FEBRUARY","MARCH","APRIL","MAY","JUNE","JULY","AUGUST","SEPTEMBER"
-    ,"OCTOBER","NOVEMBER","DECEMBER"];
-    const [index,setIndex]=useState(5)
-    const[month,setMonth]=useState(months[index]);    
-     return (
-        <div className="container">
+    const months = ["JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER"
+        , "OCTOBER", "NOVEMBER", "DECEMBER"];
+    let monthIndex = new Date().getMonth();
+    let yearIndex= new Date().getFullYear();
+    const [index, setIndex] = useState(monthIndex)
+    const [month, setMonth] = useState(months[index]);
+    const [year,setYear]=useState(yearIndex);
+    useEffect(()=>{
+        if(index===11){
+            setYear(2020);
+        }
+        if(index===0){
+            setYear(yearIndex);
+        }
+        setMonth(months[index]);
+    },[index])
+    return(
+        <div className="sp-container">
+            <div className="topsearch"></div>
             <div className="topnav">
-                <div className="leftslider arrow" >
-                  <FaAngleLeft onClick={()=>{
-                      setIndex(index-1<0?11:index-1)
-                      setMonth(months[index])
-                  }}/>
+                <div className="arrow" >
+                    <button className='arrowbutton'> <FaAngleLeft onClick={() =>{
+                        setIndex(index - 1 < 0 ? 11 : index - 1)
+                    }} /></button>
                 </div>
                 <div className="middle">
-                 <h2>SPEND ANALYSIS</h2>
-                 <h1>{month}</h1>
+                    <h2>SPEND ANALYSIS</h2>
+                    <h1>{month}</h1>
                 </div>
-                <div className="rightslider arrow">
-                    <FaAngleRight onClick={()=>{
-                        setIndex(index+1>11?0:index+1)
-                        setMonth(months[index])
-                    }}/>
+
+                <div className="arrow">
+                   <button className='arrowbutton'><FaAngleRight onClick={() => {
+                        setIndex(index + 1 > 11 ? 0 : index + 1)
+                    }}  /></button>
                 </div>
+
             </div>
-            <Chart month={month}/>
-        </div>
+            <Chart month={month} year={year}/>
+            </div>
+
     )
 }
 
