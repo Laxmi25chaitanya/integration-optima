@@ -116,29 +116,15 @@
     font-size: 2rem;
 }
 /*DownTable*/
-.categorys{
-    margin-top: 5rem;
-    padding-top: 3rem;
-    display: grid;
-    box-shadow: 0 0 2px black;
-    background-color: white;
-    height: 450px;
+.downtab{
+    height: 600px;
     width: 175vh;
+    background-color: white;
     margin-left: 4rem;
+    margin-bottom: 10vh;
+    margin-top: 20vh;
     border-radius: 10px;
-    margin-bottom: 50px;
-    grid-template-columns: auto auto auto;
-}
- 
-button{
-    height: 70px;
-    margin-left: 10px;
-    margin-right: 10px;
-    justify-content: space-between;
-    background-color: rgb(238, 235, 228);
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 20px;
+    box-shadow: 0 0 5px rgb(75, 71, 71);
 }
 .downnav{
     padding-top: 0.5rem;
