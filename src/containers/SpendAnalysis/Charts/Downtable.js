@@ -1,4 +1,5 @@
 import React from 'react';
+
 const Downtable = ({ remainingBudget, totalBudget }) => {
     return (
         <div className="downtab">
