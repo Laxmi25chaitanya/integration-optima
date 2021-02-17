@@ -20,7 +20,7 @@ const SpendAnalysis = () => {
         setMonth(months[index]);
     },[index])
     return(
-        <div className="container">
+        <div className="sp-container">
             <div className="topsearch"></div>
             <div className="topnav">
                 <div className="arrow" >
@@ -32,13 +32,13 @@ const SpendAnalysis = () => {
                     <h2>SPEND ANALYSIS</h2>
                     <h1>{month}</h1>
                 </div>
-               
+
                 <div className="arrow">
                    <button className='arrowbutton'><FaAngleRight onClick={() => {
                         setIndex(index + 1 > 11 ? 0 : index + 1)
-                    }}  /></button> 
+                    }}  /></button>
                 </div>
-               
+
             </div>
             <Chart month={month} year={year}/>
             </div>

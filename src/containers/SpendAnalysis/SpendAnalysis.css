@@ -3,25 +3,34 @@
     padding: 0;
     margin:0;
 }
-.container{
-    width: 95%;
-    margin-left: auto;
+.sp-container{
+    width: 1200px;
+    margin: 0 auto;
     user-select: none;
     background-color: #f5f6fa;
+    padding-bottom: 40px;
+}
+
+.f-grid {
+    display: flex;
+}
+.f-grid .col {
+    flex: 1;
 }
 .topsearch{
     height:250px;
     margin-bottom: -14rem;
 }
+.middle {
+    text-align: center;
+}
 .topnav{
     background-color: #007550;
-    color: white; 
-     display: flex;
+    color: white;
+    display: flex;
     justify-content: space-between;
-    margin-left: 8vh;
-    margin-right: 10vh;
+    margin: 0 40px 25px;
     border-radius: 2px;
-    padding: auto;
 }
 
 .topnav h2{
@@ -46,22 +55,30 @@
 }
 
 /*End of topnavbar*/
-.chartgrid{    
-    display: grid;
-    grid-gap: 5px;
-    margin-top: 4rem;
-    grid-template-columns: 1fr 1fr;   
-    width: 180vh;
-    margin-left: 4rem;
+.chartgrid{
+    justify-content: space-evenly;
+    display: flex;
 }
 
-.chart{
-    background-color: #ffffff;
-    width: 500px;
-    align-items: center;
-    color: rgb(0, 0, 0);
-    box-shadow: 0 0 5px rgb(75, 71, 71);
+.card{
+    position: relative;
+    display: block;
+    background-color: #fff;
+    color: #111236;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-box-shadow: 0 1px 3px 0 rgb(37 32 31 / 30%);
+    box-shadow: 0 1px 3px 0 rgb(37 32 31 / 30%);
+    border-radius: .75rem;
 }
+.col {
+    padding: 40px;
+}
+
+.chartgrid .col {
+    width: 45%;
+}
+
 .barchart{
     padding: 10px;
     padding-top: 2rem;
@@ -73,34 +90,23 @@
 /*End of Chart*/
 
 .budget{
-    margin-top: 3rem;
     background-color: #20b2aa;
-    height: 270px;
-    width: 175vh;
-    margin-left: 4rem;
-    border-radius: 10px;
+    padding: 15px;
     font-size: 20px;
 }
 
 .link-tag {
-    text-align: left;
-    margin-left: 40px;
+    text-align: center;
+    font-weight: bold;
     font-size: 30px;
 }
 .link-tag a{
     color: yellow;}
 
 .perday-cost {
-    text-align: left;
-    margin-left: 100px;
-    margin-right: 100px;
     display: flex;
-    justify-content: space-between;   
-    font-family: 'Times New Roman', Times, serif; 
-}
-.perday-cost h2{
-    padding-top: 1rem;
-    padding-left: 1rem;
+    flex-direction: column;
+    text-align: center;
 }
 .amount0{   
     display: inline;
@@ -117,20 +123,13 @@
 }
 /*DownTable*/
 .downtab{
-    height: 600px;
-    width: 175vh;
     background-color: white;
-    margin-left: 4rem;
-    margin-bottom: 10vh;
-    margin-top: 20vh;
-    border-radius: 10px;
-    box-shadow: 0 0 5px rgb(75, 71, 71);
+    margin: 0 40px 20px 40px;
 }
 .downnav{
     padding-top: 0.5rem;
-    margin-top: 10vh;
     align-items: center;
-    height: 20vh;
+
 }
 .downtitles{
     display: flex;
@@ -147,12 +146,12 @@
     cursor: pointer;
 }
 li{
-    width:60vh;
-    height: 10vh;
+    width: 60vh;
     background-color: white;
+    text-align: center;
     box-shadow: 0 0 3px black;
-    padding-top: 1rem;
 }
+
 .downtable h1{
     font-size: 20px;
     margin-bottom: 10px;
@@ -165,4 +164,6 @@ li{
     margin-top: 10px;
     text-align: center;
 }
-
+.semicircle-container{
+    text-align: center;
+}

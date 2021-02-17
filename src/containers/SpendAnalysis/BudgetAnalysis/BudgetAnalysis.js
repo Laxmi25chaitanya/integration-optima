@@ -8,7 +8,7 @@ const testData = [
 
 const BudgetAnalysis = ({ remainingBudget, totalBudget, dailyusage }) => {
     return (
-        <div className="container">
+        <div className="sp-container">
             <div className="allbudget">
                 <h1>Overall Budget</h1>
                 {testData.map((item, idx) => (
