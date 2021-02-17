@@ -7,7 +7,6 @@ import PieChart from './Charts/PieChart';
 import DownTable from './Charts/Downtable'
 import amount0 from './images/amount0.gif';
 
-
 const Chart = ({ month,year }) => {
     const [pieChartLabels,setPieChartLabels]=useState([])
     const [barChartInput,setBarChartInput]=useState([])
@@ -24,11 +23,12 @@ const Chart = ({ month,year }) => {
         let firstweek = 0, secondweek = 0, thirdweek = 0, fourthweek = 0, fifthweek = 0, averageperday = 0,
             totalbudget = 0, remainingbudget = 0;
         const getExpenseData = async () => {
-            const { data } = await axios('spendanalysis.json', 
-            {
-                headers: {
-                'Content-Type': 'application/json'
-            }})
+            const { data } = await axios('spendanalysis.json',
+                {
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
                 .catch(err => console.log(err));
             setWeekExpense(data);
         }
@@ -215,7 +215,7 @@ const Chart = ({ month,year }) => {
                     </div>
                 </div>
                 <Budget dailyusage={dailyusage} remainingBudget={remainingBudget} totalBudget={totalBudget} />
-                <DownTable />
+                <DownTable remainingBudget={remainingBudget} totalBudget={totalBudget} />
             </>
         )
     }
