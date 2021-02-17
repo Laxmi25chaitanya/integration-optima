@@ -35,6 +35,16 @@
     font-size: 50px;
     cursor: pointer;
 }
+.arrowbutton{
+    background-color: #007550;
+    color: white;
+    font-size: 50px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+}
+
 /*End of topnavbar*/
 .chartgrid{    
     display: grid;
@@ -97,6 +107,7 @@
 }
 .amount0 img{
     width: 400px;
+    
 }
 .displayline p{
     font-family: Georgia, 'Times New Roman', Times, serif;   
@@ -129,4 +140,43 @@ button{
     cursor: pointer;
     font-size: 20px;
 }
-  
+.downnav{
+    padding-top: 0.5rem;
+    margin-top: 10vh;
+    align-items: center;
+    height: 20vh;
+}
+.downtitles{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    margin-top: 5vh;
+    font-size: 35px;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: bold;
+    column-gap: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+li{
+    width:60vh;
+    height: 10vh;
+    background-color: white;
+    box-shadow: 0 0 3px black;
+    padding-top: 1rem;
+}
+.downtable h1{
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    text-align: center;
+}
+.downtable p{
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    text-align: center;
+}
+

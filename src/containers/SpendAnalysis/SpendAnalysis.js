@@ -23,20 +23,22 @@ const SpendAnalysis = () => {
         <div className="container">
             <div className="topsearch"></div>
             <div className="topnav">
-                <div className="leftslider arrow" >
-                    <FaAngleLeft onClick={() =>{
+                <div className="arrow" >
+                    <button className='arrowbutton'> <FaAngleLeft onClick={() =>{
                         setIndex(index - 1 < 0 ? 11 : index - 1)
-                    }} />
+                    }} /></button>
                 </div>
                 <div className="middle">
                     <h2>SPEND ANALYSIS</h2>
                     <h1>{month}</h1>
                 </div>
-                <div className="rightslider arrow">
-                    <FaAngleRight onClick={() => {
+               
+                <div className="arrow">
+                   <button className='arrowbutton'><FaAngleRight onClick={() => {
                         setIndex(index + 1 > 11 ? 0 : index + 1)
-                    }} />
+                    }}  /></button> 
                 </div>
+               
             </div>
             <Chart month={month} year={year}/>
             </div>
