@@ -5,7 +5,7 @@ exports.validateUserCredentials = (bodyData) => {
   console.log("from action to service 'validateUserCredentials'", bodyData);
   return new Promise((resolve, reject) => {
     axios
-      .get(`http://localhost:3000/data`, {})
+      .get(`http://localhost:8000/data`, {})
       .then((res) => {
         const data = res.data;
         const userListMatchingType = data.userList.filter(
@@ -37,7 +37,7 @@ exports.validateUserPresence = (bodyData) => {
   console.log("from action to service 'validateUserPresence'", bodyData);
   return new Promise((resolve, reject) => {
     axios
-      .get(`http://localhost:3000/data`, {})
+      .get(`http://localhost:8000/data`, {})
       .then((res) => {
         const data = res.data;
         const userListMatchingType = data.userList.filter(
@@ -62,7 +62,7 @@ exports.updatePasswordCredentials = (bodyData) => {
   let modifiedData;
   return new Promise((resolve, reject) => {
     axios
-      .get(`http://localhost:3000/data`, {})
+      .get(`http://localhost:8000/data`, {})
       .then((res) => {
         const data = res.data;
         for (const item in data.userList) {
@@ -84,7 +84,7 @@ exports.updatePasswordCredentials = (bodyData) => {
       })
       .then((modifiedData) => {
         console.log(modifiedData);
-        fetch("http://localhost:3000/data", {
+        fetch("http://localhost:8000/data", {
           method: "POST",
           body: modifiedData,
           headers: {

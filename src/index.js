@@ -11,13 +11,14 @@ import BudgetAnalysis from './containers/SpendAnalysis/BudgetAnalysis/BudgetAnal
 import store from "./app/store";
 import { Provider } from "react-redux";
 import * as serviceWorker from "./serviceWorker";
+import layout from "./containers/HomePage/App"
 
 ReactDOM.render(
   <Router>
     <Switch>
     <Provider store={store}>
         <Route exact path="/" component={LoginPage} />
-        <Route exact path="/app" component={App} />
+        <Route exact path="/app" component={layout} />
         <Route exact path="/spendAnalysis" component={SpendAnalysis} />
         <Route path="/spendanalysis/budgetanalysis" component={BudgetAnalysis} />
         <Route exact path="/forgotPassword" component={ForgotPassword} />
