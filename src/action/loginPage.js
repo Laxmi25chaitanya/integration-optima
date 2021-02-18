@@ -115,7 +115,7 @@ export const updateUserCredentials = (bodyData) => {
         } else if (res.status == 401) {
           dispatch({
             type: actionTypes.USERNAME_UPDATION_FAILURE,
-            payload: "Username already exists!"
+            payload: "Username already exists!",
           });
         }
       })

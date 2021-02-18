@@ -139,19 +139,6 @@ exports.updateUserCredentials = (bodyData) => {
         const data = res.data;
         let index_type = 0;
         let index_mailId = 0;
-        // for (let item in data.userList) {
-        //   if (data.userList[item].type === bodyData.type) {
-        //     index_type = item;
-        //     for (let index in data.userList[item].userDetails) {
-        //       if (
-        //         data.userList[item].userDetails[index].mailId ===
-        //         bodyData.mailId
-        //       ) {
-        //         index_mailId = index;
-        //       }
-        //     }
-        //   }
-        // }
         for (let item in data.userList) {
           if (data.userList[item].type === bodyData.type) {
             index_type = item;

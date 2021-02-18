@@ -54,6 +54,23 @@ const loginPageReducer = (state = initialState, action) => {
       return {
         ...state,
         error: true,
+        errorMessage: payload,
+        passwordUpdateStatus: false,
+      };
+    }
+    case actionTypes.VALIDATION_MAILFOUND: {
+      return { error: false, mailStatus: true };
+    }
+    case actionTypes.VALIDATION_MAILNOTFOUND: {
+      return { error: true, errorMessage: payload };
+    }
+    case actionTypes.USERNAME_UPDATION_SUCCESSFUL: {
+      return { ...state, error: true, usernameUpdateStatus: true };
+    }
+    case actionTypes.USERNAME_UPDATION_FAILURE: {
+      return {
+        ...state,
+        error: true,
         passwordUpdateStatus: false,
         errorMessage: payload,
       };

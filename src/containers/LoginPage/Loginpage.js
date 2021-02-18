@@ -29,7 +29,6 @@ const App = ({ setToken }) => {
     (state) => state.loginPage.usernameUpdateStatus
   );
   let user = useSelector((state) => state.loginPage.userName);
-
   useEffect(() => {
     if (!errorStatus) {
       localStorage.setItem("userName", user); // y this
@@ -44,7 +43,6 @@ const App = ({ setToken }) => {
       message = errorMessage;
     }
   }, [errorMessage]);
-
   const authenticate = async () => {
     // const token = await loginUser({
     //   userName,
@@ -54,7 +52,6 @@ const App = ({ setToken }) => {
     const token = response.token;
     setToken(token);
   };
-
   const handleUsernameChange = (e) => {
     setError(false);
     dispatch(clearErrorMessage()); // y this
@@ -72,7 +69,6 @@ const App = ({ setToken }) => {
     dispatch(clearErrorMessage());
     setType(e.target.value);
   };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (userName === "" || password === "" || type === "") {
@@ -91,10 +87,9 @@ const App = ({ setToken }) => {
     dispatch(clearErrorMessage());
     history.push("/forgotUsername");
   };
-
   return (
     <div className="text-center">
-      <img src={Logo}></img>
+      <img className="login-wallet-img" alt="wallet" src={Logo}></img>
       <div className="form-signin">
         <h1>Sign in here!</h1>
         {error ? <p className="error-message">{`${message}`}</p> : null}
@@ -121,7 +116,7 @@ const App = ({ setToken }) => {
           id="userName"
           type="text"
           value={userName}
-          className="form-control"
+          className="login-form-control"
           onChange={handleUsernameChange}
           holder="Enter Username"
         />
@@ -129,18 +124,18 @@ const App = ({ setToken }) => {
           id="password"
           type="password"
           value={password}
-          className="form-control"
+          className="login-form-control"
           onChange={handlePasswordChange}
           holder="Enter Password"
         />
         <br />
-        <button onClick={handleSubmit}>
+        <button className="login-button" onClick={handleSubmit}>
           <span>Sign In</span>
         </button>
-        <button onClick={handleForgotPassword}>
+        <button className="login-button" onClick={handleForgotPassword}>
           <span>Forgot Password</span>
         </button>
-        <button onClick={handleForgotUsername}>
+        <button className="login-button" onClick={handleForgotUsername}>
           <span>Forgot Username</span>
         </button>
         <br />
@@ -160,7 +155,6 @@ const App = ({ setToken }) => {
 };
 
 export default App;
-
 App.propTypes = {
   setToken: PropTypes.func.isRequired,
 };

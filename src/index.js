@@ -1,8 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import ProtectedRoute from "./routes/protectedRoute";
 import App from "./App";
+import LoginPage from "./containers/LoginPage/Loginpage";
+import ProtectedRoute from "./routes/protectedRoute";
 import ForgotPassword from "./pages/ForgotPassword";
 import ChangePassword from "./pages/ChangePassword";
 import ForgotUsername from "./pages/ForgotUsername";
@@ -22,8 +23,8 @@ ReactDOM.render(
         <ProtectedRoute exact path="/spendAnalysis" component={SpendAnalysis} />
         <Route exact path="/forgotPassword" component={ForgotPassword} />
         <Route exact path="/changePassword" component={ChangePassword} />
-        <Route exact path="/forgotUsername" component={ForgotUsername} />
-        <Route exact path="/changeUsername" component={ChangeUsername} />
+        <Route exact path="/forgotusername" component={ForgotUsername} />
+        <Route exact path="/changeusername" component={ChangeUsername} />
       </Provider>
     </Switch>
   </Router>,

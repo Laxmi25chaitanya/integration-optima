@@ -50,10 +50,13 @@ const ForgotUsername = () => {
       dispatch(validateMailPresence({ mailId, type }));
     }
   };
-
   return (
     <div>
-      <img src={Logo} style={{ height: "400px", width: "400px" }}></img>
+      <img
+        src={Logo}
+        className="login-wallet-img"
+        style={{ height: "400px", width: "400px" }}
+      ></img>
       <div className="form-signin">
         <h1>Forgot Username</h1>
         {error ? <p className="error-message">{`${message}`}</p> : null}
@@ -79,12 +82,12 @@ const ForgotUsername = () => {
         <input
           name="mailId"
           type="email"
-          className="form-control"
+          className="login-form-control"
           value={mailId}
-          placeholder="Enter your mail id"
+          placeholder="Enter your Mail ID"
           onChange={handleMailid}
         />
-        <button onClick={handleSearch}>
+        <button onClick={handleSearch} className="login-button">
           <span>Search</span>
         </button>
       </div>

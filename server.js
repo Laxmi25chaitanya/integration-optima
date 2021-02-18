@@ -2,7 +2,6 @@ const express = require("express");
 const app = express();
 var fs = require("fs");
 var bodyParser = require("body-parser");
-
 //enable CORS for request verbs
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -13,7 +12,6 @@ app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Methods", "POST, GET, PUT, DELETE, OPTIONS");
   next();
 });
-
 app.use(
   bodyParser.urlencoded({
     extended: true,
@@ -28,7 +26,6 @@ app.get("/data", function (req, res) {
     res.end(data);
   });
 });
-
 //Handle POST method
 app.post("/changePassword", function (req, res) {
   fs.readFile("./userCredentials.json", "utf8", function (err, data) {
@@ -60,16 +57,12 @@ app.post("/changeUsername", function (req, res) {
     res.end(JSON.stringify(user));
   });
 });
-
 app.use("/login", (req, res) => {
   res.send({
     token: "test123",
   });
 });
 
-var server = app.listen(8080, function () {
-  var host = server.address().address;
-  var port = server.address().port;
-
-  console.log("App is listening at http://%s:%s", host, port);
-});
+app.listen(8080, () =>
+  console.log("API is running on http://localhost:8080/data")
+);

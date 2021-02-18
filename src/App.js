@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./App.css";
 import LoginPage from "./containers/LoginPage/Loginpage";
 import useToken from "./hooks/useToken";
-
 const getUserName = () => {
   const username = localStorage.getItem("userName");
   return username;
@@ -15,7 +14,6 @@ function App() {
   if (!token) {
     return <LoginPage setToken={setToken} />;
   }
-
   const handleSignOut = () => {
     localStorage.clear();
     window.location.reload();
@@ -24,7 +22,9 @@ function App() {
   return (
     <div className="App">
       <h1>OPTIMA - {username}</h1>
-      <button onClick={handleSignOut}>Sign out</button>
+      <button onClick={handleSignOut} className="login-button">
+        Sign out
+      </button>
     </div>
   );
 }

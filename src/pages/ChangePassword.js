@@ -50,7 +50,7 @@ const ChangePassword = (props) => {
   };
   return (
     <div>
-      <img src={Logo} style={{ height: "300px", width: "350px" }}></img>
+      <img src={Logo} className="login-wallet-img" style={{ height: "300px", width: "350px" }}></img>
       <div className="form-signin">
         <h1>Reset Password</h1>
         {error ? <p className="error-message">{`${message}`}</p> : ""}
@@ -58,7 +58,7 @@ const ChangePassword = (props) => {
         <input
           type="password"
           placeholder="Enter New password"
-          className="form-control"
+          className="login-form-control"
           value={newPass}
           onChange={(e) => {
             setError(false);
@@ -70,13 +70,13 @@ const ChangePassword = (props) => {
           type="password"
           value={confirmPass}
           placeholder="Confirm Password"
-          className="form-control"
+          className="login-form-control"
           onChange={(e) => {
             setError(false);
             setConfirmPass(e.target.value);
           }}
         />
-        <button type="submit" onClick={handleChangePassword}>
+        <button type="submit" onClick={handleChangePassword} className="login-button">
           <span>Reset Password</span>
         </button>
       </div>
