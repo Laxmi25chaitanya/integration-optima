@@ -7,6 +7,7 @@ import LoginPage from "./containers/LoginPage/Loginpage";
 import ForgotPassword from "./pages/ForgotPassword";
 import ChangePassword from "./pages/ChangePassword";
 import SpendAnalysis from './containers/SpendAnalysis/SpendAnalysis';
+import WalletPage from "./containers/WalletPage/Walletpage.js";
 import store from "./app/store";
 import { Provider } from "react-redux";
 import * as serviceWorker from "./serviceWorker";
@@ -17,6 +18,7 @@ ReactDOM.render(
     <Provider store={store}>
         <Route exact path="/" component={LoginPage} />
         <Route exact path="/app" component={App} />
+        <Route exact path="/WalletPage" component={WalletPage} />
         <Route exact path="/spendAnalysis" component={SpendAnalysis} />
         <Route exact path="/forgotPassword" component={ForgotPassword} />
         <Route exact path="/changePassword" component={ChangePassword} />
