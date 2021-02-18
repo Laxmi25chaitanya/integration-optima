@@ -9,10 +9,11 @@ import {
   clearErrorMessage,
   validateUserCredentials,
 } from "../../action/loginPage";
+import PropTypes from "prop-types";
+import { authenticateLogin } from "../../services/loginPageService";
 
 let message;
-const App = () => {
-  let err = "";
+const App = ({ setToken }) => {
   let history = useHistory();
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
@@ -24,10 +25,16 @@ const App = () => {
   let passwordUpdateStatus = useSelector(
     (state) => state.loginPage.passwordUpdateStatus
   );
+  const usernameUpdateStatus = useSelector(
+    (state) => state.loginPage.usernameUpdateStatus
+  );
+  let user = useSelector((state) => state.loginPage.userName);
 
   useEffect(() => {
     if (!errorStatus) {
-      history.push("/app");
+      localStorage.setItem("userName", user); // y this
+      authenticate();
+      // history.push("/spendAnalysis");
     }
   }, [errorStatus]);
 
@@ -38,9 +45,19 @@ const App = () => {
     }
   }, [errorMessage]);
 
+  const authenticate = async () => {
+    // const token = await loginUser({
+    //   userName,
+    //   password,
+    // });
+    const response = await authenticateLogin({ userName, password });
+    const token = response.token;
+    setToken(token);
+  };
+
   const handleUsernameChange = (e) => {
     setError(false);
-    dispatch(clearErrorMessage());
+    dispatch(clearErrorMessage()); // y this
     setUserName(e.target.value);
   };
 
@@ -56,7 +73,7 @@ const App = () => {
     setType(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (userName === "" || password === "" || type === "") {
       setError(true);
@@ -69,6 +86,10 @@ const App = () => {
   const handleForgotPassword = (e) => {
     dispatch(clearErrorMessage());
     history.push("/forgotPassword");
+  };
+  const handleForgotUsername = (e) => {
+    dispatch(clearErrorMessage());
+    history.push("/forgotUsername");
   };
 
   return (
@@ -119,9 +140,17 @@ const App = () => {
         <button onClick={handleForgotPassword}>
           <span>Forgot Password</span>
         </button>
+        <button onClick={handleForgotUsername}>
+          <span>Forgot Username</span>
+        </button>
         <br />
         {passwordUpdateStatus ? (
           <span className="success-message">Password Updated!</span>
+        ) : (
+          ""
+        )}
+        {usernameUpdateStatus ? (
+          <span className="success-message">Username Updated!</span>
         ) : (
           ""
         )}
@@ -131,3 +160,7 @@ const App = () => {
 };
 
 export default App;
+
+App.propTypes = {
+  setToken: PropTypes.func.isRequired,
+};

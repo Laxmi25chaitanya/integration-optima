@@ -77,6 +77,54 @@ export const updatePasswordCredentials = (bodyData) => {
   };
 };
 
+export const validateMailPresence = (bodyData) => {
+  return (dispatch) => {
+    loginPageService
+      .validateMailPresence(bodyData)
+      .then((res) => {
+        console.log("response from service", res);
+        if (res.status == 200) {
+          dispatch({
+            type: actionTypes.VALIDATION_MAILFOUND,
+            payload: res.mail,
+          });
+        } else if (res.status == 404) {
+          console.log("Invalid email id!");
+          dispatch({
+            type: actionTypes.VALIDATION_MAILNOTFOUND,
+            payload: "Invalid email id!",
+          });
+        }
+      })
+      .catch((err) => {
+        console.log("response", err);
+      });
+  };
+};
+
+export const updateUserCredentials = (bodyData) => {
+  return (dispatch) => {
+    loginPageService
+      .updateUserCredentials(bodyData)
+      .then((res) => {
+        console.log("response from service", res.status);
+        if (res.status == 200) {
+          dispatch({
+            type: actionTypes.USERNAME_UPDATION_SUCCESSFUL,
+          });
+        } else if (res.status == 401) {
+          dispatch({
+            type: actionTypes.USERNAME_UPDATION_FAILURE,
+            payload: "Username already exists!"
+          });
+        }
+      })
+      .catch((err) => {
+        console.log("response", err);
+      });
+  };
+};
+
 export const clearErrorMessage = () => {
   return (dispatch) => {
     dispatch({

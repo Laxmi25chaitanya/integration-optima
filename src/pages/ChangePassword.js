@@ -14,7 +14,6 @@ const ChangePassword = (props) => {
   const userName = location.state.userName;
   const type = location.state.type;
   const dispatch = useDispatch();
-  //  let errorStatus = useSelector((state) => state.location.error);
   const [newPass, setNewPass] = useState("");
   const [confirmPass, setConfirmPass] = useState("");
   const [error, setError] = useState(false);
@@ -25,7 +24,6 @@ const ChangePassword = (props) => {
   useEffect(() => {
     if (passwordUpdateStatus) {
       alert("Password Updated!");
-      // errorStatus = true;
       setTimeout(() => {
         history.push({
           pathname: "/",
