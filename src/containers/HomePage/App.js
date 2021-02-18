@@ -1,5 +1,5 @@
 import "./App.css";
-import "./homepage.css";
+import "./Homepage.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { AiOutlineHome } from "react-icons/ai";
 import { BiWalletAlt } from "react-icons/bi";
