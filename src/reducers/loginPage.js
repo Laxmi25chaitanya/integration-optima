@@ -2,9 +2,11 @@ import * as actionTypes from "../constant/index";
 
 const initialState = {
   userName: null,
+  mailStatus:false,
   error: true,
   userStatus: false,
   passwordUpdateStatus: false,
+  usernameUpdateStatus: false,
   errorMessage: null,
 };
 
@@ -37,7 +39,19 @@ const loginPageReducer = (state = initialState, action) => {
       return { ...state, error: true, passwordUpdateStatus: true };
     }
     case actionTypes.PASSWORD_UPDATION_FAILURE: {
-      return { ...state, error: true, passwordUpdateStatus: false };
+      return { ...state, error: true, passwordUpdateStatus: false };  
+    }
+    case actionTypes.VALIDATION_MAILFOUND: {
+      return { error: false,mailStatus:true };
+    }
+    case actionTypes.VALIDATION_MAILNOTFOUND: {
+      return { error: true, errorMessage: payload};
+    }
+    case actionTypes.USERNAME_UPDATION_SUCCESSFUL: {
+      return { ...state,error: true, usernameUpdateStatus: true };
+    }
+    case actionTypes.USERNAME_UPDATION_FAILURE: {
+      return { ...state, error: true,errorMessage: payload, passwordUpdateStatus: false }; 
     }
     case actionTypes.CLEAR_ERROR_MESSAGE: {
       return { ...state, errorMessage: payload };

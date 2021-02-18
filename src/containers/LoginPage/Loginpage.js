@@ -5,14 +5,12 @@ import Logo from "../../components/imgaes/finance.png";
 import Label from "../../components/Label.js";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import {
-  clearErrorMessage,
-  validateUserCredentials,
-} from "../../action/loginPage";
+import {clearErrorMessage,validateUserCredentials,} from "../../action/loginPage";
+import PropTypes from "prop-types";
+import { authenticateLogin } from "../../services/loginPageService";
 
 let message;
-const App = () => {
-  let err = "";
+const App = ({ setToken }) => {
   let history = useHistory();
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
@@ -24,39 +22,55 @@ const App = () => {
   let passwordUpdateStatus = useSelector(
     (state) => state.loginPage.passwordUpdateStatus
   );
-
+  const usernameUpdateStatus = useSelector(
+    (state) => state.loginPage.usernameUpdateStatus
+  );
+  let user = useSelector((state) => state.loginPage.userName);
+ 
   useEffect(() => {
     if (!errorStatus) {
-      history.push("/app");
+      localStorage.setItem("userName", user); // y this
+      authenticate();
+      // history.push("/spendAnalysis");
     }
   }, [errorStatus]);
-
+ 
   useEffect(() => {
     if (errorMessage) {
       setError(true);
       message = errorMessage;
     }
   }, [errorMessage]);
-
+ 
+  const authenticate = async () => {
+    // const token = await loginUser({
+    //   userName,
+    //   password,
+    // });
+    const response = await authenticateLogin({ userName, password });
+    const token = response.token;
+    setToken(token);
+  };
+ 
   const handleUsernameChange = (e) => {
     setError(false);
-    dispatch(clearErrorMessage());
+    dispatch(clearErrorMessage()); // y this
     setUserName(e.target.value);
   };
-
+ 
   const handlePasswordChange = (e) => {
     setError(false);
     dispatch(clearErrorMessage());
     setPassword(e.target.value);
   };
-
+ 
   const handleTypeChange = (e) => {
     setError(false);
     dispatch(clearErrorMessage());
     setType(e.target.value);
   };
-
-  const handleSubmit = (e) => {
+ 
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (userName === "" || password === "" || type === "") {
       setError(true);
@@ -65,15 +79,19 @@ const App = () => {
       dispatch(validateUserCredentials({ type, userName, password }));
     }
   };
-
+ 
   const handleForgotPassword = (e) => {
     dispatch(clearErrorMessage());
     history.push("/forgotPassword");
   };
-
+  const handleForgotUsername = (e) => {
+    dispatch(clearErrorMessage());
+    history.push("/forgotUsername");
+  };
+  
   return (
     <div className="text-center">
-      <img src={Logo}></img>
+      <img className="login-wallet-img" alt="wallet" src={Logo}></img>
       <div className="form-signin">
         <h1>Sign in here!</h1>
         {error ? <p className="error-message">{`${message}`}</p> : null}
@@ -100,7 +118,7 @@ const App = () => {
           id="userName"
           type="text"
           value={userName}
-          className="form-control"
+          className="login-form-control"
           onChange={handleUsernameChange}
           holder="Enter Username"
         />
@@ -108,16 +126,19 @@ const App = () => {
           id="password"
           type="password"
           value={password}
-          className="form-control"
+          className="login-form-control"
           onChange={handlePasswordChange}
           holder="Enter Password"
         />
         <br />
-        <button onClick={handleSubmit}>
+        <button className="login-button" onClick={handleSubmit}>
           <span>Sign In</span>
         </button>
-        <button onClick={handleForgotPassword}>
+        <button className="login-button" onClick={handleForgotPassword}>
           <span>Forgot Password</span>
+        </button>
+        <button className="login-button" onClick={handleForgotUsername}>
+          <span>Forgot Username</span>
         </button>
         <br />
         {passwordUpdateStatus ? (
@@ -125,9 +146,18 @@ const App = () => {
         ) : (
           ""
         )}
+        {usernameUpdateStatus ? (
+          <span className="success-message">username Updated!</span>
+        ) : (
+          ""
+        )}
       </div>
     </div>
   );
 };
-
+ 
 export default App;
+ 
+App.propTypes = {
+  setToken: PropTypes.func.isRequired,
+};

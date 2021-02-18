@@ -4,8 +4,11 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./index.css";
 import App from "./App";
 import LoginPage from "./containers/LoginPage/Loginpage";
+import ProtectedRoute from "./routes/protectedRoute";
 import ForgotPassword from "./pages/ForgotPassword";
 import ChangePassword from "./pages/ChangePassword";
+import ForgotUsername from "./pages/ForgotUsername";
+import ChangeUsername from "./pages/ChangeUsername";
 import SpendAnalysis from './containers/SpendAnalysis/SpendAnalysis';
 import store from "./app/store";
 import { Provider } from "react-redux";
@@ -15,11 +18,13 @@ ReactDOM.render(
   <Router>
     <Switch>
     <Provider store={store}>
-        <Route exact path="/" component={LoginPage} />
-        <Route exact path="/app" component={App} />
-        <Route exact path="/spendAnalysis" component={SpendAnalysis} />
+        <Route exact path="/" component={App} />
+        {/* <Route exact path="/app" component={App} /> */}
+        <ProtectedRoute exact path="/spendAnalysis" component={SpendAnalysis} />
         <Route exact path="/forgotPassword" component={ForgotPassword} />
         <Route exact path="/changePassword" component={ChangePassword} />
+        <Route exact path="/forgotusername" component={ForgotUsername} />
+        <Route exact path="/changeusername" component={ChangeUsername} />
     </Provider>
     </Switch>
   </Router>,

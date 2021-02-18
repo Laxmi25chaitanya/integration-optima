@@ -10,7 +10,7 @@ const Label = (props) => {
         onChange={props.onChange}
         value={props.value}
         placeholder={props.holder}
-        className="form-control"
+        className="login-form-control"
       />
     </div>
   );
