@@ -7,7 +7,7 @@ import { GoGraph } from "react-icons/go";
 import { BsFillInfoCircleFill } from "react-icons/bs";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
-import "./Homepage.css";
+import "./homepage.css";
 import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 class Financials extends Component {
   constructor(props) {
