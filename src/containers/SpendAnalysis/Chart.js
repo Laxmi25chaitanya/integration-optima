@@ -116,12 +116,12 @@ const Chart = ({month, year}) => {
         )
     } else {
         return (
-            <div className="page-body">
-                <div className="chartgrid">
-                    <div className="barchart card col">
+            <div className="sp-page-body">
+                <div className="sp-chartgrid">
+                    <div className="sp-barchart sp-card sp-col">
                         <BarChart barChartInput={barChartInput}/>
                     </div>
-                    <div className="piechart card col">
+                    <div className="sp-piechart sp-card sp-col">
                         <PieChart pieChartInput={pieChartInput} pieChartLabels={pieChartLabels}/>
                     </div>
                 </div>

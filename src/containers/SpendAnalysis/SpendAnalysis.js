@@ -21,20 +21,20 @@ const SpendAnalysis = () => {
     },[index])
     return(
         <div className="sp-container">
-            <div className="topsearch"></div>
-            <div className="topnav">
-                <div className="arrow" >
-                    <button className='arrowbutton'> <FaAngleLeft onClick={() =>{
+            <div className="sp-topsearch"></div>
+            <div className="sp-topnav">
+                <div className="sp-arrow" >
+                    <button className='sp-arrowbutton'> <FaAngleLeft onClick={() =>{
                         setIndex(index - 1 < 0 ? 11 : index - 1)
                     }} /></button>
                 </div>
-                <div className="middle">
+                <div className="sp-middle">
                     <h2>SPEND ANALYSIS</h2>
                     <h1>{month}</h1>
                 </div>
 
-                <div className="arrow">
-                   <button className='arrowbutton'><FaAngleRight onClick={() => {
+                <div className="sp-arrow">
+                   <button className='sp-arrowbutton'><FaAngleRight onClick={() => {
                         setIndex(index + 1 > 11 ? 0 : index + 1)
                     }}  /></button>
                 </div>
