@@ -49,7 +49,6 @@ class Financials extends Component {
 
   render() {
     if (this.state.userdata[0]) {
-      console.log(this.state.debit[0]);
       const userdata = this.state.userdata[0];
       return (
         <div>
@@ -230,21 +229,17 @@ class Financials extends Component {
               </div>
             </div>
             <div className="main-right">
-               <Carousel showThumbs={false} autoPlay={true} infiniteLoop={true} useKeyboardArrows={true}>
+               <Carousel showThumbs={false} autoPlay={true} infiniteLoop={true} useKeyboardArrows={true} showStatus={false}>
                 <div>
-                    <img src="./homeassets/item1.png" alt="" className="image" />
+                    <img src="./homeassets/item1.png" alt="" className="crsl-image" />
                 </div>
                 <div>
-                    <img src="./homeassets/item2.png" alt="" className="image" />
+                    <img src="./homeassets/item2.jfif" alt="" className="crsl-image" />
                 </div>
-               
             </Carousel> 
-
             </div>
           </div>
-          <div className="livechat">
-            <img src="./homeassets/livechat.png" alt="" height="60px" width="60px" />
-          </div>
+          
         </div>
       );
     } else {

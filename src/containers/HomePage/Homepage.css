@@ -19,9 +19,9 @@
     width: 20%;
     margin-top: 30px;
   }
-  .image {
+  .crsl-image{
     width: 100%;
-    height: 100%;
+    height: 660px;
   }
   .main-left-top {
     display: flex;
@@ -184,13 +184,6 @@
     height: 70px;
     padding: 0;
     float: none;
-  }
-
-  
-  .livechat {
-    position: fixed;
-    left: 1187px;
-    top: 476px;
   }
   .head{
     font-weight: 300;

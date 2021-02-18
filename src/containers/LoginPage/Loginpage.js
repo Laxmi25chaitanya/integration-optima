@@ -27,7 +27,7 @@ const App = () => {
 
   useEffect(() => {
     if (!errorStatus) {
-      history.push("/app");
+      history.push("/home");
     }
   }, [errorStatus]);
 
@@ -73,7 +73,7 @@ const App = () => {
 
   return (
     <div className="text-center">
-      <img src={Logo}></img>
+      <img className="login-wallet-img" alt="wallet" src={Logo}></img>
       <div className="form-signin">
         <h1>Sign in here!</h1>
         {error ? <p className="error-message">{`${message}`}</p> : null}
@@ -100,7 +100,7 @@ const App = () => {
           id="userName"
           type="text"
           value={userName}
-          className="form-control"
+          className="login-form-control"
           onChange={handleUsernameChange}
           holder="Enter Username"
         />
@@ -108,15 +108,15 @@ const App = () => {
           id="password"
           type="password"
           value={password}
-          className="form-control"
+          className="login-form-control"
           onChange={handlePasswordChange}
           holder="Enter Password"
         />
         <br />
-        <button onClick={handleSubmit}>
+        <button className="login-button" onClick={handleSubmit}>
           <span>Sign In</span>
         </button>
-        <button onClick={handleForgotPassword}>
+        <button className="login-button" onClick={handleForgotPassword}>
           <span>Forgot Password</span>
         </button>
         <br />

@@ -8,6 +8,8 @@ import { GoGraph } from "react-icons/go";
 import { GiPiggyBank } from "react-icons/gi";
 import { CgMail } from "react-icons/cg";
 import Financials from "./Financials";
+import Loginpage from "../LoginPage/Loginpage";
+// import layout from "../HomePage/CreditHover";
 
 function App() {
   return (
@@ -17,20 +19,34 @@ function App() {
           <span id="main-head">optima</span>
           <span id="sub">Pay Less,Save More</span>
           <span id="bell">
-            <img className="layoutimg" src="./layoutassets/bell.png" alt="" height="30px"  />
+            <img
+              className="layoutimg"
+              src="./layoutassets/bell.png"
+              alt=""
+              height="30px"
+            />
           </span>
         </div>
         <div className="header-right">
-          <img className="layoutimg" src="./layoutassets/contact.jpeg" alt="" height="30px" />
+          <img
+            className="layoutimg"
+            src="./layoutassets/contact.jpeg"
+            alt=""
+            height="30px"
+          />
           <select name="users" id="users">
-          <option value="alice">Alice</option>  
-            <option value="bob">Bob</option>  
+            <option value="alice">Alice</option>
+            <option value="bob">Bob</option>
           </select>
-          
-        <div className="btn">
-        <img className="layoutimg" src="./layoutassets/logout.png" alt="Logout" height="29px" /> 
-        </div>
 
+          <a href="/">
+            <img
+              className="layoutimg"
+              src="./layoutassets/logout.png"
+              alt="Logout"
+              height="29px"
+            />
+          </a>
         </div>
       </div>
       <div>
@@ -57,7 +73,7 @@ function App() {
       </div>
       <div>
         <div>
-          <Financials/>
+          <Financials />
           {/* <Router>
             <Route path="/home"  component={Financials} />
           </Router> */}
@@ -71,6 +87,11 @@ function App() {
           <Router>
             <Route path="/"  component={} />
           </Router> */}
+          <Router>
+            
+              <Route exact path="/" component={Loginpage} />
+            
+          </Router>
         </div>
       </div>
     </div>

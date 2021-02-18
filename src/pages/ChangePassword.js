@@ -60,7 +60,7 @@ const ChangePassword = (props) => {
         <input
           type="password"
           placeholder="Enter New password"
-          className="form-control"
+          className="login-form-control"
           value={newPass}
           onChange={(e) => {
             setError(false);
@@ -72,13 +72,13 @@ const ChangePassword = (props) => {
           type="password"
           value={confirmPass}
           placeholder="Confirm Password"
-          className="form-control"
+          className="login-form-control"
           onChange={(e) => {
             setError(false);
             setConfirmPass(e.target.value);
           }}
         />
-        <button type="submit" onClick={handleChangePassword}>
+        <button className="login-button" type="submit" onClick={handleChangePassword}>
           <span>Reset Password</span>
         </button>
       </div>

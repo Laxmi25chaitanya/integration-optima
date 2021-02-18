@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./index.css";
-import App from "./App";
+// import App from "./App";
 import LoginPage from "./containers/LoginPage/Loginpage";
 import ForgotPassword from "./pages/ForgotPassword";
 import ChangePassword from "./pages/ChangePassword";
@@ -18,7 +18,7 @@ ReactDOM.render(
     <Switch>
     <Provider store={store}>
         <Route exact path="/" component={LoginPage} />
-        <Route exact path="/app" component={layout} />
+        <Route exact path="/home" component={layout} />
         <Route exact path="/spendAnalysis" component={SpendAnalysis} />
         <Route path="/spendanalysis/budgetanalysis" component={BudgetAnalysis} />
         <Route exact path="/forgotPassword" component={ForgotPassword} />
