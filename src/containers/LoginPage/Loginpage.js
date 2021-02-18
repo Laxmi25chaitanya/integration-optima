@@ -31,7 +31,7 @@ const App = ({ setToken }) => {
   let user = useSelector((state) => state.loginPage.userName);
   useEffect(() => {
     if (!errorStatus) {
-      localStorage.setItem("userName", user); // y this
+      localStorage.setItem("userName", user);
       authenticate();
       // history.push("/spendAnalysis");
     }
@@ -54,7 +54,7 @@ const App = ({ setToken }) => {
   };
   const handleUsernameChange = (e) => {
     setError(false);
-    dispatch(clearErrorMessage()); // y this
+    dispatch(clearErrorMessage());
     setUserName(e.target.value);
   };
 
