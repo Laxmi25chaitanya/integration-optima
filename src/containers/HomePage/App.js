@@ -88,9 +88,7 @@ function App() {
             <Route path="/"  component={} />
           </Router> */}
           <Router>
-            
-              <Route exact path="/" component={Loginpage} />
-            
+            <Route exact path="/" component={Loginpage} />
           </Router>
         </div>
       </div>
