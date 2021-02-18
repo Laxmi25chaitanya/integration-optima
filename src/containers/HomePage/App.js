@@ -9,6 +9,8 @@ import { GiPiggyBank } from "react-icons/gi";
 import { CgMail } from "react-icons/cg";
 import Financials from "./Financials";
 import Loginpage from "../LoginPage/Loginpage";
+import WalletPage from "../WalletPage/Walletpage";
+import SpendAnalysis from "../SpendAnalysis/SpendAnalysis"
 // import layout from "../HomePage/CreditHover";
 
 function App() {
@@ -54,13 +56,13 @@ function App() {
           <a href="/home" className="active">
             <AiOutlineHome />
           </a>
-          <a href="/">
+          <a href="/WalletPage">
             <BiWalletAlt />
           </a>
           <a href="/">
             <RiMoneyDollarCircleLine />
           </a>
-          <a href="/">
+          <a href="/SpendAnalysis">
             <GoGraph />
           </a>
           <a href="/">
