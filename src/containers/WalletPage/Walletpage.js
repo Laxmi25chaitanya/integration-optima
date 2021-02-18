@@ -1,6 +1,6 @@
 import React ,{useEffect,useState} from 'react';
 import './Wallpage.css';
-import './normalize.css';
+// import './normalize.css';
 import cardInfo from './cardInfo.json';
 import hsbc from './hsbc.png';
 import halifax from './halifax.png';
