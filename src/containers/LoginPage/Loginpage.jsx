@@ -72,13 +72,13 @@ const App = () => {
   };
 
   return (
-    <div className="text-center">
-      <img className="login-wallet-img" alt="wallet" src={Logo}></img>
-      <div className="form-signin">
+    <div className="lp-text-center">
+      <img className="lp-login-wallet-img" alt="wallet" src={Logo}></img>
+      <div className="lp-form-signin">
         <h1>Sign in here!</h1>
-        {error ? <p className="error-message">{`${message}`}</p> : null}
+        {error ? <p className="lp-error-message">{`${message}`}</p> : null}
         <br />
-        <div className="button1">
+        <div className="lp-button1">
           <input
             value={type}
             name="type"
@@ -100,7 +100,7 @@ const App = () => {
           id="userName"
           type="text"
           value={userName}
-          className="login-form-control"
+          className="lp-login-form-control"
           onChange={handleUsernameChange}
           holder="Enter Username"
         />
@@ -108,7 +108,7 @@ const App = () => {
           id="password"
           type="password"
           value={password}
-          className="login-form-control"
+          className="lp-login-form-control"
           onChange={handlePasswordChange}
           holder="Enter Password"
         />
@@ -121,7 +121,7 @@ const App = () => {
         </button>
         <br />
         {passwordUpdateStatus ? (
-          <span className="success-message">Password Updated!</span>
+          <span className="lp-success-message">Password Updated!</span>
         ) : (
           ""
         )}
