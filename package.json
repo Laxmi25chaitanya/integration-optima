@@ -10,7 +10,6 @@
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
     "chart.js": "^2.9.4",
-    "concurrently": "^5.3.0",
     "react": "^17.0.1",
     "react-animated-css": "^1.2.1",
     "react-chartjs-2": "^2.11.1",
@@ -33,7 +32,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "server": "json-server userCredentials.json -p 8000",
-    "all": "concurrently  \"npm run start\" \"npm run server\" "
+    "all": "concurrently  \"npm run start\" \"npx json-server --watch userCredentials.json --port 8000\" "
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -52,6 +51,7 @@
   },
   "devDependencies": {
     "@wojtekmaj/enzyme-adapter-react-17": "^0.4.1",
+    "concurrently": "^5.3.0",
     "css-loader": "^5.0.2",
     "enzyme": "^3.11.0",
     "jest-enzyme": "^7.1.2",

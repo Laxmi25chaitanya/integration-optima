@@ -127,3 +127,7 @@ img {
   background-color: #2d8259;
 }
 
+p{
+  font-size: inherit !important;
+}
+
