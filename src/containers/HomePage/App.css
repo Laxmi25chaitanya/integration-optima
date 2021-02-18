@@ -15,7 +15,7 @@ body{
 }
 .header-left {
   width: 85%;
-  border: 1.5px solid black;
+  /* border: 1.5px solid black; */
   padding: 10px;
   margin: 3px;
   margin-right: 0px;
@@ -23,7 +23,7 @@ body{
 }
 .header-right {
   width: 15%;
-  border: 1.5px solid black;
+  /* border: 1.5px solid black; */
   margin-top: 3px;
   margin-bottom: 3px;
   display: flex;
@@ -56,7 +56,7 @@ body{
   padding-right: 0em;
 }
 .menu {
-  width: 4%;
+  width: 6%;
   height: 480px;
   float: left;
 }
@@ -80,6 +80,6 @@ body{
 }
 
 .tdi-digits {
-  font-size: x-large;
+  /* font-size: x-large; */
   font-weight: bold;
 }
