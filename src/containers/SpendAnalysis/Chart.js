@@ -1,188 +1,136 @@
 import React from 'react'
-import { useState, useEffect } from "react"
+import {useState, useEffect} from "react"
 import axios from 'axios';
-import { Bar, Pie } from 'react-chartjs-2';
-import Budget from './Budget'
-const Chart = ({ month }) => {
-    //States
-    const [barchart, setBarChart] = useState({})
-    const [options, setOptions] = useState({})
-    const [weekexpense, setWeekExpense] = useState([])
+import Budget from './Charts/Budget'
+import BarChart from './Charts/BarChart';
+import PieChart from './Charts/PieChart';
+import DownTable from './Charts/Downtable'
+import amount0 from './images/amount0.gif';
+
+const Chart = ({month, year}) => {
+    const [pieChartLabels, setPieChartLabels] = useState([])
+    const [barChartInput, setBarChartInput] = useState([])
+    const [pieChartInput, setPieChartInput] = useState([])
+    const [detailExpenses, setDetailExpense] = useState([])
+    const [weekexpense, setWeekExpense] = useState({})
     const [dailyusage, setDailyUsage] = useState(0)
     const [totalBudget, setTotalBudget] = useState(0)
     const [remainingBudget, setRemainingBudget] = useState(0)
-    const [piedata, setPieData] = useState({})
-    const [Pieoptions, setPieOptions] = useState({})
-    let firstweek=0,secondweek=0,thirdweek=0,fourthweek=0,fifthweek=0,averageperday=0,
-            totalbudget=0,remainingbudget=0;
+    const monthyear = `${month}${year}`
+    let costByExpense = {};
+    let detailExpensesCal = []
+    let category = ['Groceries',
+        'Personal Care',
+        'Entertainment',
+        'Expenses',
+        'Income',
+        'Holidays',
+        'Utilities',
+        'Eating Out',
+        'Family',
+        'Shopping',
+        'Charity',
+        'Bills']
     const AddCharts = () => {
-        //Declaration
-        let weeks = []
-        //let piechart=[]
-        //1----Axios to Get Data
+        let weeks = [];
+        let firstweek = 0, secondweek = 0, thirdweek = 0, fourthweek = 0, fifthweek = 0, averageperday = 0,
+            totalbudget = 0, remainingbudget = 0;
         const getExpenseData = async () => {
-            const { data } = await axios('spendanalysis.json')
+            const {data} = await axios('spendanalysis.json',
+                {
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'userId':'121212'
+                    }
+                })
                 .catch(err => console.log(err));
-            setWeekExpense(data)
+            setWeekExpense(data);
         }
-        //End of getExpenseData
-        //2----Called Functions              
         getExpenseData();
         overallmonthsExpense();
-        //getByCategory();
-
-        setBarChart({
-            labels: ["1-7", "8-14", "15-21", "22-28", "29-31"],
-            datasets: [
-                {
-
-                    label: 'weekly spend',
-                    data: weeks,
-                    borderColor: ['rgba(22,85,79,20)',
-                        'rgba(22,85,79,20)',
-                        'rgba(22,85,79,20)',
-                        'rgba(22,85,79,20)'],
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.6)',
-                        'rgba(54, 162, 235, 0.6)',
-                        'rgba(255, 206, 86, 0.6)',
-                        'rgba(75, 192, 192, 0.6)',
-                        'rgba(153, 102, 255, 0.6)'
-                    ],
-                }
-            ]
-        })
-        //End of barGraph
-        setOptions({
-            legend: { display: false },
-            title: {
-                display: true,
-                text: 'Weekly Expense',
-                fontColor: 'black',
-                fontFamily: 'Helvetica Neue',
-                fontSize: 28,
-            },
-            responsive: true,
-            scales: {
-                xAxes: [{
-                    gridLines: {
-                        display: true,
-                    }
-                }],
-                yAxes: [{
-                    ticks: {
-                        min: 0,
-                        stepSize: 500,
-                        max: 3000,
-                        fontColor: 'black',
-                        fontFamily: 'Helvetica Neue',
-                        fontSize: 20,
-                    },
-                    gridLines: {
-                        display: false
-                    },
-                    labels: {
-                        fontColor: 'black',
-                        fontFamily: 'Helvetica Neue',
-                        fontSize: 20,
-                    }
-
-                }]
-            }
-        })
-        //--------BarChart
-
-
-        //---pie chart
-        setPieData({
-            labels: ["Groceries", "Holidays", "Eating Out", "Shopping"],
-            backgroundColor: [
-                'rgba(54, 162, 235, 0.6)',
-                'rgba(255, 99, 132, 0.6)',
-                'rgba(255, 206, 86, 0.6)',
-                'rgba(75, 192, 192, 0.6)',
-            ],
-            datasets: [{
-                data: [450, 820, 46, 75],
-                fill: false,
-                lineTension: 0.2,
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.6)',
-                    'rgba(54, 162, 235, 0.6)',
-                    'rgba(255, 206, 86, 0.6)',
-                    'rgba(75, 192, 192, 0.6)',
-                ],
-                borderColor: 'rgba(0,0,0,0.4)',
-                borderWidth: 2,
-
-            }]
-        })
-
-        setPieOptions({
-            title:{
-                display:true,
-                fontSize:20
-              },
-              legend:{
-                display:true,
-                position:'right'
-              }
-        })
+        getpiechart();
 
         function overallmonthsExpense() {
             Object.keys(weekexpense).forEach((key) => {
                 var expense = weekexpense[key];
                 Object.keys(expense).forEach((key2) => {
-                    if (expense[key2].spendMonthYear === `${month}2020`) {
-                        firstweek+=parseInt(expense[key2].firstWeek);
-                        secondweek+=parseInt(expense[key2].secondWeek);
-                        thirdweek+=parseInt(expense[key2].thirdWeek);
-                        fourthweek+=parseInt(expense[key2].fourthWeek);
-                        fifthweek+=parseInt(expense[key2].fifthWeek);                       
-                        averageperday+=parseInt(expense[key2].averagePerDay);
-                        remainingbudget+=parseInt(expense[key2].remainingBudget);
-                        totalbudget+=parseInt(expense[key2].totalBudget);
+                    if (expense[key2].spendMonthYear === monthyear) {
+                        firstweek += parseInt(expense[key2].firstWeek);
+                        secondweek += parseInt(expense[key2].secondWeek);
+                        thirdweek += parseInt(expense[key2].thirdWeek);
+                        fourthweek += parseInt(expense[key2].fourthWeek);
+                        fifthweek += parseInt(expense[key2].fifthWeek);
+                        averageperday += parseInt(expense[key2].averagePerDay);
+                        remainingbudget += parseInt(expense[key2].remainingBudget);
+                        totalbudget += parseInt(expense[key2].totalBudget);
                     }
                 })
             })
         }
+
         //End of Budget and Week analysis calculation
-        weeks.push(firstweek);
-        weeks.push(secondweek);
-        weeks.push(thirdweek);
-        weeks.push(fourthweek);
-        weeks.push(fifthweek);
+        function getpiechart() {
+            Object.keys(weekexpense).forEach((key) => {
+                var expense = weekexpense[key];
+                if (category.includes(key)) {
+                    Object.keys(expense).forEach((key2) => {
+                        if (expense[key2].spendMonthYear === monthyear) {
+                            if (expense[key2].totalBudget !== 0) {
+                                costByExpense[key] = expense[key2].totalBudget - expense[key2].remainingBudget
+                                detailExpensesCal.push(
+                                    {
+                                        category:key,
+                                        expense: (expense[key2].totalBudget - expense[key2].remainingBudget).toFixed(2),
+                                        totalbudget:expense[key2].totalBudget.toFixed(2),
+                                        remainingbudget:expense[key2].remainingBudget.toFixed(2)
+                                    }
+                                )
+                            }
+                        }
+                    })
+                }
+            })
+        }
+
+        weeks.push(firstweek, secondweek, thirdweek, fourthweek, fifthweek);
+        setPieChartInput(Object.values(costByExpense));
+        setPieChartLabels(Object.keys(costByExpense));
+        setBarChartInput(weeks);
         setDailyUsage(averageperday);
         setRemainingBudget(remainingbudget);
         setTotalBudget(totalbudget);
-        //Pie Chart Function
-        /*function getByCategory(){
-                Object.keys(weekexpense).forEach((key)=>{
-                    example=weekexpense[key];
-                })
-
-        }*/
+        setDetailExpense(detailExpensesCal);
     }
-
-    //Use Effect
     useEffect(() => {
         AddCharts();
     }, [month])
-    //End of use Effect
 
-    return (
-        <>
-            <div className="chartgrid">
-                <div className="barchart chart">
-                    <Bar data={barchart} options={options} />
-                </div>
-                <div className="donutchart chart">
-                    <Pie data={piedata} options={Pieoptions} />
+    if (totalBudget === 0) {
+        return (
+            <div className='amount0'>
+                <img src={amount0} alt="amount0"/>
+                <br></br>
+                <div className='displayline'>
+                    <p> {month} {year}, spend amount is £0</p>
                 </div>
             </div>
-            <Budget dailyusage={dailyusage} remainingBudget={remainingBudget} totalBudget={totalBudget} />
-        </>
-    )
+        )
+    } else {
+        return (
+            <div className="page-body">
+                <div className="chartgrid">
+                    <div className="barchart card col">
+                        <BarChart barChartInput={barChartInput}/>
+                    </div>
+                    <div className="piechart card col">
+                        <PieChart pieChartInput={pieChartInput} pieChartLabels={pieChartLabels}/>
+                    </div>
+                </div>
+                <Budget dailyusage={dailyusage} remainingBudget={remainingBudget} totalBudget={totalBudget}/>
+                <DownTable detailExpenses={detailExpenses}/>
+            </div>
+        )
+    }
 }
 
 export default Chart
