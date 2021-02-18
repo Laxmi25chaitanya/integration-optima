@@ -17,7 +17,7 @@ function App() {
           <span id="main-head">optima</span>
           <span id="sub">Pay Less,Save More</span>
           <span id="bell">
-            <img className="layoutimg" src="./layoutassets/bell.png" alt="" height="30px" />
+            <img className="layoutimg" src="./layoutassets/bell.png" alt="" height="30px"  />
           </span>
         </div>
         <div className="header-right">

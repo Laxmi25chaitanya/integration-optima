@@ -14,7 +14,7 @@ class CreditHover extends Component {
       const bank = this.props.bankdetails;
       return (<div className="hover-card-main">
         <div>
-          <img className="layoutimg" src={`./homeassets/${bank.cardimage}`} alt={bank.bankName} height="110px" />
+          <img className="homeimg" src={`./homeassets/${bank.cardimage}`} alt={bank.bankName} height="110px" />
         </div>
         <div className="hover-text-left ">
           <div>

@@ -8,6 +8,7 @@ import { BsFillInfoCircleFill } from "react-icons/bs";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import "./homepage.css";
+import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 class Financials extends Component {
   constructor(props) {
     super(props);
@@ -90,12 +91,11 @@ class Financials extends Component {
                     Looking for best option to maximize your savings and optimise
                     your expenses
                 </p>
-                  <button className="btn btn-success btn-xs">
-                    {" "}
+                  <span className="btn btn-success btn-xs">
                   &nbsp;&nbsp;Yes&nbsp;
                   <GoArrowRight className="yesarrow" />
                   &nbsp;
-                </button>
+                </span>
                 </div>
               </div>
               <div className="main-left-bottom">
@@ -129,7 +129,7 @@ class Financials extends Component {
                         <div className="inner-one">
                           <div className="cardimage">
 
-                            <img className="layoutimg" src={`./homeassets/${bank.cardimage}`} alt={bank.bankName}
+                            <img className="homeimg" src={`./homeassets/${bank.cardimage}`} alt={bank.bankName}
                               height="50px"></img>
                           </div>
                           <div>
@@ -183,7 +183,7 @@ class Financials extends Component {
                           data-background-color="white">
                           <div className="inner-one">
                             <div className="cardimage">
-                              <img className="layoutimg" src={`./homeassets/${bank.cardimage}`} alt={bank.bankName}
+                              <img className="homeimg" src={`./homeassets/${bank.cardimage}`} alt={bank.bankName}
                                 height="50px"></img>
                             </div>
                             <div>
@@ -232,14 +232,12 @@ class Financials extends Component {
             <div className="main-right">
                <Carousel showThumbs={false} autoPlay={true} infiniteLoop={true} useKeyboardArrows={true}>
                 <div>
-                    <img src="./homeassets/imgone.png" alt="" className="image" />
+                    <img src="./homeassets/item1.png" alt="" className="image" />
                 </div>
                 <div>
-                    <img src="./homeassets/imgone.png" alt="" className="image" />
+                    <img src="./homeassets/item2.png" alt="" className="image" />
                 </div>
-                <div>
-                    <img src="./homeassets/imgone.png" alt="" className="image" />
-                </div>
+               
             </Carousel> 
 
             </div>
