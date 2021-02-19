@@ -9,6 +9,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import "./homepage.css";
 import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import api from '../../config/api'
 class Financials extends Component {
   constructor(props) {
     super(props);
@@ -31,18 +32,18 @@ class Financials extends Component {
   }
 
   async getUserData() {
-    const response = await fetch('http://localhost:8000/userdata');
+    const response = await fetch(api.userdata);
     const json = await response.json();
     return json;
   }
 
   async getDebitData() {
-    const response = await fetch('http://localhost:8000/debit');
+    const response = await fetch(api.debit);
     const json = await response.json();
     return json;
   }
   async getCreditData() {
-    const response = await fetch('http://localhost:8000/credit');
+    const response = await fetch(api.credit);
     const json = await response.json();
     return json;
   }

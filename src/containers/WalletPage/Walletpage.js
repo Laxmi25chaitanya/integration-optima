@@ -6,12 +6,12 @@ import halifax from './halifax.png';
 import barclays from './barclays.png';
 import Header from "../../components/Header/Header";
 import Menu from "../../components/Menu/Menu";
-
+import api from '../../config/api'
 function WalletPage() {
 
     const [data, setData] = useState([]);
     const getData = () => {
-        fetch('data.json'
+        fetch(api.totalBalances
             , {
                 headers: {
                     'Content-Type': 'application/json',

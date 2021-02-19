@@ -6,6 +6,7 @@ import BarChart from './Charts/BarChart';
 import PieChart from './Charts/PieChart';
 import DownTable from './Charts/Downtable'
 import amount0 from './images/amount0.gif';
+import api from '../../config/api';
 
 const Chart = ({month, year}) => {
     const [pieChartLabels, setPieChartLabels] = useState([])
@@ -36,7 +37,7 @@ const Chart = ({month, year}) => {
         let firstweek = 0, secondweek = 0, thirdweek = 0, fourthweek = 0, fifthweek = 0, averageperday = 0,
             totalbudget = 0, remainingbudget = 0;
         const getExpenseData = async () => {
-            const {data} = await axios('spendanalysis.json',
+            const {data} = await axios(api.spendanalysis,
                 {
                     headers: {
                         'Content-Type': 'application/json',
