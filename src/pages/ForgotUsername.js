@@ -54,13 +54,12 @@ const ForgotUsername = () => {
     <div>
       <img
         src={Logo}
-        className="login-wallet-img"
-        style={{ height: "400px", width: "400px" }}
+        className="lp-login-wallet-img"
       ></img>
-      <div className="form-signin">
+      <div className="lp-form-signin">
         <h1>Forgot Username</h1>
-        {error ? <p className="error-message">{`${message}`}</p> : null}
-        <div className="button1">
+        {error ? <p className="lp-error-message">{`${message}`}</p> : null}
+        <div className="lp-button1">
           <input
             name="type"
             value={type}
@@ -82,12 +81,12 @@ const ForgotUsername = () => {
         <input
           name="mailId"
           type="email"
-          className="login-form-control"
+          className="lp-login-form-control"
           value={mailId}
           placeholder="Enter your Mail ID"
           onChange={handleMailid}
         />
-        <button onClick={handleSearch} className="login-button">
+        <button onClick={handleSearch} className="lp-login-button">
           <span>Search</span>
         </button>
       </div>

@@ -56,17 +56,16 @@ const ChangeUsername = () => {
     <div>
       <img
         src={Logo}
-        className="login-wallet-img"
-        style={{ height: "300px", width: "350px" }}
+        className="lp-login-wallet-img"
       ></img>
-      <div className="form-signin">
+      <div className="lp-form-signin">
         <h1>Reset Username</h1>
-        {error ? <p className="error-message">{`${message}`}</p> : ""}
+        {error ? <p className="lp-error-message">{`${message}`}</p> : ""}
 
         <input
           type="text"
           placeholder="Enter New Username"
-          className="login-form-control"
+          className="lp-login-form-control"
           value={newUserName}
           onChange={(e) => {
             setError(false);
@@ -77,7 +76,7 @@ const ChangeUsername = () => {
         <button
           type="submit"
           onClick={handleChangeUserName}
-          className="login-button"
+          className="lp-login-button"
         >
           <span>Reset Username</span>
         </button>

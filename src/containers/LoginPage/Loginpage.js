@@ -33,7 +33,8 @@ const App = ({ setToken }) => {
     if (!errorStatus) {
       localStorage.setItem("userName", user);
       authenticate();
-      // history.push("/spendAnalysis");
+      console.log("*********token",errorStatus)
+      history.push("/home");
     }
   }, [errorStatus]);
 
@@ -50,7 +51,7 @@ const App = ({ setToken }) => {
     // });
     const response = await authenticateLogin({ userName, password });
     const token = response.token;
-    setToken(token);
+    // setToken(token);
   };
   const handleUsernameChange = (e) => {
     setError(false);
@@ -88,13 +89,13 @@ const App = ({ setToken }) => {
     history.push("/forgotUsername");
   };
   return (
-    <div className="text-center">
-      <img className="login-wallet-img" alt="wallet" src={Logo}></img>
-      <div className="form-signin">
+    <div className="lp-text-center">
+      <img className="lp-login-wallet-img" alt="wallet" src={Logo}></img>
+      <div className="lp-form-signin">
         <h1>Sign in here!</h1>
-        {error ? <p className="error-message">{`${message}`}</p> : null}
+        {error ? <p className="lp-error-message">{`${message}`}</p> : null}
         <br />
-        <div className="button1">
+        <div className="lp-button1">
           <input
             value={type}
             name="type"
@@ -112,40 +113,40 @@ const App = ({ setToken }) => {
           onChange={handleTypeChange}
         />
         <span>Commercial</span>
-        <Label
+        <input
           id="userName"
           type="text"
           value={userName}
-          className="login-form-control"
+          className="lp-login-form-control"
           onChange={handleUsernameChange}
-          holder="Enter Username"
+          placeholder="Enter Username"
         />
-        <Label
+        <input
           id="password"
           type="password"
           value={password}
-          className="login-form-control"
+          className="lp-login-form-control"
           onChange={handlePasswordChange}
-          holder="Enter Password"
+          placeholder="Enter Password"
         />
         <br />
-        <button className="login-button" onClick={handleSubmit}>
+        <button className="lp-login-button" onClick={handleSubmit}>
           <span>Sign In</span>
         </button>
-        <button className="login-button" onClick={handleForgotPassword}>
+        <button className="lp-login-button" onClick={handleForgotPassword}>
           <span>Forgot Password</span>
         </button>
-        <button className="login-button" onClick={handleForgotUsername}>
+        <button className="lp-login-button" onClick={handleForgotUsername}>
           <span>Forgot Username</span>
         </button>
         <br />
         {passwordUpdateStatus ? (
-          <span className="success-message">Password Updated!</span>
+          <span className="lp-success-message">Password Updated!</span>
         ) : (
           ""
         )}
         {usernameUpdateStatus ? (
-          <span className="success-message">Username Updated!</span>
+          <span className="lp-success-message">Username Updated!</span>
         ) : (
           ""
         )}

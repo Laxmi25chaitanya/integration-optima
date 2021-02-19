@@ -56,11 +56,11 @@ const ForgotPassword = () => {
 
   return (
     <div>
-      <img src={Logo} className="login-wallet-img" style={{ height: "400px", width: "400px" }}></img>
-      <div className="form-signin">
+      <img src={Logo} className="lp-login-wallet-img" alt="logo"></img>
+      <div className="lp-form-signin">
         <h1>Forgot Password</h1>
-        {error ? <p className="error-message">{`${message}`}</p> : null}
-        <div className="button1">
+        {error ? <p className="lp-error-message">{`${message}`}</p> : null}
+        <div className="lp-button1">
           <input
             name="type"
             value={type}
@@ -82,13 +82,13 @@ const ForgotPassword = () => {
         <input
           name="Username"
           type="text"
-          className="login-form-control"
+          className="lp-login-form-control"
           value={userName}
           placeholder="Enter Username"
           onChange={handleUsernameChange}
         />
         <br />
-        <button onClick={handleSearch} className="login-button">
+        <button onClick={handleSearch} className="lp-login-button">
           <span>Search</span>
         </button>
       </div>

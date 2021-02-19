@@ -1,12 +1,11 @@
 For Installing the dependencies
 
 1. npm install
-2. npm install -g json-server --save
 
 To run the application execute the below cmd in the optima-fe path
 
-1. json-server --watch userCredentials.json
-2. npm start
+1. npm run nodemon -> node server will be running in the port 8080
+2. npm start -> development build will be running in the port 3000
 
 src/
 app/  

@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: rgb(236, 179, 72);
+  background-color: rgb(236, 179, 72) !important;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -10,14 +10,14 @@ body {
   font-family: "Courier New", Courier, monospace;
 }
 
-.login-wallet-img {
-  height: 400px;
+.lp-login-wallet-img {
   width: 40%;
   float: left;
   padding: 50px 40px;
+  border: none
 }
 
-.form-signin {
+.lp-form-signin {
   margin: 50px;
   padding: 20px 0;
   background-color: rgb(51, 94, 110);
@@ -30,18 +30,18 @@ body {
   font-family: "Courier New", Courier, monospace;
 }
 
-.form-signin p {
+.lp-form-signin p {
   color: red;
   font-family: "Courier New", Courier, monospace;
 }
 
-.button1 {
+.lp-button1 {
   margin-top: 5px 0;
   float: left;
   padding-left: 70px;
 }
 
-.login-form-control {
+.lp-login-form-control {
   width: 260px;
   padding-top: 15px;
   margin-top: 10px;
@@ -55,7 +55,7 @@ body {
   font-family: "Courier New", Courier, monospace;
 }
 
-.login-button {
+.lp-login-button {
   width: 270px;
   padding: 15px 20px;
   background-color: brown;
@@ -64,16 +64,16 @@ body {
   margin: 10px;
 }
 
-.login-button:hover {
+.lp-login-button:hover {
   background-color: aqua;
   color: black;
 }
 
-.login-button span {
+.lp-login-button span {
   font-family: "Courier New", Courier, monospace;
 }
 
-.success-message {
+.lp-success-message {
   color: green;
   font-family: "Courier New", Courier, monospace;
   font-weight: bold;
@@ -81,7 +81,7 @@ body {
   background-color: aliceblue;
 }
 
-.error-message {
+.lp-error-message {
   color: red;
   font-weight: bold;
   background-color: white;
