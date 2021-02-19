@@ -110,7 +110,7 @@ const Chart = ({month, year}) => {
                 <img src={amount0} alt="amount0"/>
                 <br></br>
                 <div className='displayline'>
-                    <p> {month} {year}, spend amount is £0</p>
+                      {month} {year}, spend amount is £0
                 </div>
             </div>
         )
