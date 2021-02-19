@@ -25,10 +25,10 @@ ReactDOM.render(
         <Route exact path="/changePassword" component={ChangePassword} />
         <Route exact path="/forgotusername" component={ForgotUsername} />
         <Route exact path="/changeusername" component={ChangeUsername} />
-        <ProtectedRoute exact path="/home" component={layout} />
-        <ProtectedRoute exact path="/spendAnalysis" component={SpendAnalysis} />
-        <ProtectedRoute exact path="/WalletPage" component={WalletPage} />
-        <ProtectedRoute path="/spendanalysis/budgetanalysis" component={BudgetAnalysis} />
+        <Route exact path="/home" component={layout} />
+        <Route exact path="/spendAnalysis" component={SpendAnalysis} />
+        <Route exact path="/WalletPage" component={WalletPage} />
+        <Route path="/spendanalysis/budgetanalysis" component={BudgetAnalysis} />
       </Provider>
     </Switch>
   </Router>,

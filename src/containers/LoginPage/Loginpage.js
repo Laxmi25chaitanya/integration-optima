@@ -156,6 +156,6 @@ const App = ({ setToken }) => {
 };
 
 export default App;
-App.propTypes = {
-  setToken: PropTypes.func.isRequired,
-};
+// App.propTypes = {
+//   setToken: PropTypes.func.isRequired,
+// };

@@ -49,7 +49,7 @@ const ChangePassword = (props) => {
     }
   };
   return (
-    <div>
+    <div className="lp-text-center">
       <img src={Logo} className="lp-login-wallet-img" ></img>
       <div className="lp-form-signin">
         <h1>Reset Password</h1>

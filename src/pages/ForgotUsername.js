@@ -51,7 +51,7 @@ const ForgotUsername = () => {
     }
   };
   return (
-    <div>
+    <div className="lp-text-center">
       <img
         src={Logo}
         className="lp-login-wallet-img"
