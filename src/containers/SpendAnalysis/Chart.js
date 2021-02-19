@@ -6,6 +6,7 @@ import BarChart from './Charts/BarChart';
 import PieChart from './Charts/PieChart';
 import DownTable from './Charts/Downtable'
 import amount0 from './images/amount0.gif';
+import api from '../../config/api';
 
 const Chart = ({month, year}) => {
     const [pieChartLabels, setPieChartLabels] = useState([])
@@ -36,7 +37,7 @@ const Chart = ({month, year}) => {
         let firstweek = 0, secondweek = 0, thirdweek = 0, fourthweek = 0, fifthweek = 0, averageperday = 0,
             totalbudget = 0, remainingbudget = 0;
         const getExpenseData = async () => {
-            const {data} = await axios('spendanalysis.json',
+            const {data} = await axios(api.spendanalysis,
                 {
                     headers: {
                         'Content-Type': 'application/json',
@@ -111,18 +112,18 @@ const Chart = ({month, year}) => {
                 <img src={amount0} alt="amount0"/>
                 <br></br>
                 <div className='displayline'>
-                    <p> {month} {year}, spend amount is £0</p>
+                      {month} {year}, spend amount is £0
                 </div>
             </div>
         )
     } else {
         return (
-            <div className="page-body">
-                <div className="chartgrid">
-                    <div className="barchart card col">
+            <div className="sp-page-body">
+                <div className="sp-chartgrid">
+                    <div className="sp-barchart sp-card sp-col">
                         <BarChart barChartInput={barChartInput}/>
                     </div>
-                    <div className="piechart card col">
+                    <div className="sp-piechart sp-card sp-col">
                         <PieChart pieChartInput={pieChartInput} pieChartLabels={pieChartLabels}/>
                     </div>
                 </div>

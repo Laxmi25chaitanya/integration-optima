@@ -1,0 +1,97 @@
+body {
+  font-size: 15px !important;
+}
+
+.layoutimg {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  float: none;
+}
+
+.Header {
+  display: flex;
+}
+
+.header-left {
+  width: 85%;
+  /* border: 1.5px solid black; */
+  padding: 10px;
+  margin: 3px;
+  margin-right: 0px;
+  float: left;
+}
+
+.header-right {
+  width: 15%;
+  /* border: 1.5px solid black; */
+  margin-top: 3px;
+  margin-bottom: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-left: none;
+}
+
+#main-head {
+  text-transform: uppercase;
+  font-size: larger;
+  color: red;
+  font-weight: bold;
+}
+
+#sub {
+  font-size: smaller;
+  font-style: italic;
+  font-weight: bold;
+}
+
+#bell {
+  float: right;
+}
+
+.contact {
+  height: 40px;
+  width: 10rem;
+  float: right;
+  padding-left: 1em;
+  padding-right: 0em;
+}
+
+.menu {
+  width: 6%;
+  height: 480px;
+  float: left;
+}
+
+.menu a {
+  background-color: #eee;
+  color: black;
+  display: block;
+  padding: 12px;
+  height: 80px;
+  padding-top: 50%;
+}
+
+.menu a:hover {
+  background-color: #ccc;
+}
+
+.menu a.active {
+  background-color: darkgreen;
+  color: white;
+}
+
+.tdi-digits {
+  /* font-size: x-large; */
+  font-weight: bold;
+}
+
+.username-call {
+  color: white;
+  border: 2px solid;
+  border-radius: 5px;
+  background-color: green;
+  padding: 2px 5px;
+
+}

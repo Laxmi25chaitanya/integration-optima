@@ -8,7 +8,12 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
+    "bootstrap": "^4.6.0",
     "chart.js": "^2.9.4",
+    "express": "^4.17.1",
+    "json-server": "^0.16.3",
+    "nodemon": "^2.0.7",
     "react": "^17.0.1",
     "react-animated-css": "^1.2.1",
     "react-chartjs-2": "^2.11.1",
@@ -16,9 +21,11 @@
     "react-icons": "^4.2.0",
     "react-progressbar-semicircle": "^1.2.1",
     "react-redux": "^7.1.3",
+    "react-responsive-carousel": "^3.2.12",
     "react-router-dom": "^5.2.0",
-    "react-tabs": "^3.2.0",
     "react-scripts": "4.0.2",
+    "react-tabs": "^3.2.0",
+    "react-tooltip": "^4.2.14",
     "redux-devtools-extension": "^2.13.8",
     "redux-promise": "^0.6.0",
     "redux-thunk": "^2.3.0"
@@ -27,7 +34,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "nodemon": "nodemon server.js",
+    "server": "json-server userCredentials.json -p 8000",
+    "all": "concurrently  \"npm run start\" \"npx json-server --watch userCredentials.json --port 8000\" "
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -46,6 +56,7 @@
   },
   "devDependencies": {
     "@wojtekmaj/enzyme-adapter-react-17": "^0.4.1",
+    "concurrently": "^5.3.0",
     "css-loader": "^5.0.2",
     "enzyme": "^3.11.0",
     "jest-enzyme": "^7.1.2",

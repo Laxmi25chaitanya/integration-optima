@@ -1,30 +1,35 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import "./index.css";
 import App from "./App";
-import LoginPage from "./containers/LoginPage/Loginpage";
+import ProtectedRoute from "./routes/protectedRoute";
 import ForgotPassword from "./pages/ForgotPassword";
 import ChangePassword from "./pages/ChangePassword";
+import ForgotUsername from "./pages/ForgotUsername";
+import ChangeUsername from "./pages/ChangeUsername";
 import SpendAnalysis from './containers/SpendAnalysis/SpendAnalysis';
-import WalletPage from "./containers/WalletPage/Walletpage.js";
 import BudgetAnalysis from './containers/SpendAnalysis/BudgetAnalysis/BudgetAnalysis';
+import WalletPage from './containers/WalletPage/Walletpage'
 import store from "./app/store";
+import "./index.css";
 import { Provider } from "react-redux";
 import * as serviceWorker from "./serviceWorker";
+import layout from "./containers/HomePage/App"
 
 ReactDOM.render(
   <Router>
     <Switch>
-    <Provider store={store}>
-        <Route exact path="/" component={LoginPage} />
-        <Route exact path="/app" component={App} />
-        <Route exact path="/WalletPage" component={WalletPage} />
-        <Route exact path="/spendAnalysis" component={SpendAnalysis} />
-        <Route path="/spendanalysis/budgetanalysis" component={BudgetAnalysis} />
+      <Provider store={store}>
+        <Route exact path="/" component={App} />
         <Route exact path="/forgotPassword" component={ForgotPassword} />
         <Route exact path="/changePassword" component={ChangePassword} />
-    </Provider>
+        <Route exact path="/forgotusername" component={ForgotUsername} />
+        <Route exact path="/changeusername" component={ChangeUsername} />
+        <Route exact path="/home" component={layout} />
+        <Route exact path="/spendAnalysis" component={SpendAnalysis} />
+        <Route exact path="/WalletPage" component={WalletPage} />
+        <Route path="/spendanalysis/budgetanalysis" component={BudgetAnalysis} />
+      </Provider>
     </Switch>
   </Router>,
   document.getElementById("root")

@@ -1,30 +1,39 @@
-*{
-    box-sizing: border-box;
-    padding: 0;
-    margin:0;
-}
+
 .sp-container{
-    width: 1200px;
+    width: 1100px;
     margin: 0 auto;
     user-select: none;
     background-color: #f5f6fa;
     padding-bottom: 40px;
 }
 
+.amount0{
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.displayline{
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
 .f-grid {
     display: flex;
 }
-.f-grid .col {
+.f-grid .sp-col {
     flex: 1;
 }
-.topsearch{
+.sp-topsearch{
     height:250px;
     margin-bottom: -14rem;
 }
-.middle {
+.sp-middle {
     text-align: center;
 }
-.topnav{
+.sp-topnav{
     background-color: #007550;
     color: white;
     display: flex;
@@ -33,18 +42,18 @@
     border-radius: 2px;
 }
 
-.topnav h2{
+.sp-topnav h2{
     padding-top: 1.8rem ;
     font-weight: 400;
     font-size: 40px;
     
 }
-.arrow{
+.sp-arrow{
     padding-top: 6rem;
     font-size: 50px;
     cursor: pointer;
 }
-.arrowbutton{
+.sp-arrowbutton{
     background-color: #007550;
     color: white;
     font-size: 50px;
@@ -55,12 +64,12 @@
 }
 
 /*End of topnavbar*/
-.chartgrid{
+.sp-chartgrid{
     justify-content: space-evenly;
     display: flex;
 }
 
-.card{
+.sp-card{
     position: relative;
     display: block;
     background-color: #fff;
@@ -71,67 +80,67 @@
     box-shadow: 0 1px 3px 0 rgb(37 32 31 / 30%);
     border-radius: .75rem;
 }
-.col {
+.sp-col {
     padding: 40px;
 }
 
-.chartgrid .col {
+.sp-chartgrid .sp-col {
     width: 45%;
 }
 
-.barchart{
+.sp-barchart{
     padding: 10px;
     padding-top: 2rem;
 }
-.piechart{
+.sp-piechart{
     padding: 10px;
 
 }
 /*End of Chart*/
 
-.budget{
+.sp-budget{
     background-color: #20b2aa;
     padding: 15px;
     font-size: 20px;
 }
 
-.link-tag {
+.sp-link-tag {
     text-align: center;
     font-weight: bold;
     font-size: 30px;
 }
-.link-tag a{
+.sp-link-tag a{
     color: yellow;}
 
-.perday-cost {
+.sp-perday-cost {
     display: flex;
     flex-direction: column;
     text-align: center;
 }
-.amount0{   
+.sp-amount0{
     display: inline;
 }
-.amount0 img{
+.sp-amount0 img{
     width: 400px;
     
 }
-.displayline p{
+.sp-displayline p{
     font-family: Georgia, 'Times New Roman', Times, serif;   
     padding-top: 2rem;
     text-align: center;
     font-size: 2rem;
 }
 /*DownTable*/
-.downtab{
+.sp-downtab{
     background-color: white;
     margin: 0 40px 20px 40px;
 }
-.downnav{
+.sp-downnav{
     padding-top: 0.5rem;
     align-items: center;
 
 }
-.downtitles{
+.sp-downtitles{
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -152,13 +161,13 @@ li{
     box-shadow: 0 0 3px black;
 }
 
-.downtable h1{
+.sp-downtable h1{
     font-size: 20px;
     margin-bottom: 10px;
     margin-top: 10px;
     text-align: center;
 }
-.downtable p{
+.sp-downtable p{
     font-size: 20px;
     margin-bottom: 10px;
     margin-top: 10px;
