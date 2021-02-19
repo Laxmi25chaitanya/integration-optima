@@ -1,8 +1,8 @@
-body{
+body {
   font-size: 15px !important;
 }
 
-.layoutimg{
+.layoutimg {
   width: 40px;
   height: 40px;
   padding: 0;
@@ -12,6 +12,7 @@ body{
 .Header {
   display: flex;
 }
+
 .header-left {
   width: 85%;
   /* border: 1.5px solid black; */
@@ -20,6 +21,7 @@ body{
   margin-right: 0px;
   float: left;
 }
+
 .header-right {
   width: 15%;
   /* border: 1.5px solid black; */
@@ -43,6 +45,7 @@ body{
   font-style: italic;
   font-weight: bold;
 }
+
 #bell {
   float: right;
 }
@@ -54,6 +57,7 @@ body{
   padding-left: 1em;
   padding-right: 0em;
 }
+
 .menu {
   width: 6%;
   height: 480px;
@@ -81,4 +85,13 @@ body{
 .tdi-digits {
   /* font-size: x-large; */
   font-weight: bold;
+}
+
+.username-call {
+  color: white;
+  border: 2px solid;
+  border-radius: 5px;
+  background-color: green;
+  padding: 2px 5px;
+
 }

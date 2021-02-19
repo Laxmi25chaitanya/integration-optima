@@ -10,10 +10,12 @@ import { CgMail } from "react-icons/cg";
 import Financials from "./Financials";
 import Loginpage from "../LoginPage/Loginpage";
 import WalletPage from "../WalletPage/Walletpage";
-import SpendAnalysis from "../SpendAnalysis/SpendAnalysis"
-// import layout from "../HomePage/CreditHover";
+import SpendAnalysis from "../SpendAnalysis/SpendAnalysis";
 
+// import layout from "../HomePage/CreditHover";
 function App() {
+
+  let userName = localStorage.getItem("userName");
   const handleSignOut = () => {
     localStorage.clear();
     window.location.reload();
@@ -41,10 +43,11 @@ function App() {
             alt=""
             height="30px"
           />
-          <select name="users" id="users">
+          {/* <select name="users" id="users">
             <option value="alice">Alice</option>
             <option value="bob">Bob</option>
-          </select>
+          </select> */}
+          <span className="username-call" >Hello {userName}!</span>
 
           <a href="/">
             <img
