@@ -25,7 +25,6 @@ const PieChart = ({pieChartInput, pieChartLabels}) => {
                     'rgba(130, 119, 23)',
                     'rgba(54, 162, 235)',
 
-
                 ],
                 borderColor: 'rgba(0,0,0)',
                 borderWidth: 0,

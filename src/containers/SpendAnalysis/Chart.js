@@ -39,7 +39,8 @@ const Chart = ({month, year}) => {
             const {data} = await axios('spendanalysis.json',
                 {
                     headers: {
-                        'Content-Type': 'application/json'
+                        'Content-Type': 'application/json',
+                        'userId':'121212'
                     }
                 })
                 .catch(err => console.log(err));
