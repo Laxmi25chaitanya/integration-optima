@@ -32,6 +32,7 @@ p {
   padding: 47px 18px;
   max-width: 35%;
   max-height: 5%;
+  margin-left: 70px !important;
 }
 
 .hp1 {
@@ -137,7 +138,7 @@ p {
   height: 50px !important;
   border-radius: 0px 0px 10px 10px;
   background-color: #2d8259 !important;
-  margin: 40px 0px 0px 0px !important;
+  margin: 15px 0px 0px 0px !important;
 }
 
 #myImg {
@@ -170,3 +171,4 @@ p {
 .Link3 {
   margin-left: 165px !important;
 }
+
