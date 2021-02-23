@@ -1,0 +1,14 @@
+name: optima-fe
+image:
+  repository: gcr.io/wipro-gcp-kubernetes-poc/optima-fe
+  tag: latest
+  pullPolicy: Always
+service:
+  name: optima-fe-svc
+  type: ClusterIP
+  port: 3000
+  targetPort: 3000
+  protocol: TCP
+ingress:
+  name: optima-fe-ingress
+  path: /optima-fe(/|$)(.*)
