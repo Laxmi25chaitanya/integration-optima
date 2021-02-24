@@ -1,7 +1,8 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import './Wallpage.css';
 import Menu from "../../components/Menu/Menu"
 import Header from "../../components/Header/Header"
+import api from '../../config/api'
 import { Component } from 'react';
 
 class WalletPage extends Component{
@@ -23,13 +24,13 @@ class WalletPage extends Component{
   }
 
   async getUserData() {
-    const response = await fetch('http://localhost:8000/userdata');
+    const response = await fetch(api.userdata);
     const json = await response.json();
     return json;
   }
 
   async getDebitData() {
-    const response = await fetch('http://localhost:8000/debit');
+    const response = await fetch(api.debit);
     const json = await response.json();
     return json;
   }
