@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import './Wallpage.css';
 import Menu from "../../components/Menu/Menu"
 import Header from "../../components/Header/Header"
