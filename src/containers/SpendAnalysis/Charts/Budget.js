@@ -8,16 +8,16 @@ const Budget = ({ dailyusage, remainingBudget, totalBudget }) => {
 
     return (
         <div className='f-grid'>
-            <div className="col">
-                <div className="budget card">
-                    <div className="link-tag">
+            <div className="sp-col">
+                <div className="sp-budget sp-card">
+                    <div className="sp-link-tag">
                         <Link to='/spendanalysis/budgetanalysis' >
                             Budget
                         </Link>
                     </div>
                     <SemiCircleProgressBar percentage={average} circleRadius={100} showPercentValue strokeWidth={20} stroke='#fbc02d'
                                            diameter={325} />
-                    <div className="perday-cost">
+                    <div className="sp-perday-cost">
                         <h2>£{dailyusage} Per day</h2>
                         <h2>£{remainingBudget} Remaining out of £{totalBudget}</h2>
                     </div>

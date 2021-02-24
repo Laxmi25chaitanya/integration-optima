@@ -14,7 +14,6 @@ const ChangePassword = (props) => {
   const userName = location.state.userName;
   const type = location.state.type;
   const dispatch = useDispatch();
-  //  let errorStatus = useSelector((state) => state.location.error);
   const [newPass, setNewPass] = useState("");
   const [confirmPass, setConfirmPass] = useState("");
   const [error, setError] = useState(false);
@@ -25,7 +24,6 @@ const ChangePassword = (props) => {
   useEffect(() => {
     if (passwordUpdateStatus) {
       alert("Password Updated!");
-      // errorStatus = true;
       setTimeout(() => {
         history.push({
           pathname: "/",
@@ -51,16 +49,16 @@ const ChangePassword = (props) => {
     }
   };
   return (
-    <div>
-      <img src={Logo} style={{ height: "300px", width: "350px" }}></img>
-      <div className="form-signin">
+    <div className="lp-text-center">
+      <img src={Logo} className="lp-login-wallet-img" ></img>
+      <div className="lp-form-signin">
         <h1>Reset Password</h1>
-        {error ? <p className="error-message">{`${message}`}</p> : ""}
+        {error ? <p className="lp-error-message">{`${message}`}</p> : ""}
 
         <input
           type="password"
           placeholder="Enter New password"
-          className="form-control"
+          className="lp-login-form-control"
           value={newPass}
           onChange={(e) => {
             setError(false);
@@ -72,13 +70,13 @@ const ChangePassword = (props) => {
           type="password"
           value={confirmPass}
           placeholder="Confirm Password"
-          className="form-control"
+          className="lp-login-form-control"
           onChange={(e) => {
             setError(false);
             setConfirmPass(e.target.value);
           }}
         />
-        <button type="submit" onClick={handleChangePassword}>
+        <button type="submit" onClick={handleChangePassword} className="lp-login-button">
           <span>Reset Password</span>
         </button>
       </div>

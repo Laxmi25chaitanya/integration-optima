@@ -1,0 +1,40 @@
+steps:
+  - id: Docker Build
+    name: "gcr.io/cloud-builders/docker"
+    args:
+      ["build", "-t", "gcr.io/$PROJECT_ID/optima-fe:$SHORT_SHA", "."]
+
+  - id: Docker Tag
+    name: "gcr.io/cloud-builders/docker"
+    args:
+      [
+        "tag",
+        "gcr.io/$PROJECT_ID/optima-fe:$SHORT_SHA",
+        "gcr.io/$PROJECT_ID/optima-fe:latest",
+      ]
+
+  - id: Docker Push version
+    name: "gcr.io/cloud-builders/docker"
+    args: ["push", "gcr.io/$PROJECT_ID/optima-fe:$SHORT_SHA"]
+
+  - id: Docker Push latest
+    name: "gcr.io/cloud-builders/docker"
+    args: ["push", "gcr.io/$PROJECT_ID/optima-fe:latest"]
+    
+  - id: Helm Install GCS Plugin
+    name: gcr.io/$PROJECT_ID/helm
+    args: ["plugin", "install", "https://github.com/hayorov/helm-gcs.git"]
+    env:
+      - TILLERLESS=true
+      - CLOUDSDK_COMPUTE_ZONE=europe-west2-b
+      - CLOUDSDK_CONTAINER_CLUSTER=immersive-induction
+
+  - id: Helm Install Optima Chart
+    name: gcr.io/$PROJECT_ID/helm
+    args: ["upgrade", "--install", "--values", "values.yaml", "optima-fe", "immersive-induction-charts/immersive-induction-fe"]
+    env:
+      - TILLERLESS=true
+      - CLOUDSDK_COMPUTE_ZONE=europe-west2-b
+      - CLOUDSDK_CONTAINER_CLUSTER=immersive-induction
+      - HELM_REPO_URL=gs://immersive-induction-charts
+      - HELM_REPO_NAME=immersive-induction-charts

@@ -9,10 +9,11 @@ import {
   clearErrorMessage,
   validateUserCredentials,
 } from "../../action/loginPage";
+import PropTypes from "prop-types";
+import { authenticateLogin } from "../../services/loginPageService";
 
 let message;
-const App = () => {
-  let err = "";
+const App = ({ setToken }) => {
   let history = useHistory();
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
@@ -24,10 +25,16 @@ const App = () => {
   let passwordUpdateStatus = useSelector(
     (state) => state.loginPage.passwordUpdateStatus
   );
-
+  const usernameUpdateStatus = useSelector(
+    (state) => state.loginPage.usernameUpdateStatus
+  );
+  let user = useSelector((state) => state.loginPage.userName);
   useEffect(() => {
     if (!errorStatus) {
-      history.push("/app");
+      localStorage.setItem("userName", user);
+      authenticate();
+      console.log("*********token",errorStatus)
+      history.push("/home");
     }
   }, [errorStatus]);
 
@@ -37,7 +44,15 @@ const App = () => {
       message = errorMessage;
     }
   }, [errorMessage]);
-
+  const authenticate = async () => {
+    // const token = await loginUser({
+    //   userName,
+    //   password,
+    // });
+    const response = await authenticateLogin({ userName, password });
+    const token = response.token;
+    // setToken(token);
+  };
   const handleUsernameChange = (e) => {
     setError(false);
     dispatch(clearErrorMessage());
@@ -55,8 +70,7 @@ const App = () => {
     dispatch(clearErrorMessage());
     setType(e.target.value);
   };
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (userName === "" || password === "" || type === "") {
       setError(true);
@@ -70,15 +84,18 @@ const App = () => {
     dispatch(clearErrorMessage());
     history.push("/forgotPassword");
   };
-
+  const handleForgotUsername = (e) => {
+    dispatch(clearErrorMessage());
+    history.push("/forgotUsername");
+  };
   return (
-    <div className="text-center">
-      <img src={Logo}></img>
-      <div className="form-signin">
+    <div className="lp-text-center">
+      <img className="lp-login-wallet-img" alt="wallet" src={Logo}></img>
+      <div className="lp-form-signin">
         <h1>Sign in here!</h1>
-        {error ? <p className="error-message">{`${message}`}</p> : null}
+        {error ? <p className="lp-error-message">{`${message}`}</p> : null}
         <br />
-        <div className="button1">
+        <div className="lp-button1">
           <input
             value={type}
             name="type"
@@ -96,32 +113,40 @@ const App = () => {
           onChange={handleTypeChange}
         />
         <span>Commercial</span>
-        <Label
+        <input
           id="userName"
           type="text"
           value={userName}
-          className="form-control"
+          className="lp-login-form-control"
           onChange={handleUsernameChange}
-          holder="Enter Username"
+          placeholder="Enter Username"
         />
-        <Label
+        <input
           id="password"
           type="password"
           value={password}
-          className="form-control"
+          className="lp-login-form-control"
           onChange={handlePasswordChange}
-          holder="Enter Password"
+          placeholder="Enter Password"
         />
         <br />
-        <button onClick={handleSubmit}>
+        <button className="lp-login-button" onClick={handleSubmit}>
           <span>Sign In</span>
         </button>
-        <button onClick={handleForgotPassword}>
+        <button className="lp-login-button" onClick={handleForgotPassword}>
           <span>Forgot Password</span>
+        </button>
+        <button className="lp-login-button" onClick={handleForgotUsername}>
+          <span>Forgot Username</span>
         </button>
         <br />
         {passwordUpdateStatus ? (
-          <span className="success-message">Password Updated!</span>
+          <span className="lp-success-message">Password Updated!</span>
+        ) : (
+          ""
+        )}
+        {usernameUpdateStatus ? (
+          <span className="lp-success-message">Username Updated!</span>
         ) : (
           ""
         )}
@@ -131,3 +156,6 @@ const App = () => {
 };
 
 export default App;
+// App.propTypes = {
+//   setToken: PropTypes.func.isRequired,
+// };
