@@ -1,6 +1,7 @@
 import React ,{useEffect,useState} from 'react';
 import './Wallpage.css';
-import LeftHandNav from '../../components/leftHandNav/leftHandNav';
+import Menu from "../../components/Menu/Menu"
+import Header from "../../components/Header/Header"
 import { Component } from 'react';
 
 class WalletPage extends Component{
@@ -40,7 +41,8 @@ class WalletPage extends Component{
       bank=this.state.debit[0]; 
       return (
       <div>
-        <LeftHandNav/>
+        <Header/>
+        <Menu/>
     <div className ="Main">
     <div className="Head">
       <h5 className = "h5">My Accounts</h5>
@@ -51,7 +53,7 @@ class WalletPage extends Component{
           </div>
     </div>
     <div className="cardInfo1">
-    <img id="myImg" src={`./Images/${bank.banks[0].cardimage}`}  width="310" height="120" alt="Card1"/>
+    <img id="myImg" src={`./homeassets/${bank.banks[0].cardimage}`}  width="310" height="120" alt="Card1"/>
     <p className="cp1">&emsp;{bank.banks[0].bankName}</p>
     <p className="cp2">&emsp;{bank.banks[0].accounts[0].interestRate} %AER</p>
     <p className="cp3">Total Balance  &nbsp;&nbsp;&nbsp;&emsp;&emsp;Payment Instructions</p>
@@ -63,7 +65,7 @@ class WalletPage extends Component{
     </div>
     
     <div className="cardInfo2">
-    <img id="myImg1" src={`./Images/${bank.banks[1].cardimage}`}  width="287" height="120" alt="Card2"/>
+    <img id="myImg1" src={`./homeassets/${bank.banks[1].cardimage}`}  width="287" height="120" alt="Card2"/>
     <p className="cp1">&emsp;{bank.banks[1].bankName}</p>
     <p className="cp2">&emsp;{bank.banks[1].accounts[0].interestRate} %AER</p>
     <p className="cp3">Total Balance &nbsp;&nbsp;&nbsp;&emsp;&emsp; Payment Instructions</p>
@@ -75,7 +77,7 @@ class WalletPage extends Component{
     </div>
 
     <div className="cardInfo2">
-    <img id="myImg1" src={`./Images/${bank.banks[2].cardimage}`}  width="287" height="120" alt="Card2"/>
+    <img id="myImg1" src={`./homeassets/${bank.banks[2].cardimage}`}  width="287" height="120" alt="Card2"/>
     <p className="cp1">&emsp;{bank.banks[2].bankName}</p>
     <p className="cp2">&emsp;{bank.banks[2].accounts[0].interestRate} %AER</p>
     <p className="cp3">Total Balance &nbsp;&nbsp;&nbsp;&emsp;&emsp; Payment Instructions</p>
