@@ -32,18 +32,26 @@ class Financials extends Component {
   }
 
   async getUserData() {
-    const response = await fetch(api.userdata, {mode: 'cors'});
+    const response = await fetch(api.userdata);
     const json = await response.json();
     return json;
   }
 
   async getDebitData() {
-    const response = await fetch(api.debit);
+    const response = await fetch(api.debit, {
+      headers: {
+        'Content-Type': 'application/json'
+      },
+    });
     const json = await response.json();
    return json;
   }
   async getCreditData() {
-    const response = await fetch(api.credit);
+    const response = await fetch(api.credit, {
+      headers: {
+        'Content-Type': 'application/json'
+      },
+    });
     const json = await response.json();
     return json;
   }
