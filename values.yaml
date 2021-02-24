@@ -5,10 +5,7 @@ image:
   pullPolicy: Always
 service:
   name: optima-fe-svc
-  type: ClusterIP
-  port: 3000
+  type: LoadBalancer
+  port: 80
   targetPort: 3000
   protocol: TCP
-ingress:
-  name: optima-fe-ingress
-  path: /optima-fe(/|$)(.*)
