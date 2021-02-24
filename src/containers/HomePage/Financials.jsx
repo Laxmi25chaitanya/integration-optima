@@ -92,7 +92,7 @@ class Financials extends Component {
                     your expenses
                 </p>
                   <span className="btn btn-success btn-xs">
-                  &nbsp;&nbsp;Yes&nbsp;
+                    &nbsp;&nbsp;Yes&nbsp;
                   <GoArrowRight className="yesarrow" />
                   &nbsp;
                 </span>
@@ -103,7 +103,7 @@ class Financials extends Component {
                   <div className="inner-head">
                     <div
                       style={{
-                        fontSize: "Larger",
+                        fontSize: "18px",
                         fontWeight: "bold",
                         marginLeft: 0,
                       }}
@@ -160,7 +160,7 @@ class Financials extends Component {
                   <div className="inner-head">
                     <div
                       style={{
-                        fontSize: "Larger",
+                        fontSize: "18px",
                         fontWeight: "bold",
                         marginLeft: 0,
                       }}
@@ -230,17 +230,17 @@ class Financials extends Component {
               </div>
             </div>
             <div className="main-right">
-               <Carousel showThumbs={false} autoPlay={true} infiniteLoop={true} useKeyboardArrows={true} showStatus={false}>
+              <Carousel showThumbs={false} autoPlay={true} infiniteLoop={true} useKeyboardArrows={true} showStatus={false}>
                 <div>
-                    <img src="./homeassets/item1.png" alt="" className="crsl-image" />
+                  <img src="./homeassets/item1.png" alt="" className="crsl-image" />
                 </div>
                 <div>
-                    <img src="./homeassets/item2.jfif" alt="" className="crsl-image" />
+                  <img src="./homeassets/item2.jfif" alt="" className="crsl-image" />
                 </div>
-            </Carousel> 
+              </Carousel>
             </div>
           </div>
-          
+
         </div>
       );
     } else {

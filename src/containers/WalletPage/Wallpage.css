@@ -12,14 +12,13 @@ p {
 }
 
 .Head {
-  margin-left: 100px;
-  padding-bottom: 10px;
-  margin-bottom: 2px;
+  margin: 5px 0px 2px 100px !important;
+  padding-bottom: 10px !important;
 }
 
 .h5 {
   font-weight: 300 !important;
-  margin-top: 5px !important;
+  margin: 5px 0px 0px 100px !important;
   font-weight: 600 !important;
   font-size: 30px !important;
   color: #4a4a4a;
@@ -32,6 +31,7 @@ p {
   padding: 47px 18px;
   max-width: 35%;
   max-height: 5%;
+  margin-left: 100px !important;
 }
 
 .hp1 {
@@ -137,7 +137,7 @@ p {
   height: 50px !important;
   border-radius: 0px 0px 10px 10px;
   background-color: #2d8259 !important;
-  margin: 40px 0px 0px 0px !important;
+  margin: 15px 0px 0px 0px !important;
 }
 
 #myImg {

@@ -1,0 +1,11 @@
+name: optima-fe
+image:
+  repository: gcr.io/wipro-gcp-kubernetes-poc/optima-fe
+  tag: latest
+  pullPolicy: Always
+service:
+  name: optima-fe-svc
+  type: LoadBalancer
+  port: 80
+  targetPort: 3000
+  protocol: TCP
