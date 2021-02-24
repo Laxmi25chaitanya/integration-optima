@@ -14,9 +14,7 @@ function App() {
   const { token, setToken } = useToken();
 
   const username = getUserName();
-  // if (!token) {
-  //   return <LoginPage setToken={setToken} />;
-  // }
+
   const handleSignOut = () => {
     localStorage.clear();
     window.location.reload();

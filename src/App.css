@@ -56,17 +56,16 @@ body {
   background-color: #eee;
   color: black;
   display: block;
-  padding: 12px;
-  height: 80px;
-  padding-top: 50%;
+  padding: 25px;
 }
 
 .menu a:hover {
   background-color: #ccc;
 }
 
-.menu a.active {
+.menu a.selected {
   background-color: darkgreen;
   color: white;
 }
+
 

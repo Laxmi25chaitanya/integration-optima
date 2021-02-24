@@ -5,29 +5,22 @@ import {GoGraph} from "react-icons/go";
 import {GiPiggyBank} from "react-icons/gi";
 import {CgMail} from "react-icons/cg";
 import {RiMoneyDollarCircleLine} from "react-icons/ri";
+import { NavLink } from "react-router-dom";
 
 const  Menu = (props) => {
     return (
         <div>
             <div className="menu">
-                <a href="/home" className="active">
+                <NavLink to="/home" activeClassName="selected">
                     <AiOutlineHome />
-                </a>
-                <a href="/WalletPage">
+
+                </NavLink>
+                <NavLink to="/WalletPage" activeClassName="selected">
                     <BiWalletAlt />
-                </a>
-                <a href="/SpendAnalysis">
+                </NavLink>
+                <NavLink to="/SpendAnalysis" activeClassName="selected">
                     <GoGraph />
-                </a>
-                <a href="/spendanalysis/budgetanalysis">
-                    <GiPiggyBank />
-                </a>
-                <a>
-                    <CgMail />
-                </a>
-                <a >
-                    <RiMoneyDollarCircleLine />
-                </a>
+                </NavLink>
             </div>
         </div>
     )

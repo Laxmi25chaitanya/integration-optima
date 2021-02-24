@@ -58,30 +58,6 @@ body {
   padding-right: 0em;
 }
 
-.menu {
-  width: 6%;
-  height: 480px;
-  float: left;
-}
-
-.menu a {
-  background-color: #eee;
-  color: black;
-  display: block;
-  padding: 12px;
-  height: 80px;
-  padding-top: 50%;
-}
-
-.menu a:hover {
-  background-color: #ccc;
-}
-
-.menu a.active {
-  background-color: darkgreen;
-  color: white;
-}
-
 .tdi-digits {
   /* font-size: x-large; */
   font-weight: bold;
