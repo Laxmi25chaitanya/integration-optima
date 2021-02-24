@@ -31,7 +31,7 @@ steps:
 
   - id: Helm Install Optima Chart
     name: gcr.io/$PROJECT_ID/helm
-    args: ["upgrade", "--install", "--values", "values.yaml", "optima-fe", "immersive-induction-charts/immersive-induction-fe"]
+    args: ["upgrade", "--install", "--values", "values.yaml", "optima-fe", "immersive-induction-charts/immersive-induction-fe", "--set", "image.tag=$SHORT_SHA"]
     env:
       - TILLERLESS=true
       - CLOUDSDK_COMPUTE_ZONE=europe-west2-b
