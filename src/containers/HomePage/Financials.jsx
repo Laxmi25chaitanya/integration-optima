@@ -32,7 +32,7 @@ class Financials extends Component {
   }
 
   async getUserData() {
-    const response = await fetch(api.userdata);
+    const response = await fetch(api.userdata, {mode: 'cors'});
     const json = await response.json();
     return json;
   }
@@ -40,7 +40,7 @@ class Financials extends Component {
   async getDebitData() {
     const response = await fetch(api.debit);
     const json = await response.json();
-    return json;
+   return json;
   }
   async getCreditData() {
     const response = await fetch(api.credit);
