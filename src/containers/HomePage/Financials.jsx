@@ -58,7 +58,7 @@ class Financials extends Component {
 
   render() {
     if (this.state.userdata[0]) {
-      // const loggedUser=localStorage.getItem("userName");
+      //const loggedUser=localStorage.getItem("userName");
       const userdata = this.state.userdata[0].userData[0];
       return (
         <div>
