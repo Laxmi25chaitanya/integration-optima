@@ -5,11 +5,13 @@ class DebitHover extends Component {
   render() {
     if (this.props.bankdetails) {
       const bank = this.props.bankdetails;
+      const index=this.props.index;
+
       return (
 
         <div className="hover-card-main">
           <div>
-            <img className="homeimg" src={`./homeassets/${bank.cardimage}`} alt={bank.bankName} height="110px" />
+            <img className="homeimg" src={`./homeassets/debit${index}.png`} alt={bank.bankName} height="110px" />
           </div>
           <div className="hover-text-left">
             <div>

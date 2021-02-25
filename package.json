@@ -37,7 +37,7 @@
     "eject": "react-scripts eject",
     "nodemon": "nodemon server.js",
     "server": "json-server userCredentials.json -p 8000",
-    "all": "concurrently  \"npm run start\" \"npx json-server --watch userCredentials.json --port 8000\" "
+    "all": "concurrently  \"npm run start\"  \"npm run nodemon\" "
   },
   "eslintConfig": {
     "extends": "react-app"

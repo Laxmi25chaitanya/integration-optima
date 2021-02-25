@@ -38,13 +38,13 @@ class Financials extends Component {
   }
 
   async getDebitData() {
-    const response = await fetch(api.debit, {
-      headers: {
-        'Content-Type': 'application/json'
-      },
-    });
-    const json = await response.json();
-   return json;
+       const response = await fetch(api.debit, {
+        headers: {
+          'Content-Type': 'application/json'
+        },
+      });
+      const json = await response.json();
+     return json;
   }
   async getCreditData() {
     const response = await fetch(api.credit, {
@@ -58,7 +58,8 @@ class Financials extends Component {
 
   render() {
     if (this.state.userdata[0]) {
-      const userdata = this.state.userdata[0];
+      // const loggedUser=localStorage.getItem("userName");
+      const userdata = this.state.userdata[0].userData[0];
       return (
         <div>
           <div className="main">
@@ -126,6 +127,7 @@ class Financials extends Component {
                   </div>
 
                   {
+
                     this.state.debit[0].banks.map((bank, index) => {
                       return (<div
                         className="inner"
@@ -137,7 +139,7 @@ class Financials extends Component {
                         <div className="inner-one">
                           <div className="cardimage">
 
-                            <img className="homeimg" src={`./homeassets/${bank.cardimage}`} alt={bank.bankName}
+                            <img className="homeimg" src={`./homeassets/debit${index}.png`} alt={bank.bankName}
                               height="50px"></img>
                           </div>
                           <div>
@@ -145,6 +147,7 @@ class Financials extends Component {
                             <br />
                             <span className="intRate">
                               {bank.accounts[0].interestRate}
+
                       &#37;&nbsp;AER
                     </span>
                           </div>
@@ -154,7 +157,7 @@ class Financials extends Component {
                   &nbsp;|&nbsp;&#8356;{bank.accounts[0].balance}
                         </div>
                         <ReactTooltip id={"debit_" + bank.bankId}>
-                          <DebitHover id={bank.bankId} bankdetails={bank} />
+                          <DebitHover id={bank.bankId} bankdetails={bank} index={index} />
                         </ReactTooltip>
                       </div>
                       )
@@ -191,7 +194,7 @@ class Financials extends Component {
                           data-background-color="white">
                           <div className="inner-one">
                             <div className="cardimage">
-                              <img className="homeimg" src={`./homeassets/${bank.cardimage}`} alt={bank.bankName}
+                              <img className="homeimg" src={`./homeassets/credit${index}.png`} alt={bank.bankName}
                                 height="50px"></img>
                             </div>
                             <div>
@@ -218,8 +221,9 @@ class Financials extends Component {
                     &nbsp;|&nbsp;&#8356;
                     {bank.accounts[0].totalBalanceDue}
                           </div>
+
                           <ReactTooltip id={"credit_" + bank.bankId}>
-                            <CreditHover id={bank.bankId} bankdetails={bank} />
+                            <CreditHover id={bank.bankId} bankdetails={bank} index={index} />
                           </ReactTooltip>
                         </div>
                       )
